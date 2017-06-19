@@ -1114,7 +1114,7 @@ std::cout<<"====================================================================
 // ###########################################
 // ### Create a file for all my histograms ###
 // ###########################################
-TFile myfile("./DataDrivenProtonMC_EnergyCalibrationPlots.root","CREATE");
+TFile myfile("./DataDrivenProtonMC_EnergyCalibrationPlots.root","RECREATE");
 
 
 // ##########################
