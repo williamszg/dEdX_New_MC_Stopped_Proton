@@ -752,7 +752,7 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
 	    }//<---End nXbins loop
 	 
 	 }//<---End Y in the top    
-      
+*/      
       if(EnergyLossFromMap == 0){EnergyLossFromMap = 66.6;}
       
       // ###################################################################
@@ -780,7 +780,7 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
       
       nG4Primary++;
       
-*/
+
       }//<---End iG4 loop
       
    // ##########################################################
@@ -1061,9 +1061,9 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
 	       }//<---End nYbins loop
 	    }//<---End only looking if the Phi is matched
 	 }//<---End nXbins loop
-*/	 
+	 
       }//<---End Y in the top    
-      
+*/      
    if(EnergyLossFromMap == 0){EnergyLossFromMap = 66.6;}
    
    hMCELossUpstreamTPCRecoMap->Fill(EnergyLossFromMap);
