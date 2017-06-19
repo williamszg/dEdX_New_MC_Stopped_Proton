@@ -252,7 +252,7 @@ double ZUpperFid = 90;
 // ###################################
 // ### Load the calibration tables ###
 // ###################################
-//TFile *f1 = new TFile("./DataDrivenProtonMC_EnergyCalibrationTable.root");
+TFile *f1 = new TFile("./DataDrivenProtonMC_EnergyCalibrationTable.root");
 
 
 
@@ -660,7 +660,7 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
       float ThetaInDegrees = mcTheta *(180/3.14159);
       
       
-/*      // ################################################
+      // ################################################
       // ### Deterimine which histogram I should open ###
       // ################################################
       if(FirstPoint_Y > 5 && FirstPoint_Y < 15)
@@ -752,7 +752,7 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
 	    }//<---End nXbins loop
 	 
 	 }//<---End Y in the top    
-*/      
+      
       if(EnergyLossFromMap == 0){EnergyLossFromMap = 66.6;}
       
       // ###################################################################
@@ -981,7 +981,7 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
    
    
    
-/*   // ################################################
+   // ################################################
    // ### Deterimine which histogram I should open ###
    // ################################################
    if(FirstSpacePointY > 5 && FirstSpacePointY < 15)
@@ -1063,7 +1063,7 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
 	 }//<---End nXbins loop
 	 
       }//<---End Y in the top    
-*/      
+      
    if(EnergyLossFromMap == 0){EnergyLossFromMap = 66.6;}
    
    hMCELossUpstreamTPCRecoMap->Fill(EnergyLossFromMap);
@@ -1102,7 +1102,7 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
       
    }//<---End jentry loop
    
-//f1->Close();
+f1->Close();
 
 std::cout<<"========================================================================================"<<std::endl;
 std::cout<<"Total Number of Events 			    	   "<<nTotalEvents<<std::endl;
@@ -1114,7 +1114,7 @@ std::cout<<"====================================================================
 // ###########################################
 // ### Create a file for all my histograms ###
 // ###########################################
-TFile myfile("./DataDrivenProtonMC_EnergyCalibrationTable.root","CREATE");
+TFile myfile("./DataDrivenProtonMC_EnergyCalibrationPlots.root","CREATE");
 
 
 // ##########################
