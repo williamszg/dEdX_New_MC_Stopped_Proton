@@ -219,6 +219,29 @@ TH1D *hDeltaEnergyLossUpstreamTPCTruevsReco = new TH1D("hDeltaEnergyLossUpstream
 
 TH2D *hDeltaEInTPCvsTrkLength = new TH2D("hDeltaEInTPCvsTrkLength", "TrkLength vs Delta E", 1000, 0, 110, 1000, -75, 75);
 TH2D *hDeltaEInTPCvsKEinit = new TH2D("hDeltaEInTPCvsKEinit", "Initial KE vs Delta E", 80, 0, 800, 1000, -75, 75);
+
+//--------------------------------------|
+//--- Checking Dual Peaks Histograms ---|
+//--------------------------------------|
+
+TH1D *hLXRecoInTPC = new TH1D("hLXRecoInTPC", "Reconstructed X_{0} Inside the TPC of the Left Peak of the Dual Peaks", 200, -50, 50);
+TH1D *hLYRecoInTPC = new TH1D("hLYRecoInTPC", "Reconstructed Y_{0} Inside the TPC of the Left Peak of the Dual Peaks", 200, -50, 50);
+TH1D *hLZRecoInTPC = new TH1D("hLZRecoInTPC", "Reconstructed Z_{0} Inside the TPC of the Left Peak of the Dual Peaks", 600, -120, 180);
+
+TH1D *hLTrueELossInTPC = new TH1D("hLTrueELossInTPC", "The Left Peaks True E_{Loss} Inside the TPC", 1100, -100, 1000);
+TH1D *hLRecoELossInTPC = new TH1D("hLRecoELossInTPC", "The Left Peaks Reconstructed E_{Loss} Inside the TPC", 1100, -100, 1000);
+TH1D *hLDeltaInTPC = new TH1D("hLDeltaInTPC", "#Delta E_{Loss} Inside the TPC of the Left Peak (True - Reco)", 1000, -75, 75);
+
+TH1D *hRXRecoInTPC = new TH1D("hRXRecoInTPC", "Reconstructed X_{0} Inside the TPC of the Right Peak of the Dual Peaks", 200, -50, 50);
+TH1D *hRYRecoInTPC = new TH1D("hRYRecoInTPC", "Reconstructed Y_{0} Inside the TPC of the Right Peak of the Dual Peaks", 200, -50, 50);
+TH1D *hRZRecoInTPC = new TH1D("hRZRecoInTPC", "Reconstructed Z_{0} Inside the TPC of the Right Peak of the Dual Peaks", 600, -120, 180);
+
+TH1D *hRTrueELossInTPC = new TH1D("hRTrueELossInTPC", "The Right Peaks True E_{Loss} Inside the TPC", 1100, -100, 1000);
+TH1D *hRRecoELossInTPC = new TH1D("hRRecoELossInTPC", "The Right Peaks Reconstructed E_{Loss} Inside the TPC", 1100, -100, 1000);
+TH1D *hRDeltaInTPC = new TH1D("hRDeltaInTPC", "#Delta E_{Loss} Inside the TPC of the Right Peak (True - Reco)", 1000, -75, 75);
+
+//--------------------------------------|
+
 // ===================================================================================================================
 // ===================================================================================================================
 
@@ -1078,12 +1101,34 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
    hMCELossRecoInTPC->Fill(RecoEnergyLossInsideTPC);
    
    float DeltaEnergyLossInTPC = EnergyLossInsideTPC - RecoEnergyLossInsideTPC;
-   float DeltaELossUpstreamTruevsReco = -999.;
+   float DeltaELossUpstreamTruevsReco = 999;
 
    DeltaELossUpstreamTruevsReco = ELossMapTrue - EnergyLossFromMap;
 
-   if (DeltaELossUpstreamTruevsReco != -999) {hDeltaEnergyLossUpstreamTPCTruevsReco->Fill(DeltaELossUpstreamTruevsReco);}
+   if (DeltaELossUpstreamTruevsReco != 999) {hDeltaEnergyLossUpstreamTPCTruevsReco->Fill(DeltaELossUpstreamTruevsReco);}
 
+   if (DeltaEnergyLossInTPC >= 15 && DeltaEnergyLossInTPC <= 35) 
+      {
+      hLXRecoInTPC->Fill(FirstSpacePointX);
+      hLYRecoInTPC->Fill(FirstSpacePointY);
+      hLZRecoInTPC->Fill(FirstSpacePointZ);
+
+      hLRecoELossInTPC->Fill(RecoEnergyLossInsideTPC);
+      hLTrueELossInTPC->Fill(EnergyLossInsideTPC);
+      hLDeltaInTPC->Fill(DeltaEnergyLossInTPC);
+      }
+
+   if (DeltaEnergyLossInTPC >= 35 && DeltaEnergyLossInTPC <= 55) 
+      {
+      hRXRecoInTPC->Fill(FirstSpacePointX);
+      hRYRecoInTPC->Fill(FirstSpacePointY);
+      hRZRecoInTPC->Fill(FirstSpacePointZ);
+
+      hRRecoELossInTPC->Fill(RecoEnergyLossInsideTPC);
+      hRTrueELossInTPC->Fill(EnergyLossInsideTPC);
+      hRDeltaInTPC->Fill(DeltaEnergyLossInTPC);
+      }
+   
    hDeltaEnergyLossInTPCTruevsReco->Fill(DeltaEnergyLossInTPC);
 
    hDeltaEInTPCvsTrkLength->Fill(primary_track_length,DeltaEnergyLossInTPC);
@@ -1235,5 +1280,21 @@ hMCPrimaryPzvsELossUpstream->Write();
 
 hDeltaEInTPCvsTrkLength->Write();
 hDeltaEInTPCvsKEinit->Write();
+
+hLXRecoInTPC->Write();
+hLYRecoInTPC->Write();
+hLZRecoInTPC->Write();
+
+hRXRecoInTPC->Write();
+hRYRecoInTPC->Write();
+hRZRecoInTPC->Write();
+
+hLTrueELossInTPC->Write();
+hLRecoELossInTPC->Write();
+hLDeltaInTPC->Write();
+
+hRTrueELossInTPC->Write();
+hRRecoELossInTPC->Write();
+hRDeltaInTPC->Write();
 
 }//<----End Loop()
