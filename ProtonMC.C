@@ -228,6 +228,8 @@ TH1D *hLXRecoInTPC = new TH1D("hLXRecoInTPC", "Reconstructed X_{0} Inside the TP
 TH1D *hLYRecoInTPC = new TH1D("hLYRecoInTPC", "Reconstructed Y_{0} Inside the TPC of the Left Peak of the Dual Peaks", 200, -50, 50);
 TH1D *hLZRecoInTPC = new TH1D("hLZRecoInTPC", "Reconstructed Z_{0} Inside the TPC of the Left Peak of the Dual Peaks", 600, -120, 180);
 
+TH1D *hLInitKE = new TH1D("hLInitKE", "The Left Peaks Initial Kinetic Energy", 1100, -100, 1000);
+
 TH1D *hLTrueELossInTPC = new TH1D("hLTrueELossInTPC", "The Left Peaks True E_{Loss} Inside the TPC", 1100, -100, 1000);
 TH1D *hLRecoELossInTPC = new TH1D("hLRecoELossInTPC", "The Left Peaks Reconstructed E_{Loss} Inside the TPC", 1100, -100, 1000);
 TH1D *hLDeltaInTPC = new TH1D("hLDeltaInTPC", "#Delta E_{Loss} Inside the TPC of the Left Peak (True - Reco)", 1000, -75, 75);
@@ -235,6 +237,8 @@ TH1D *hLDeltaInTPC = new TH1D("hLDeltaInTPC", "#Delta E_{Loss} Inside the TPC of
 TH1D *hRXRecoInTPC = new TH1D("hRXRecoInTPC", "Reconstructed X_{0} Inside the TPC of the Right Peak of the Dual Peaks", 200, -50, 50);
 TH1D *hRYRecoInTPC = new TH1D("hRYRecoInTPC", "Reconstructed Y_{0} Inside the TPC of the Right Peak of the Dual Peaks", 200, -50, 50);
 TH1D *hRZRecoInTPC = new TH1D("hRZRecoInTPC", "Reconstructed Z_{0} Inside the TPC of the Right Peak of the Dual Peaks", 600, -120, 180);
+
+TH1D *hRInitKE = new TH1D("hRInitKE", "The Right Peaks Initial Kinetic Energy", 1100, -100, 1000);
 
 TH1D *hRTrueELossInTPC = new TH1D("hRTrueELossInTPC", "The Right Peaks True E_{Loss} Inside the TPC", 1100, -100, 1000);
 TH1D *hRRecoELossInTPC = new TH1D("hRRecoELossInTPC", "The Right Peaks Reconstructed E_{Loss} Inside the TPC", 1100, -100, 1000);
@@ -254,7 +258,7 @@ void ProtonMC::Loop()
 // ##########################################################
 // ### Putting in some counters for event reduction table ###
 // ##########################################################
-int nTotalEvents = 0, TrueStoppingParticle = 0, nRecoEvents = 0;
+int nTotalEvents = 0, TrueStoppingParticle = 0, nRecoEvents = 0, nEntries = 100000;
 
 
 float particle_mass = 938.28 ;
@@ -1107,22 +1111,26 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
 
    if (DeltaELossUpstreamTruevsReco != 999) {hDeltaEnergyLossUpstreamTPCTruevsReco->Fill(DeltaELossUpstreamTruevsReco);}
 
-   if (DeltaEnergyLossInTPC >= 15 && DeltaEnergyLossInTPC <= 35) 
+   if (DeltaEnergyLossInTPC >= 15 && DeltaEnergyLossInTPC <= 34) 
       {
       hLXRecoInTPC->Fill(FirstSpacePointX);
       hLYRecoInTPC->Fill(FirstSpacePointY);
       hLZRecoInTPC->Fill(FirstSpacePointZ);
+
+      hLInitKE->Fill(InitialKineticEnergy);
 
       hLRecoELossInTPC->Fill(RecoEnergyLossInsideTPC);
       hLTrueELossInTPC->Fill(EnergyLossInsideTPC);
       hLDeltaInTPC->Fill(DeltaEnergyLossInTPC);
       }
 
-   if (DeltaEnergyLossInTPC >= 35 && DeltaEnergyLossInTPC <= 55) 
+   if (DeltaEnergyLossInTPC >= 34 && DeltaEnergyLossInTPC <= 65) 
       {
       hRXRecoInTPC->Fill(FirstSpacePointX);
       hRYRecoInTPC->Fill(FirstSpacePointY);
       hRZRecoInTPC->Fill(FirstSpacePointZ);
+
+      hRInitKE->Fill(InitialKineticEnergy);
 
       hRRecoELossInTPC->Fill(RecoEnergyLossInsideTPC);
       hRTrueELossInTPC->Fill(EnergyLossInsideTPC);
@@ -1288,6 +1296,10 @@ hLZRecoInTPC->Write();
 hRXRecoInTPC->Write();
 hRYRecoInTPC->Write();
 hRZRecoInTPC->Write();
+
+hLInitKE->Write();
+
+hRInitKE->Write();
 
 hLTrueELossInTPC->Write();
 hLRecoELossInTPC->Write();
