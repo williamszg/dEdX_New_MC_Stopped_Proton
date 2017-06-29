@@ -217,6 +217,9 @@ TH1D *hDeltaEnergyLossInTPCTruevsReco = new TH1D("hDeltaEnergyLossInTPCTruevsRec
 TH1D *hDeltaEnergyLossUpstreamTPCTruevsReco = new TH1D("hDeltaEnergyLossUpstreamTPCTruevsReco", "#Delta Energy Loss Upstream of the TPC (True - Reco)", 1000, -75, 75);
 
 
+TH1D *hDeltaTotalTruevsReco = new TH1D("hDeltaTotalTruevsReco", "#Delta E_{Total} (True - Reco)", 1001, -75, 75);
+
+
 TH2D *hDeltaEInTPCvsTrkLength = new TH2D("hDeltaEInTPCvsTrkLength", "TrkLength vs Delta E", 1000, 0, 110, 1000, -75, 75);
 TH2D *hDeltaEInTPCvsKEinit = new TH2D("hDeltaEInTPCvsKEinit", "Initial KE vs Delta E", 80, 0, 800, 1000, -75, 75);
 
@@ -1107,6 +1110,14 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
    float DeltaEnergyLossInTPC = EnergyLossInsideTPC - RecoEnergyLossInsideTPC;
    float DeltaELossUpstreamTruevsReco = 999;
 
+   float ETrueTotal = EnergyLossInsideTPC + EnergyLossOutsideTPC;
+   float ERecoTotal = RecoEnergyLossInsideTPC + EnergyLossFromMap;
+
+   float DeltaTotal = 999;
+   DeltaTotal = ETrueTotal - ERecoTotal;
+
+   if (DeltaTotal != 999) {hDeltaTotalTruevsReco->Fill(DeltaTotal);}
+
    DeltaELossUpstreamTruevsReco = ELossMapTrue - EnergyLossFromMap;
 
    if (DeltaELossUpstreamTruevsReco != 999) {hDeltaEnergyLossUpstreamTPCTruevsReco->Fill(DeltaELossUpstreamTruevsReco);}
@@ -1308,5 +1319,8 @@ hLDeltaInTPC->Write();
 hRTrueELossInTPC->Write();
 hRRecoELossInTPC->Write();
 hRDeltaInTPC->Write();
+
+
+hDeltaTotalTruevsReco->Write();
 
 }//<----End Loop()
