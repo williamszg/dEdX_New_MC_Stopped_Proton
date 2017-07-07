@@ -95,6 +95,27 @@ TH2D *hPhivsThetaELossFlux = new TH2D("hPhivsThetaELossFlux", "Phi vs Energy Los
 /////////////////////////////////// Phi vs Theta ELoss Divided /////////////////////////
 TH2D *hPhivsThetaELossDivided = new TH2D("hPhivsThetaELossDivided", "Phi vs Energy Loss", 360, 0, 360, 360, -180, 180);
 
+
+
+
+
+//----------------------------------------------------|
+//---------       Calo Reco Histograms       ---------|
+//----------------------------------------------------|
+
+//=== dE/dx ===|
+TH1D *hCaloRecodEdX = new TH1D("hCaloRecodEdX", "The Energy Deposition Reconstructed Using the Calorimetric Energy", 100, 0, 50);
+
+//=== Track Length ===|
+TH1D *hCaloRecoTrackLength = new TH1D("hCaloRecoTrackLength", "The Track Length From Reconstructed Tracks", 50, 0, 100);
+
+//=== dE/dX vs RR ===|
+TH2D *hCaloRecodEdXvsRR = new TH2D("hCaloRecodEdXvsRR", "Calorimetric Reconstructed Energy Deposition vs the Residual Range", 100, 0, 100, 100, 0, 50);
+
+//----------------------------------------------------|
+
+
+
 // ===================================================================================================================
 // ===================================================================================================================
 // ===================================================================================================================
@@ -195,7 +216,7 @@ double alphaCut = 10;
 // #############################################################################################################
 // #################################        ROOT FILE FOR HISTOGRAM FOR PLOTS           ########################
 // #############################################################################################################
-TFile myfile("./ROOTFILES/RunIPosPolData_StoppingProtons.root", "RECREATE");
+//TFile myfile("./ROOTFILES/RunIPosPolData_StoppingProtons.root", "RECREATE");
 
 
 // ----------------------------------------------------------------
@@ -215,6 +236,15 @@ float g_per_kg = 1000;
 float avogadro = 6.022e+23; //number/mol
 float number_density = rho*g_per_kg/molar_mass*avogadro;
 float slab_width = 0.0045;//in m
+
+
+
+
+//###################################|
+//### Load the Calibration Tables ###|
+//###################################|
+TFile *f1 = new TFile("./ROOTFILES/DataDrivenProtonMC_EnergyCalibrationTable.root");
+
 
 
 
@@ -651,8 +681,8 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
 	 // ##########################################################################
 	 // ### Calculating the Delta X and Delta Y between WC track and TPC track ###
 	 // ##########################################################################
-	 DeltaX_WC_TPC_Track = FirstSpacePointX - (wctrk_XFaceCoor[mwctrk]* 0.1);//<---Note: *0.1 to convert to cm
-	 DeltaY_WC_TPC_Track = FirstSpacePointY - (wctrk_YFaceCoor[mwctrk]* 0.1);
+	 DeltaX_WC_TPC_Track = FirstSpacePointX - (wctrk_XFaceCoor[mwctrk]);//<---Note: *0.1 to convert to cm
+	 DeltaY_WC_TPC_Track = FirstSpacePointY - (wctrk_YFaceCoor[mwctrk]);
 	 
 	 
 	 // ###########################################################
@@ -704,7 +734,141 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
    // ### Counting the number of events with ONE WC track matched ###
    nEvtsWCTrackMatch++;
    
-  
+
+
+   
+   float EnergyLossFromMap = 0;
+   float PhiInDegrees = tpcPhi * (180/3.14159);
+   float ThetaInDegrees = tpcTheta * (180/3.14159);
+
+   //00000000000000000000000000000000000000000000000|
+   //000 Determine Which Histogram I Should Open 000|
+   //00000000000000000000000000000000000000000000000|
+
+   //%%%%%%%%%%%%%%%%%%%|
+   //%%% Top Portion %%%|
+   //%%%%%%%%%%%%%%%%%%%|
+   if (FirstSpacePointY > 5 && FirstSpacePointY < 15)
+      {
+
+      TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedTop");
+
+      //--- Loop Over the Phi Bins ---|
+      for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+         {
+
+         //--- Match the Phi Angle ---|
+         if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+            {
+
+            //--- Loop Over the Theta Bins ---|
+            for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+               {
+
+               //--- Match the Theta Angle ---|
+               if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+                  {
+
+                  EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+
+                  }//<---End If Only Looking If Theta is Matched
+
+               }//<---Close nYbins For Loop
+
+            }//<---End If Only Looking If Phi is Matched
+
+         }//<---Close nXbins For Loop
+
+      }//<---Close Y in the Top
+   //%%%%%%%%%%%%%%%%%%%|
+
+
+   //%%%%%%%%%%%%%%%%%%%|
+   //%%% Mid Portion %%%|
+   //%%%%%%%%%%%%%%%%%%%|
+   if (FirstSpacePointY > -5 && FirstSpacePointY < 5)
+      {
+
+      TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedMid");
+
+      //--- Loop Over the Phi Bins ---|
+      for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+         {
+
+         //--- Match the Phi Angle ---|
+         if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+            {
+
+            //--- Loop Over the Theta Bins ---|
+            for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+               {
+
+               //--- Match the Theta Angle ---|
+               if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+                  {
+
+                  EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+
+                  }//<---End If Only Looking If Theta is Matched
+
+               }//<---Close nYbins For Loop
+
+            }//<---End If Only Looking If Phi is Matched
+
+         }//<---Close nXbins For Loop
+
+      }//<---Close Y in the Top
+   //%%%%%%%%%%%%%%%%%%%|
+
+
+   //%%%%%%%%%%%%%%%%%%%|
+   //%%% Bot Portion %%%|
+   //%%%%%%%%%%%%%%%%%%%|
+   if (FirstSpacePointY > -15 && FirstSpacePointY < -5)
+      {
+
+      TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedBottom");
+
+      //--- Loop Over the Phi Bins ---|
+      for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+         {
+
+         //--- Match the Phi Angle ---|
+         if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+            {
+
+            //--- Loop Over the Theta Bins ---|
+            for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+               {
+
+               //--- Match the Theta Angle ---|
+               if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+                  {
+
+                  EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+
+                  }//<---End If Only Looking If Theta is Matched
+
+               }//<---Close nYbins For Loop
+
+            }//<---End If Only Looking If Phi is Matched
+
+         }//<---Close nXbins For Loop
+
+      }//<---Close Y in the Top
+   //%%%%%%%%%%%%%%%%%%%|
+
+   if (EnergyLossFromMap == 0) {EnergyLossFromMap = 66.6;}
+
+   //00000000000000000000000000000000000000000000000|
+
+
+
+
+
+
+
+ 
 
    // =========================================================================================================================================
    //						Recording information about the Wire Chamber Track
@@ -739,7 +903,8 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
    
    // ### The kinetic energy is that which we calculated ###
    // ###       minus the calculated energy loss         ###
-   kineticEnergy -= entryTPCEnergyLoss;
+   //kineticEnergy -= entryTPCEnergyLoss;
+   kineticEnergy -= EnergyLossFromMap;
   
    double InitialKinEnAtTPC = 0.;
    InitialKinEnAtTPC = kineticEnergy;
@@ -794,6 +959,10 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
       
       // ### Skipping events which are non-stopping ###
       if(ThroughGoingTrack[nTPCtrk]){continue;}
+
+
+      float TrackLength = 0;
+
       
       // ###############################################################
       // ### Looping over the calorimetry spacepoints for this track ###
@@ -821,9 +990,21 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
 	 DataSptsY[nDataSpts] = trkxyz[nTPCtrk][1][nspts][1];
 	 DataSptsZ[nDataSpts] = trkxyz[nTPCtrk][1][nspts][2];
 	 
-	 
+
+         //TrackLength += DataSptPitch[nDataSpts];
+         //hCaloRecodEdX->Fill(DatadEdX[nDataSpts]);
+         //hCaloRecodEdXvsRR->Fill(DataResRange[nDataSpts], DatadEdX[nDataSpts]);
+
+
+
 	 nDataSpts++;
+
 	 }//<---End nspts
+
+
+
+         //hCaloRecoTrackLength->Fill(TrackLength);
+
       
       
       // --------------------------------------------------------------------
@@ -836,6 +1017,9 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
       // ############################################
       for(int npoints = 0; npoints < nDataSpts; npoints++)
          {
+         //LowIonizingTrack = false;
+         //CloseToTheEdge = false;
+
 	 if(DatadEdX[npoints] < 4.0 && DataResRange[npoints] < 16)
 	    {LowIonizingTrack = true;}
    
@@ -843,16 +1027,26 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
 	 if(DataSptsX[npoints] > 38 || DataSptsX[npoints] < 5 || DataSptsY[npoints] > 15 || 
 	    DataSptsY[npoints] < -15|| DataSptsZ[npoints] > 85)
 	    {CloseToTheEdge = true;}
+
 	 
+         if(LowIonizingTrack == true || CloseToTheEdge == true) {continue;}
+         TrackLength += DataSptPitch[npoints];
+         hCaloRecodEdX->Fill(DatadEdX[npoints]);
+         hCaloRecodEdXvsRR->Fill(DataResRange[npoints], DatadEdX[npoints]);
+
 	 }//<---End npoints loop
       
+      //std::cout<<"Right Before The Stopping Proton Counter"<<std::endl;
       // ### Skip this track if it is minimum ionizing or too close to the edge
-      if(LowIonizingTrack || CloseToTheEdge)
-         {continue;}
+      if(LowIonizingTrack == true || CloseToTheEdge == true) {continue;}
+         hCaloRecoTrackLength->Fill(TrackLength);
       
+      
+      //std::cout<<"Right Before The Stopping Proton Counter"<<std::endl;
       
       protonTrkNumber = nTPCtrk;
       nStopProtons++;
+	 //}//<---End npoints loop
       
       }//<---End nTPCtrk loop   
 
@@ -861,6 +1055,7 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
    // ##################################################
    if(nStopProtons != 1){continue;}
 
+   //std::cout<<"Right Before The Stopping Proton Counter"<<std::endl;
    nEventsStopProton++;   
 
 
@@ -940,6 +1135,10 @@ hELossXvsYDivide->Divide(hELossXvsY, hELossXvsYFlux);
 hPhivsThetaELossDivided->Divide(hPhivsThetaELoss, hPhivsThetaELossFlux);
    
 
+
+TFile myfile("./ROOTFILES/RunIPosPolData_StoppingProtons.root", "RECREATE");
+
+
 // ===========================================================================================
 // ============================  Writing out histograms to ROOT File =========================
 // ===========================================================================================
@@ -968,5 +1167,9 @@ hELossXvsYDivide->Write();
 hPhivsThetaELoss->Write();
 hPhivsThetaELossFlux->Write();
 hPhivsThetaELossDivided->Write();
+
+hCaloRecodEdX->Write();
+hCaloRecodEdXvsRR->Write();
+hCaloRecoTrackLength->Write();
    
 }//<---End Loop() Function

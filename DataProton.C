@@ -327,7 +327,66 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
    //###########################################################|
    //######           Low Z Spacepoint Track Cut          ######|
    //###########################################################|
+   //--- Boolian for Events With Track Which ---|
+   //---       Start at the Front Face       ---|
+   bool TrackSptsZCut = false;
 
+   bool ThisTrackHasLowZPoint = false;
+
+   //--- Recording the Index of the Track Which ---|
+   //---   Starts at the Front Face of the TPC  ---|
+   bool PreLimTrackIndex[500] = {false};
+
+   //---------------------------|
+   //--- Looping Over Tracks ---|
+   //---------------------------|
+   for (int nTPCtrk = 0; nTPCtrk < ntracks_reco; nTPCtrk++)
+      {
+
+      float tempZpoint = 100;
+      ThisTrackHasLowZPoint = false;
+
+      //========================================================|
+      //=== Looping Over the Trajectory Points for the Track ===|
+      //========================================================|
+      for (int ntrjpts = 0; ntrjpts < nTrajPoint[nTPCtrk]; ntrjpts++)
+         {
+
+         //~~~ Tracking the Lowest Z Point That is Inside Fiducial Boundaries of the TPC ~~~|
+         if (trjPt_Z[nTPCtrk][ntrjpts] < tempZpoint && trjPt_Z[nTPCtrk][ntrjpts] > ZLowerFid &&
+             trjPt_Z[nTPCtrk][ntrjpts] < ZUpperFid && trjPt_X[nTPCtrk][ntrjpts] > XLowerFid &&
+             trjPt_X[nTPCtrk][ntrjpts] < XUpperFid && trjPt_Y[nTPCtrk][ntrjpts] < YUpperFid
+             trjPt_Y[nTPCtrk][ntrjpts] > YLowerFid) {tempZpoint = trjPt_Z[nTPCtrk][ntrjpts];} 
+
+         //~~~ Only Passing Events With a Track That Has a Spacepoint Within the ~~~|
+         //~~~       First N cm in Z And Requiring it to Be Inside the TPC       ~~~|
+         if (tempZpoint < FirstSpacePointZPos) 
+            {
+
+            TrackSptsZCut = true;
+            ThisTrackHasLowZPoint = true;
+
+            }//<---End If Statement for the Spacepoint Within First N cm in Z
+
+         }//<---Close For Loop for the Trajectory Points
+      //========================================================|
+
+      //--- Filling the Most Upstream Spacepoint for the Track ---|
+      hdataUpstreamZPos->Fill(tempZpoint);
+
+      //--- Recording That This Track is a "Good Track" if ---|
+      //---   it Has a Space Point in the First N cm in Z  ---|
+      if (ThisTrackHasLowZPoint) {PreLimTrackIndex[nTPCtrk] = true;}}
+
+      }//<---Close For Loop Over Tracks
+   //---------------------------|
+
+   //--- Skipping Events That Don't Have a Track ---|
+   //---   in the Front of the TPC (Z) Position  ---|
+   if (!TrackSptsZCut) {continue;}
+
+   //--- Counting Events With Front Face TPC Track ---|
+   nEvtsTrackZPos++;
    //###########################################################|
 
 
