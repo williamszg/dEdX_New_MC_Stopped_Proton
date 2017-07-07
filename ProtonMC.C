@@ -282,7 +282,7 @@ double ZUpperFid = 90;
 // ###################################
 // ### Load the calibration tables ###
 // ###################################
-TFile *f1 = new TFile("./DataDrivenProtonMC_EnergyCalibrationTable.root");
+TFile *f1 = new TFile("./ROOTFILES/DataDrivenProtonMC_EnergyCalibrationTable.root");
 
 
 
@@ -1180,7 +1180,7 @@ std::cout<<"====================================================================
 // ###########################################
 // ### Create a file for all my histograms ###
 // ###########################################
-TFile myfile("./DataDrivenProtonMC_EnergyCalibrationPlots.root","RECREATE");
+TFile myfile("./ROOTFILES/DataDrivenProtonMC_EnergyCalibrationPlots.root","RECREATE");
 
 
 // ##########################
