@@ -1,4 +1,4 @@
-#define StoppingProtonData_cxx
+#define DataProtonStopped_cxx
 #include "DataProton.h"
 #include <TH2.h>
 #include <TStyle.h>
@@ -195,7 +195,7 @@ double alphaCut = 10;
 // #############################################################################################################
 // #################################        ROOT FILE FOR HISTOGRAM FOR PLOTS           ########################
 // #############################################################################################################
-TFile myfile("./ROOTFILES/RunIPosPolData_StoppingProtons.root","CREATE");
+TFile myfile("./ROOTFILES/RunIPosPolData_StoppingProtons.root", "RECREATE");
 
 
 // ----------------------------------------------------------------
@@ -239,8 +239,8 @@ int MatchWCTrackIndex[10] = {0};
 // ###############################
 // ### Looping over all events ###
 // ###############################   
-//for (Long64_t jentry=0; jentry<nentries;jentry++) 
-for (Long64_t jentry=0; jentry<60000;jentry++)
+for (Long64_t jentry=0; jentry<nentries;jentry++) 
+//for (Long64_t jentry=0; jentry<60000;jentry++)
    {
    // #########################
    // ### Loading the event ###
