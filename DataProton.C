@@ -394,7 +394,47 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
    //###########################################################|
    //### Cutting on the Number of Tracks in the Upstream TPC ###|
    //###########################################################|
+   //--- Initializing Variables for Study of Low Z Track Location ---|
+   int nLowZTracksInTPC = 0;
+   bool LowZTrackInTPC = false;
 
+   //--- Only Keeping Events if There is Less Than N Tracks in the ---|
+   //---    First ## cm of the TPC (to Help Cut Out EM Showers)    ---|
+   for (int nTPCtrk = 0; nTPCtrk < ntracks_reco; nTPCtrk++)
+      {
+
+      //--- Start by Assuming this Track is not in the Low Z Part of the TPC ---|
+      LowZTrackInTPC = false;
+
+      //--- Looping Over the Trajectory Points for the Track ---|
+      for (int ntrjpts = 0; ntrjpts < nTrajPoint[nTPCtrk]; ntrjpts ++)
+         {
+
+         //--- Counting This Track if it has a Spacepoint in the Low Z Region of the TPC ---|
+         if (trjPt_Z[nTPCtrk][ntrjpts] < UpperPartOfTPC)
+            {
+
+            if (trjPt_Y[nTPCtrk][ntrjpts] > YLowerFid && trjPt_Y[nTPCtrk][ntrjpts] < YUpperFid &&
+                trjPt_X[nTPCtrk][ntrjpts] > XLowerFid && trjPt_X[nTPCtrk][ntrjpts] < XUpperFid)
+                {LowZTrackInTPC = true;}
+
+            }//<---Close Counting This Track If Statement
+
+         }//<---Close ntrjpts For Loop
+
+      //--- If the Track Was in the "UpperPartOfTPC," Bump the Counter ---|
+      if (LowZTrackInTPC) {nLowZTracksInTPC++;}
+
+      }//<---Close nTPCtrk For Loop
+   
+   hdataNumberOfUSTrks->Fill(nLowZTracksInTPC);
+
+   //--- Skipping the Event if There Are Too Many ---|
+   //---        Low Z Tracks in the Event         ---|
+   if (nLowZTracksInTPC > nLowZTracksAllowed || nLowZTracksInTPC == 0) {continue;}
+
+   //--- Counting the Event if it Passess ---|
+   nLowZTrkEvents++;
    //###########################################################|
 
 
@@ -402,7 +442,25 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
    //###########################################################|
    //######           Vetoing Shower Like Events          ######|
    //###########################################################|
+   int nShortTrks = 0;
+   
+   //===============================|
+   //=== Looping Over TPC Tracks ===|
+   //===============================|
+   for (int nTPCtrk = 0; nTPCtrk < ntracks_reco; nTPCtrk++)
+      {
 
+      //--- If the Track is Shorter Than Our Cut ---|
+      if (trklength[nTPCtrk] < ShortTkLength) {nShortTrks++;}
+
+      }//<---Close nTPCtrk For Loop
+   //===============================|
+
+   //--- Skipping the Event if There Are Too Many Short Tacks ---|
+   if (nShortTrks > nShortTracksAllowed) {continue;}
+
+   //--- Bumping the Counter ---|
+   nNonShowerEvents++;
    //###########################################################|
 
 
@@ -416,12 +474,46 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
 
 
    //###########################################################|
-   //######  Calculating Theta and Phi for this TPC Track ######|
+   //###### Calculating Theta and Phi for this TPC Track  ######|
    //###########################################################|
 
    //###########################################################|
 
+
+
+   //###########################################################|
+   //### Recording Information About the Wire Chamber Track  ###|
+   //###########################################################|
+
+   //###########################################################|
+
+
+
+   //###########################################################|
+   //#### Deciding Whether This Track is a Stopping Proton  ####|
+   //###########################################################|
+
+   //###########################################################|
+
+
+
+   //###########################################################|
+   //########  Filling Information for the Energy Loss  ########|
+   //###########################################################|
+
+   //###########################################################|
    }//<---Close Event For Loop
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
+
+
+
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
+//%%%%%                Event Reduction Table               %%%%%|
+//%%%%%                     Print Out                      %%%%%|
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
+std::cout<<std::endl;
+std::cout<<""<<std::endl;
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
 
 }//<---Close Void Loop
