@@ -859,7 +859,6 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
    //%%%%%%%%%%%%%%%%%%%|
 
    if (EnergyLossFromMap == 0) {EnergyLossFromMap = 66.6;}
-
    //00000000000000000000000000000000000000000000000|
 
 
