@@ -126,25 +126,25 @@ TH2D *hCaloRecodEdXvsRR = new TH2D("hCaloRecodEdXvsRR", "Calorimetric Reconstruc
 TH1D *hInitialKEWC4 = new TH1D("hInitialKEWC4", "The Initial Kinetic Energy at Wire Chamber 4", 500, 0, 2500);
 
 //=== Delta Energy (Calo - Length) Histogram ===|
-TH1D *hDeltaEnergyCaloVsLength = new TH1D("hDeltaEnergyCaloVsLength", "#Delta Energy (Calo - Length)", 500, 0, 2500);
+TH1D *hDeltaEnergyCaloVsLength = new TH1D("hDeltaEnergyCaloVsLength", "#Delta Energy (Calo - Length)", 50, -100, 100);
 
 //=== Calo Energy Histogram ===|
-TH1D *hEnergyCalo = new TH1D("hEnergyCalo", "Calo Energy", 500, 0, 2500);
+TH1D *hEnergyCalo = new TH1D("hEnergyCalo", "Calo Energy", 500, 0, 1000);
 
 //=== Length Energy Histogram ===|
-TH1D *hEnergyLength = new TH1D("hEnergyLength", "Length Energy", 500, 0, 2500);
+TH1D *hEnergyLength = new TH1D("hEnergyLength", "Length Energy", 500, 0, 1000);
 
 //=== Kinetic Energy at TPC Histogram ===|
-TH1D *hKETPC = new TH1D("hKETPC", "Kinetic Energy at the TPC", 500, 0, 2500);
+TH1D *hKETPC = new TH1D("hKETPC", "Kinetic Energy at the TPC", 500, 0, 1500);
 
 //=== Delta Kinetic Energy (TPC - Length) Histogram ===|
-TH1D *hDeltaKETPCVsLength = new TH1D("hDeltaKETPCVsLength", "#Delta KE (TPC - Length)", 500, 0, 2500);
+TH1D *hDeltaKETPCVsLength = new TH1D("hDeltaKETPCVsLength", "#Delta KE (TPC - Length)", 50, -100, 100);
 
 //=== Delta Kinetic Energy (TPC - Calo) Histogram ===|
-TH1D *hDeltaKETPCVsCalo = new TH1D("hDeltaKETPCVsCalo", "#Delta KE (TPC - Calo)", 500, 0, 2500);
+TH1D *hDeltaKETPCVsCalo = new TH1D("hDeltaKETPCVsCalo", "#Delta KE (TPC - Calo)", 50, -100, 100);
 
 //=== Energy Loss From Map Histogram ===|
-TH1D *hEnergyLossMap = new TH1D("hEnergyLossMap", "Energy Loss From the Map Method", 500, 0, 2500);
+TH1D *hEnergyLossMap = new TH1D("hEnergyLossMap", "Energy Loss From the Map Method", 500, 0, 150);
 
 //----------------------------------------------------|
 
@@ -893,6 +893,8 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
    //%%%%%%%%%%%%%%%%%%%|
 
    if (EnergyLossFromMap == 0) {EnergyLossFromMap = 66.6;}
+
+   hEnergyLossMap->Fill(EnergyLossFromMap);
    //00000000000000000000000000000000000000000000000|
 
 
@@ -933,7 +935,10 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
    // ###   Calculating the initial Kinetic Energy    ###
    // ### KE = Energy - mass = (p^2 + m^2)^1/2 - mass ###
    float kineticEnergy = pow( (momentum*momentum) + (mass*mass) ,0.5) - mass;
+   float kineticEnergyInitial = kineticEnergy;
    
+   hInitialKEWC4->Fill(kineticEnergyInitial);
+
    // ### The kinetic energy is that which we calculated ###
    // ###       minus the calculated energy loss         ###
    //kineticEnergy -= entryTPCEnergyLoss;
@@ -946,6 +951,8 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
    // ### Filling the initial kinetic energy plot ###
    // ###############################################
    hdataInitialKE->Fill(kineticEnergy);
+
+   hKETPC->Fill(InitialKinEnAtTPC);
    
    
    // =========================================================================================================================================
@@ -995,7 +1002,8 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
 
 
       float TrackLength = 0;
-
+      float ELength = 0;
+      float ECalo = 0;
       
       // ###############################################################
       // ### Looping over the calorimetry spacepoints for this track ###
@@ -1023,21 +1031,9 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
 	 DataSptsY[nDataSpts] = trkxyz[nTPCtrk][1][nspts][1];
 	 DataSptsZ[nDataSpts] = trkxyz[nTPCtrk][1][nspts][2];
 	 
-
-         //TrackLength += DataSptPitch[nDataSpts];
-         //hCaloRecodEdX->Fill(DatadEdX[nDataSpts]);
-         //hCaloRecodEdXvsRR->Fill(DataResRange[nDataSpts], DatadEdX[nDataSpts]);
-
-
-
 	 nDataSpts++;
 
 	 }//<---End nspts
-
-
-
-         //hCaloRecoTrackLength->Fill(TrackLength);
-
       
       
       // --------------------------------------------------------------------
@@ -1064,6 +1060,7 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
 	 
          if(LowIonizingTrack == true || CloseToTheEdge == true) {continue;}
          TrackLength += DataSptPitch[npoints];
+         ECalo += DataSptPitch[npoints]*DatadEdX[npoints];
          hCaloRecodEdX->Fill(DatadEdX[npoints]);
          hCaloRecodEdXvsRR->Fill(DataResRange[npoints], DatadEdX[npoints]);
 
@@ -1073,6 +1070,12 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
       // ### Skip this track if it is minimum ionizing or too close to the edge
       if(LowIonizingTrack == true || CloseToTheEdge == true) {continue;}
          hCaloRecoTrackLength->Fill(TrackLength);
+         hEnergyCalo->Fill(ECalo);
+         ELength = InitialKinEnAtTPC;
+         hEnergyLength->Fill(ELength);
+
+         float DeltaEnergyCaloLength = ECalo - ELength;
+         hDeltaEnergyCaloVsLength->Fill(DeltaEnergyCaloLength);
       
       
       //std::cout<<"Right Before The Stopping Proton Counter"<<std::endl;
