@@ -277,7 +277,8 @@ float avogadro = 6.022e+23; //number/mol
 float number_density = rho*g_per_kg/molar_mass*avogadro;
 float slab_width = 0.0045;//in m
 
-
+float MeandEdxRI = 10;
+float MeandEdxRII = 10;
 
 
 //###################################|
@@ -1000,7 +1001,7 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
       // ### Check to see if this track is through going ###
       // ### by checking to see if it ends on a boundary ###
       // ###################################################
-      if(trkendx[nTPCtrk] < 1   || trkendx[nTPCtrk] > 42.0 || trkendy[nTPCtrk] > 19 ||
+      if(trkendx[nTPCtrk] < 1   || trkendx[nTPCtrk] > 46.0 || trkendy[nTPCtrk] > 19 ||
          trkendy[nTPCtrk] < -19 || trkendz[nTPCtrk] > 89.0)
          {ThroughGoingTrack[nTPCtrk] = true;}      
       
@@ -1061,7 +1062,7 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
 	    {LowIonizingTrack = true;}
    
 	 
-	 if(DataSptsX[npoints] > 38 || DataSptsX[npoints] < 5 || DataSptsY[npoints] > 15 || 
+	 if(DataSptsX[npoints] > 42 || DataSptsX[npoints] < 5 || DataSptsY[npoints] > 15 || 
 	    DataSptsY[npoints] < -15|| DataSptsZ[npoints] > 85)
 	    {CloseToTheEdge = true;}
 
@@ -1078,12 +1079,16 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
       // ### Skip this track if it is minimum ionizing or too close to the edge
       if(LowIonizingTrack == true || CloseToTheEdge == true) {continue;}
          hCaloRecoTrackLength->Fill(TrackLength);
+	 ECalo = pow(pow(ECalo,2) + pow(particle_mass,2),0.5);
          hEnergyCalo->Fill(ECalo);
-         ELength = InitialKinEnAtTPC;
+         ELength = pow(pow(TrackLength*MeandEdxRI,2) + pow(particle_mass,2),0.5);
          hEnergyLength->Fill(ELength);
 
          float DeltaEnergyCaloLength = ECalo - ELength;
          hDeltaEnergyCaloVsLength->Fill(DeltaEnergyCaloLength);
+
+         ECalo -= particle_mass;
+         ELength -= particle_mass;
 
          float DeltaKELength = InitialKinEnAtTPC - ELength;
          float DeltaKECalo = InitialKinEnAtTPC - ECalo;
@@ -1188,7 +1193,7 @@ hPhivsThetaELossDivided->Divide(hPhivsThetaELoss, hPhivsThetaELossFlux);
    
 
 
-TFile myfile("./ROOTFILES/RunIIPosPolData_StoppingProtons.root", "RECREATE");
+TFile myfile("./ROOTFILES/RunIPosPolData_StoppingProtons.root", "RECREATE");
 
 
 // ===========================================================================================
