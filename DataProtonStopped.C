@@ -138,10 +138,10 @@ TH1D *hEnergyLength = new TH1D("hEnergyLength", "Length Energy", 500, 0, 1000);
 TH1D *hKETPC = new TH1D("hKETPC", "Kinetic Energy at the TPC", 500, 0, 1500);
 
 //=== Delta Kinetic Energy (TPC - Length) Histogram ===|
-TH1D *hDeltaKETPCVsLength = new TH1D("hDeltaKETPCVsLength", "#Delta KE (TPC - Length)", 50, -100, 100);
+TH1D *hDeltaKETPCVsLength = new TH1D("hDeltaKETPCVsLength", "#Delta KE (TPC - Length)", 50, -500, 500);
 
 //=== Delta Kinetic Energy (TPC - Calo) Histogram ===|
-TH1D *hDeltaKETPCVsCalo = new TH1D("hDeltaKETPCVsCalo", "#Delta KE (TPC - Calo)", 50, -100, 100);
+TH1D *hDeltaKETPCVsCalo = new TH1D("hDeltaKETPCVsCalo", "#Delta KE (TPC - Calo)", 50, -500, 500);
 
 //=== Energy Loss From Map Histogram ===|
 TH1D *hEnergyLossMap = new TH1D("hEnergyLossMap", "Energy Loss From the Map Method", 500, 0, 150);
@@ -1076,7 +1076,11 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
 
          float DeltaEnergyCaloLength = ECalo - ELength;
          hDeltaEnergyCaloVsLength->Fill(DeltaEnergyCaloLength);
-      
+
+         float DeltaKELength = InitialKinEnAtTPC - ELength;
+         float DeltaKECalo = InitialKinEnAtTPC - ECalo;
+         hDeltaKETPCVsLength->Fill(DeltaKELength);
+         hDeltaKETPCVsCalo->Fill(DeltaKECalo);      
       
       //std::cout<<"Right Before The Stopping Proton Counter"<<std::endl;
       
@@ -1172,7 +1176,7 @@ hPhivsThetaELossDivided->Divide(hPhivsThetaELoss, hPhivsThetaELossFlux);
    
 
 
-TFile myfile("./ROOTFILES/RunIPosPolData_StoppingProtons.root", "RECREATE");
+TFile myfile("./ROOTFILES/RunIIPosPolData_StoppingProtons.root", "RECREATE");
 
 
 // ===========================================================================================
