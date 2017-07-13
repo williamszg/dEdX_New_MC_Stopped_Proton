@@ -143,6 +143,9 @@ TH1D *hDeltaKETPCVsLength = new TH1D("hDeltaKETPCVsLength", "#Delta KE (TPC - Le
 //=== Delta Kinetic Energy (TPC - Calo) Histogram ===|
 TH1D *hDeltaKETPCVsCalo = new TH1D("hDeltaKETPCVsCalo", "#Delta KE (TPC - Calo)", 500, 0, 2500);
 
+//=== Energy Loss From Map Histogram ===|
+TH1D *hEnergyLossMap = new TH1D("hEnergyLossMap", "Energy Loss From the Map Method", 500, 0, 2500);
+
 //----------------------------------------------------|
 
 
@@ -1209,5 +1212,6 @@ hEnergyLength->Write();
 hKETPC->Write();
 hDeltaKETPCVsLength->Write();
 hDeltaKETPCVsCalo->Write();
- 
+hEnergyLossMap->Write();
+
 }//<---End Loop() Function
