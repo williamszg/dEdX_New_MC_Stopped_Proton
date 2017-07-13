@@ -146,6 +146,12 @@ TH1D *hDeltaKETPCVsCalo = new TH1D("hDeltaKETPCVsCalo", "#Delta KE (TPC - Calo)"
 //=== Energy Loss From Map Histogram ===|
 TH1D *hEnergyLossMap = new TH1D("hEnergyLossMap", "Energy Loss From the Map Method", 500, 0, 150);
 
+//=== Delta Kinetic Energy (TPC - Flat) Histogram ===|
+TH1D *hDeltaKETPCVsFlat = new TH1D("hDeltaKETPCVsFlat", "#Delta KE (TPC - Flat)", 50, -500, 500);
+
+//=== Delta Kinetic Energy (Flat - Calo) Histogram ===|
+TH1D *hDeltaKEFlatVsCalo = new TH1D("hDeltaKEFlatVsCalo", "#Delta KE (Flat - Calo)", 50, -500, 500);
+
 //----------------------------------------------------|
 
 
@@ -258,7 +264,7 @@ double alphaCut = 10;
 // ----------------------------------------------------------------
 
 // ### The assumed energy loss between the cryostat and the TPC ###
-float entryTPCEnergyLoss = 0.; //MeV
+float entryTPCEnergyLoss = 66.6; //MeV
 
 // ### The assumed mass of the incident particle (here we assume a pion) ###
 float mass = 938.28;
@@ -936,6 +942,7 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
    // ### KE = Energy - mass = (p^2 + m^2)^1/2 - mass ###
    float kineticEnergy = pow( (momentum*momentum) + (mass*mass) ,0.5) - mass;
    float kineticEnergyInitial = kineticEnergy;
+   float kineticEnergyFlat = kineticEnergy - entryTPCEnergyLoss;
    
    hInitialKEWC4->Fill(kineticEnergyInitial);
 
@@ -953,7 +960,8 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
    hdataInitialKE->Fill(kineticEnergy);
 
    hKETPC->Fill(InitialKinEnAtTPC);
-   
+
+   float DeltaKETPCFlat = InitialKinEnAtTPC - kineticEnergyFlat;
    
    // =========================================================================================================================================
    //						Deciding whether this track is a stopping proton
@@ -1081,7 +1089,11 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
          float DeltaKECalo = InitialKinEnAtTPC - ECalo;
          hDeltaKETPCVsLength->Fill(DeltaKELength);
          hDeltaKETPCVsCalo->Fill(DeltaKECalo);      
-      
+ 
+         float DeltaKEFlatCalo = kineticEnergyFlat - ECalo;
+         hDeltaKEFlatVsCalo->Fill(DeltaKEFlatCalo);
+         hDeltaKETPCVsFlat->Fill(DeltaKETPCFlat);
+     
       //std::cout<<"Right Before The Stopping Proton Counter"<<std::endl;
       
       protonTrkNumber = nTPCtrk;
@@ -1220,5 +1232,7 @@ hKETPC->Write();
 hDeltaKETPCVsLength->Write();
 hDeltaKETPCVsCalo->Write();
 hEnergyLossMap->Write();
+hDeltaKETPCVsFlat->Write();
+hDeltaKEFlatVsCalo->Write();
 
 }//<---End Loop() Function
