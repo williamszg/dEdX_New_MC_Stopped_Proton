@@ -456,11 +456,11 @@ DataProtonStopped::DataProtonStopped(TTree *tree) : fChain(0)
 // if parameter tree is not specified (or zero), connect the file
 // used to generate this class and read the Tree.
    if (tree == 0) {
-      TFile *f = (TFile*)gROOT->GetListOfFiles()->FindObject("/lariat/data/users/jasaadi/v06_34_01/PickyTrack_RunI_Proton_PosPol_Reco_v06_34_01_anatree.root");
+      TFile *f = (TFile*)gROOT->GetListOfFiles()->FindObject("/lariat/data/users/jasaadi/v06_34_01/PickyTrack_RunII_Proton_PosPol_Reco_v06_34_01_anatree.root");
       if (!f || !f->IsOpen()) {
-         f = new TFile("/lariat/data/users/jasaadi/v06_34_01/PickyTrack_RunI_Proton_PosPol_Reco_v06_34_01_anatree.root");
+         f = new TFile("/lariat/data/users/jasaadi/v06_34_01/PickyTrack_RunII_Proton_PosPol_Reco_v06_34_01_anatree.root");
       }
-      TDirectory * dir = (TDirectory*)f->Get("/lariat/data/users/jasaadi/v06_34_01/PickyTrack_RunI_Proton_PosPol_Reco_v06_34_01_anatree.root:/anatree");
+      TDirectory * dir = (TDirectory*)f->Get("/lariat/data/users/jasaadi/v06_34_01/PickyTrack_RunII_Proton_PosPol_Reco_v06_34_01_anatree.root:/anatree");
       dir->GetObject("anatree",tree);
 
    }

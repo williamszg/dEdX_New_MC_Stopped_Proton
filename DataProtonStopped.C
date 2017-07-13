@@ -277,8 +277,8 @@ float avogadro = 6.022e+23; //number/mol
 float number_density = rho*g_per_kg/molar_mass*avogadro;
 float slab_width = 0.0045;//in m
 
-float MeandEdxRI = 10;
-float MeandEdxRII = 10;
+float MeandEdxRI = 8.158;
+float MeandEdxRII = 7.99;
 
 
 //###################################|
@@ -1079,16 +1079,15 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
       // ### Skip this track if it is minimum ionizing or too close to the edge
       if(LowIonizingTrack == true || CloseToTheEdge == true) {continue;}
          hCaloRecoTrackLength->Fill(TrackLength);
-	 ECalo = pow(pow(ECalo,2) + pow(particle_mass,2),0.5);
          hEnergyCalo->Fill(ECalo);
-         ELength = pow(pow(TrackLength*MeandEdxRI,2) + pow(particle_mass,2),0.5);
+         ELength = TrackLength*MeandEdxRII;
          hEnergyLength->Fill(ELength);
 
          float DeltaEnergyCaloLength = ECalo - ELength;
          hDeltaEnergyCaloVsLength->Fill(DeltaEnergyCaloLength);
 
-         ECalo -= particle_mass;
-         ELength -= particle_mass;
+         //ECalo -= particle_mass;
+         //ELength -= particle_mass;
 
          float DeltaKELength = InitialKinEnAtTPC - ELength;
          float DeltaKECalo = InitialKinEnAtTPC - ECalo;
@@ -1193,7 +1192,7 @@ hPhivsThetaELossDivided->Divide(hPhivsThetaELoss, hPhivsThetaELossFlux);
    
 
 
-TFile myfile("./ROOTFILES/RunIPosPolData_StoppingProtons.root", "RECREATE");
+TFile myfile("./ROOTFILES/RunIIPosPolData_StoppingProtons.root", "RECREATE");
 
 
 // ===========================================================================================
