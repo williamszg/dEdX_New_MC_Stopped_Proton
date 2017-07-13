@@ -116,6 +116,37 @@ TH2D *hCaloRecodEdXvsRR = new TH2D("hCaloRecodEdXvsRR", "Calorimetric Reconstruc
 
 
 
+
+
+//----------------------------------------------------|
+//---------        Energy Histograms         ---------|
+//----------------------------------------------------|
+
+//=== Initial Kinetic Energy at WC4 Histogram ===|
+TH1D *hInitialKEWC4 = new TH1D("hInitialKEWC4", "The Initial Kinetic Energy at Wire Chamber 4", 500, 0, 2500);
+
+//=== Delta Energy (Calo - Length) Histogram ===|
+TH1D *hDeltaEnergyCaloVsLength = new TH1D("hDeltaEnergyCaloVsLength", "#Delta Energy (Calo - Length)", 500, 0, 2500);
+
+//=== Calo Energy Histogram ===|
+TH1D *hEnergyCalo = new TH1D("hEnergyCalo", "Calo Energy", 500, 0, 2500);
+
+//=== Length Energy Histogram ===|
+TH1D *hEnergyLength = new TH1D("hEnergyLength", "Length Energy", 500, 0, 2500);
+
+//=== Kinetic Energy at TPC Histogram ===|
+TH1D *hKETPC = new TH1D("hKETPC", "Kinetic Energy at the TPC", 500, 0, 2500);
+
+//=== Delta Kinetic Energy (TPC - Length) Histogram ===|
+TH1D *hDeltaKETPCVsLength = new TH1D("hDeltaKETPCVsLength", "#Delta KE (TPC - Length)", 500, 0, 2500);
+
+//=== Delta Kinetic Energy (TPC - Calo) Histogram ===|
+TH1D *hDeltaKETPCVsCalo = new TH1D("hDeltaKETPCVsCalo", "#Delta KE (TPC - Calo)", 500, 0, 2500);
+
+//----------------------------------------------------|
+
+
+
 // ===================================================================================================================
 // ===================================================================================================================
 // ===================================================================================================================
@@ -1170,5 +1201,13 @@ hPhivsThetaELossDivided->Write();
 hCaloRecodEdX->Write();
 hCaloRecodEdXvsRR->Write();
 hCaloRecoTrackLength->Write();
-   
+
+hInitialKEWC4->Write();
+hDeltaEnergyCaloVsLength->Write();
+hEnergyCalo->Write();
+hEnergyLength->Write();
+hKETPC->Write();
+hDeltaKETPCVsLength->Write();
+hDeltaKETPCVsCalo->Write();
+ 
 }//<---End Loop() Function
