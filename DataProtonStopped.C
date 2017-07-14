@@ -152,6 +152,9 @@ TH1D *hDeltaKETPCVsFlat = new TH1D("hDeltaKETPCVsFlat", "#Delta KE (TPC - Flat)"
 //=== Delta Kinetic Energy (Flat - Calo) Histogram ===|
 TH1D *hDeltaKEFlatVsCalo = new TH1D("hDeltaKEFlatVsCalo", "#Delta KE (Flat - Calo)", 50, -500, 500);
 
+//=== Delta Kinetic Energy (Flat - Length) Histogram ===|
+TH1D *hDeltaKEFlatVsLength = new TH1D("hDeltaKEFlatVsLength", "#Delta KE (Flat - Length)", 50, -500, 500);
+
 //----------------------------------------------------|
 
 
@@ -1095,7 +1098,9 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
          hDeltaKETPCVsCalo->Fill(DeltaKECalo);      
  
          float DeltaKEFlatCalo = kineticEnergyFlat - ECalo;
+         float DeltaKEFlatLength = kineticEnergyFlat - ELength;
          hDeltaKEFlatVsCalo->Fill(DeltaKEFlatCalo);
+         hDeltaKEFlatVsLength->Fill(DeltaKEFlatLength);
          hDeltaKETPCVsFlat->Fill(DeltaKETPCFlat);
      
       //std::cout<<"Right Before The Stopping Proton Counter"<<std::endl;
@@ -1238,5 +1243,6 @@ hDeltaKETPCVsCalo->Write();
 hEnergyLossMap->Write();
 hDeltaKETPCVsFlat->Write();
 hDeltaKEFlatVsCalo->Write();
+hDeltaKEFlatVsLength->Write();
 
 }//<---End Loop() Function
