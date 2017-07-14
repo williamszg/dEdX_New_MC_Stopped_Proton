@@ -948,7 +948,7 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
    float kineticEnergyInitial = kineticEnergy;
    float kineticEnergyFlat = kineticEnergy - entryTPCEnergyLoss;
    
-   hInitialKEWC4->Fill(kineticEnergyInitial);
+   //hInitialKEWC4->Fill(kineticEnergyInitial);
 
    // ### The kinetic energy is that which we calculated ###
    // ###       minus the calculated energy loss         ###
@@ -963,7 +963,7 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
    // ###############################################
    hdataInitialKE->Fill(kineticEnergy);
 
-   hKETPC->Fill(InitialKinEnAtTPC);
+   //hKETPC->Fill(InitialKinEnAtTPC);
 
    float DeltaKETPCFlat = InitialKinEnAtTPC - kineticEnergyFlat;
    
@@ -1083,8 +1083,11 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
       if(LowIonizingTrack == true || CloseToTheEdge == true) {continue;}
          hCaloRecoTrackLength->Fill(TrackLength);
          hEnergyCalo->Fill(ECalo);
-         ELength = TrackLength*MeandEdxRII;
+         ELength = TrackLength*MeandEdxRI;
          hEnergyLength->Fill(ELength);
+
+         hInitialKEWC4->Fill(kineticEnergyInitial);
+         hKETPC->Fill(InitialKinEnAtTPC);
 
          float DeltaEnergyCaloLength = ECalo - ELength;
          hDeltaEnergyCaloVsLength->Fill(DeltaEnergyCaloLength);
@@ -1197,7 +1200,7 @@ hPhivsThetaELossDivided->Divide(hPhivsThetaELoss, hPhivsThetaELossFlux);
    
 
 
-TFile myfile("./ROOTFILES/RunIIPosPolData_StoppingProtons.root", "RECREATE");
+TFile myfile("./ROOTFILES/RunIPosPolData_StoppingProtons.root", "RECREATE");
 
 
 // ===========================================================================================
