@@ -45,7 +45,7 @@ TH2D *hMCPrimaryEndYvsZ = new TH2D("hMCPrimaryEndYvsZ", "Y_{f} vs Z_{f}", 200, -
 
 
 /////////////////////////////////////////// Initial Kinetic Energy ///////////////////////////////////////////
-TH1D *hMCTrueInitialKE = new TH1D("hMCTrueInitialKE", "Initial Kinetic Energy (MC Truth)", 1100, -100, 1000);
+TH1D *hMCTrueInitialKE = new TH1D("hMCTrueInitialKE", "Initial Kinetic Energy (MC Truth)", 200, 0, 1000);
 
 /////////////////////////////////// Energy Loss in the upstream region of the beamline ///////////////////////
 TH1D *hMCTrueELossUpstream = new TH1D("hMCTrueELossUpstream", "Energy loss prior to entering the TPC (MC Truth)", 1100, -100, 1000);
