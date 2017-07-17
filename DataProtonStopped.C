@@ -956,12 +956,12 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
    kineticEnergy -= EnergyLossFromMap;
   
    double InitialKinEnAtTPC = 0.;
-   InitialKinEnAtTPC = kineticEnergyInitial;
+   InitialKinEnAtTPC = kineticEnergy;
    
    // ###############################################
    // ### Filling the initial kinetic energy plot ###
    // ###############################################
-   hdataInitialKE->Fill(kineticEnergy);
+   hdataInitialKE->Fill(kineticEnergyInitial);
 
    //hKETPC->Fill(InitialKinEnAtTPC);
 
