@@ -1,0 +1,85 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{indentfirst}
+\usepackage{changepage}
+\usepackage{caption}
+\usepackage{gensymb}
+\usepackage{rotating}
+\usepackage{lscape}
+\usepackage{pdfpages}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{float}
+\usepackage{csvsimple}
+\usepackage{authblk}
+\usepackage{listings}
+\usepackage{amssymb}
+
+\title{Equations}
+
+\begin{document}
+
+\begin{equation}
+m_{p} = 938.28 MeV/c^{2}
+\end{equation}
+
+\begin{equation}
+KE_{i}^{WC4} = \sqrt{{p_{WC4}^{2}c}^{2} + (m_{p}c^{2})^{2}} - m_{p}c^{2}
+\end{equation}
+
+\begin{equation}
+KE^{TPC} = KE_{i}^{WC4} - E_{Map}
+\end{equation}
+
+\begin{equation}
+E_{Flat} = 66.6 MeV
+\end{equation}
+
+\begin{equation}
+E_{Calo} = \sum_{i} \Big(\frac{dE}{dx}\Big)_{i} \times (Track Pitch)_{i}
+\end{equation}
+
+\begin{equation}
+E_{Length} = \Big(\frac{dE}{dx}\Big)_{mean} \times (Track Length)
+\end{equation}
+
+\begin{equation}
+KE^{Calo} = \sum_{i} \Big(\frac{dE}{dx}\Big)_{i} \times (Track Pitch)_{i}
+\end{equation}
+
+\begin{equation}
+KE^{Flat} = KE^{WC4}_{i} - E_{Flat}
+\end{equation}
+
+\begin{equation}
+KE^{Length} = \Big(\frac{dE}{dx}\Big)_{mean} \times (Track Length)
+\end{equation}
+
+\begin{equation}
+\Delta{E} = E_{Calo} - E_{Length}
+\end{equation}
+
+\begin{equation}
+\Delta{KE} = KE^{TPC} - KE^{Length}
+\end{equation}
+
+\begin{equation}
+\Delta{KE} = KE^{TPC} - KE^{Calo}
+\end{equation}
+
+\begin{equation}
+\Delta{KE} = KE^{TPC} - KE^{Flat}
+\end{equation}
+
+\begin{equation}
+\Delta{KE} = KE^{Flat} - KE^{Calo}
+\end{equation}
+
+\begin{equation}
+\Delta{KE} = KE^{Flat} - KE^{Length}
+\end{equation}
+
+\end{document}
