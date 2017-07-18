@@ -207,7 +207,7 @@ TH1D *h1KETPC = (TH1D*)f1->Get("hKETPC");
 //--- Run II Histogram ---|
 TH1D *h2KETPC = (TH1D*)f2->Get("hKETPC");
 //--- DDProton Histogram ---|
-TH1D *hDKETPC = (TH1D*)f3->Get("hMCTrueInitialKE");
+TH1D *hDKETPC = (TH1D*)f3->Get("hMCELossRecoInTPC");
 
 //--- Run I Histogram ---|
 TH1D *h1DeltaKETPCVsLength = (TH1D*)f1->Get("hDeltaKETPCVsLength");

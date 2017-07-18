@@ -944,7 +944,7 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
    
    // ###   Calculating the initial Kinetic Energy    ###
    // ### KE = Energy - mass = (p^2 + m^2)^1/2 - mass ###
-   float kineticEnergy = pow( (momentum*momentum) + (mass*mass) ,0.5) - mass;
+   float kineticEnergy = sqrt( (momentum*momentum) + (mass*mass) ) - mass;
    float kineticEnergyInitial = kineticEnergy;
    float kineticEnergyFlat = kineticEnergy - entryTPCEnergyLoss;
    
@@ -961,7 +961,7 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
    // ###############################################
    // ### Filling the initial kinetic energy plot ###
    // ###############################################
-   hdataInitialKE->Fill(kineticEnergyFlat);
+   hdataInitialKE->Fill(kineticEnergyInitial);
 
    //hKETPC->Fill(InitialKinEnAtTPC);
 
