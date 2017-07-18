@@ -26,6 +26,8 @@ TFile *f3 = new TFile("./ROOTFILES/DataDrivenProtonMC_EnergyCalibrationPlots.roo
 TH1D *h1RawWCMomentum = (TH1D*)f1->Get("hdataRawWCTRKMomentum");
 //--- Run II Histogram ---|
 TH1D *h2RawWCMomentum = (TH1D*)f2->Get("hdataRawWCTRKMomentum");
+//--- DDProton Histogram ---|
+TH1D *hDRawWCMomentum = (TH1D*)f3->Get("hMCPrimaryPUnWeighted");
 
 //--- Run I Histogram ---|
 TH1D *h1TOFNoCuts = (TH1D*)f1->Get("hdataTOFNoCuts");
@@ -250,6 +252,7 @@ TH1D *h2DeltaKEFlatVsLength = (TH1D*)f2->Get("hDeltaKEFlatVsLength");
 
 h1RawWCMomentum->Sumw2();
 h2RawWCMomentum->Sumw2();
+hDRawWCMomentum->Sumw2();
 
 h1TOFNoCuts->Sumw2();
 h2TOFNoCuts->Sumw2();
@@ -373,6 +376,13 @@ h2RawWCMomentum->GetXaxis()->SetTitle("");
 h2RawWCMomentum->GetXaxis()->CenterTitle();
 h2RawWCMomentum->GetYaxis()->SetTitle("Events");
 h2RawWCMomentum->GetYaxis()->CenterTitle();
+//--- DDProton Histogram ---|
+hDRawWCMomentum->SetLineColor(kBlue);
+hDRawWCMomentum->GetXaxis()->SetTitle("");
+hDRawWCMomentum->GetXaxis()->CenterTitle();
+hDRawWCMomentum->GetYaxis()->SetTitle("Events");
+hDRawWCMomentum->GetYaxis()->CenterTitle();
+
 
 
 //--- Run I Histogram ---|
@@ -962,10 +972,11 @@ TCanvas *c1 = new TCanvas("c1", "");
 c1->SetTicks();
 c1->SetFillColor(kWhite);
 
-h1RawWCMomentum->Scale(1/h1RawWCMomentum->Integral());
-h2RawWCMomentum->Scale(1/h2RawWCMomentum->Integral());
+h1RawWCMomentum->Scale((h2RawWCMomentum->Integral())/(h1RawWCMomentum->Integral()));
+hDRawWCMomentum->Scale((h2RawWCMomentum->Integral())/(hDRawWCMomentum->Integral()));
 
-h1RawWCMomentum->Draw("E1");
+hDRawWCMomentum->Draw("histo");
+h1RawWCMomentum->Draw("E1same");
 h2RawWCMomentum->Draw("E1same");
 //========================================================|
 TLegend *leg1 = new TLegend(0.58,0.65,0.88,0.88);
@@ -977,6 +988,7 @@ leg1->SetShadowColor(kWhite);
 leg1->SetHeader("Proton Calorimetry Study");
 leg1->AddEntry(h1RawWCMomentum, "Run I Data");
 leg1->AddEntry(h2RawWCMomentum, "Run II Data");
+leg1->AddEntry(hDRawWCMomentum, "DDProton MC");
 leg1->Draw();
 //--------------------------------------------------------|
 
