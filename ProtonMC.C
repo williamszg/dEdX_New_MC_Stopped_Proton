@@ -34,9 +34,15 @@ TH1D *hMCPrimaryTPCStartZ = new TH1D("hMCPrimaryTPCStartZ", "Primary Particle Z_
 /////////////////////////////////// Primary Particle Initial Px   //////////////////////////////////////////
 TH1D *hMCPrimaryPxUnWeighted = new TH1D("hMCPrimaryPxUnWeighted", "Primary Particle P_{x}", 300, -150 , 150);
 /////////////////////////////////// Primary Particle Initial Py  //////////////////////////////////////////
-TH1D *hMCPrimaryPyUnWeighted = new TH1D("hMCPrimaryPyUnWeighted", "Primary Particle P_{y}", 300, -159 , 150);
+TH1D *hMCPrimaryPyUnWeighted = new TH1D("hMCPrimaryPyUnWeighted", "Primary Particle P_{y}", 300, -150 , 150);
 /////////////////////////////////// Primary Particle Initial Pz //////////////////////////////////////////
 TH1D *hMCPrimaryPzUnWeighted = new TH1D("hMCPrimaryPzUnWeighted", "Primary Particle P_{z}", 250, 0 , 2500);
+
+
+
+TH1D *hMCPrimaryPUnWeighted = new TH1D("hMCPrimaryPUnWeighted", "Primary Particle P_{0}", 250, 0, 2500);
+
+
 
 /////////////////////////////////// Primary End X vs Z Position //////////////////////////////////////////////
 TH2D *hMCPrimaryEndXvsZ = new TH2D("hMCPrimaryEndXvsZ", "X_{f} vs Z_{f}", 200, -10, 90, 120, -10, 50);
@@ -415,6 +421,8 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
 				
       InitialKineticEnergy = sqrt( (momentumScale*momentumScale) + (particle_mass*particle_mass) ) - particle_mass;
       
+      hMCPrimaryPUnWeighted->Fill(momentumScale);
+
       hMCTrueInitialKE->Fill(InitialKineticEnergy);
       
       
@@ -1322,5 +1330,7 @@ hRDeltaInTPC->Write();
 
 
 hDeltaTotalTruevsReco->Write();
+
+hMCPrimaryPUnWeighted->Write();
 
 }//<----End Loop()
