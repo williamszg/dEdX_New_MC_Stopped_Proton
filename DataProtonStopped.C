@@ -961,7 +961,7 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
    // ###############################################
    // ### Filling the initial kinetic energy plot ###
    // ###############################################
-   hdataInitialKE->Fill(kineticEnergyInitial);
+   hdataInitialKE->Fill(kineticEnergyFlat);
 
    //hKETPC->Fill(InitialKinEnAtTPC);
 
