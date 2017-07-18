@@ -66,7 +66,7 @@ TH2D *hELossXvsYFlux = new TH2D("hELossXvsYFlux", "Energy Loss X vs Y", 200, 0, 
 TH2D *hELossXvsYDivide = new TH2D("hELossXvsYDivide", "Energy Loss X vs Y", 200, 0, 50, 200, -25, 25);
 
 ////////////////////////////////// MC Theta  //////////////////////////////
-TH1D *hMCThetaAtFrontFace = new TH1D("hMCThetaAtFrontFace", "#theta at the front face of the TPC", 80, -10, 30);
+TH1D *hMCThetaAtFrontFace = new TH1D("hMCThetaAtFrontFace", "#theta at the front face of the TPC", 180, 0, 180);
 
 ////////////////////////////////// MC Phi  //////////////////////////////
 TH1D *hMCPhiAtFrontFace = new TH1D("hMCPhiAtFrontFace", "#phi at the front face of the TPC", 360, 0, 360);
@@ -194,7 +194,7 @@ TH1D *hMCELossRecoInTPC = new TH1D("hMCELossRecoInTPC", "Reconstructed Energy lo
 TH1D *hRecoMCTPCPhi = new TH1D("hRecoMCTPCPhi", "TPC Track Phi", 360, 0, 360);
 
 /////////////////////////////////// TPC Track Theta at the upstream point //////////////////////////////////////
-TH1D *hRecoMCTPCTheta = new TH1D("hRecoMCTPCTheta", "TPC Track Theta", 180, 0, 90);
+TH1D *hRecoMCTPCTheta = new TH1D("hRecoMCTPCTheta", "TPC Track Theta", 180, 0, 180);
 
 /////////////////////////////////// Reconstructed Particle Start X Position inside TPC //////////////////////////////////////////
 TH1D *hRecoMCTPCStartX = new TH1D("hRecoMCTPCStartX", "Reconstructed X_{0} inside TPC", 200, -50 , 50);

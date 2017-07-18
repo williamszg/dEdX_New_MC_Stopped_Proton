@@ -48,13 +48,13 @@ TH1D *hdataWCTRKMomentum = new TH1D("hdataWCTRKMomentum", "WCtrk Momentum (MeV)"
 TH1D *hdataInitialKE = new TH1D("hdataInitialKE", "Matched Proton Initial KE (MeV)", 500, 0, 2500); 
 
 /////////////////////////////////// TPC Track Theta at the upstream point //////////////////////////////////////
-TH1D *hdataTPCTheta = new TH1D("hdataTPCTheta", "TPC Track Theta", 180, 0, 90);
+TH1D *hdataTPCTheta = new TH1D("hdataTPCTheta", "TPC Track Theta", 180, 0, 180);
 
 /////////////////////////////////// TPC Track Phi at the upstream point ///////////////////////////////////////
 TH1D *hdataTPCPhi = new TH1D("hdataTPCPhi", "TPC Track Phi", 360, 0, 360);
 
 /////////////////////////////////// Wire Chamber Theta ////////////////////////////////////////////////////////
-TH1D *hdataWCTheta = new TH1D("hdataWCTheta", "WCTrack Theta", 180, 0, 90);
+TH1D *hdataWCTheta = new TH1D("hdataWCTheta", "WCTrack Theta", 180, 0, 180);
 
 /////////////////////////////////// Wire Chamber Phi //////////////////////////////////////////////////////////
 TH1D *hdataWCPhi = new TH1D("hdataWCPhi", "WCTrack Phi", 360, 0, 360);

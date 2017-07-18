@@ -52,18 +52,18 @@ TH1D *h1InitialX = (TH1D*)f1->Get("hdataTrkInitialX");
 //--- Run II Histogram ---|
 TH1D *h2InitialX = (TH1D*)f2->Get("hdataTrkInitialX");
 //--- DDProton Histogram ---|
-//TH1D *hDInitialX = (TH1D*)f3->Get("hMCPrimaryTPCStartX");
+TH1D *hDInitialX = (TH1D*)f3->Get("hMCPrimaryTPCStartX");
 //--- DDProton Histogram ---|
-TH1D *hDInitialX = (TH1D*)f3->Get("hRecoMCTPCStartX");
+//TH1D *hDInitialX = (TH1D*)f3->Get("hRecoMCTPCStartX");
 
 //--- Run I Histogram ---|
 TH1D *h1InitialY = (TH1D*)f1->Get("hdataTrkInitialY");
 //--- Run II Histogram ---|
 TH1D *h2InitialY = (TH1D*)f2->Get("hdataTrkInitialY");
 //--- DDProton Histogram ---|
-//TH1D *hDInitialY = (TH1D*)f3->Get("hMCPrimaryTPCStartY");
+TH1D *hDInitialY = (TH1D*)f3->Get("hMCPrimaryTPCStartY");
 //--- DDProton Histogram ---|
-TH1D *hDInitialY = (TH1D*)f3->Get("hRecoMCTPCStartY");
+//TH1D *hDInitialY = (TH1D*)f3->Get("hRecoMCTPCStartY");
 
 //--- Run I Histogram ---|
 TH1D *h1InitialZ = (TH1D*)f1->Get("hdataTrkInitialZ");
@@ -80,18 +80,18 @@ TH1D *h1TPCTheta = (TH1D*)f1->Get("hdataTPCTheta");
 //--- Run II Histogram ---|
 TH1D *h2TPCTheta = (TH1D*)f2->Get("hdataTPCTheta");
 //--- DDProton Histogram ---|
-//TH1D *hDTPCTheta = (TH1D*)f3->Get("hMCThetaAtFrontFace");
+TH1D *hDTPCTheta = (TH1D*)f3->Get("hMCThetaAtFrontFace");
 //--- DDProton Histogram ---|
-TH1D *hDTPCTheta = (TH1D*)f3->Get("hRecoMCTPCTheta");
+//TH1D *hDTPCTheta = (TH1D*)f3->Get("hRecoMCTPCTheta");
 
 //--- Run I Histogram ---|
 TH1D *h1TPCPhi = (TH1D*)f1->Get("hdataTPCPhi");
 //--- Run II Histogram ---|
 TH1D *h2TPCPhi = (TH1D*)f2->Get("hdataTPCPhi");
 //--- DDProton Histogram ---|
-//TH1D *hDTPCPhi = (TH1D*)f3->Get("hMCPhiAtFrontFace");
+TH1D *hDTPCPhi = (TH1D*)f3->Get("hMCPhiAtFrontFace");
 //--- DDProton Histogram ---|
-TH1D *hDTPCPhi = (TH1D*)f3->Get("hRecoMCTPCPhi");
+//TH1D *hDTPCPhi = (TH1D*)f3->Get("hRecoMCTPCPhi");
 
 //--- Run I Histogram ---|
 TH1D *h1WCTheta = (TH1D*)f1->Get("hdataWCTheta");
