@@ -4,7 +4,9 @@
 #include <TStyle.h>
 #include <TCanvas.h>
 #include <iostream>
+#include <fstream>
 #include <TVector3.h>
+using namespace std;
 
 // #########################################################################################
 // ### This is the macro for data analysis of the stopping proton sample based on the    ###
@@ -172,6 +174,14 @@ Long64_t nentries = fChain->GetEntriesFast();
 Long64_t nbytes = 0, nb = 0;
 
 
+
+
+
+ofstream ElenaTxt ("StoppingProtonEventsRunII.txt");
+//ElenaTxt <<"Run Subrun Event\n";
+
+
+
 // -------------------------------------------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------------------------------------------
 // 					  Putting Flexible Cuts here
@@ -283,6 +293,8 @@ float slab_width = 0.0045;//in m
 float MeandEdxRI = 8.158;
 float MeandEdxRII = 7.99;
 
+int ElenaRunICut = 450;
+int ElenaRunIICut = 4500;
 
 //###################################|
 //### Load the Calibration Tables ###|
@@ -303,7 +315,8 @@ TFile *f1 = new TFile("./ROOTFILES/DataDrivenProtonMC_EnergyCalibrationTable.roo
 // ##########################################################
 int nTotalEvents = 0, nEvtsWCTrack = 0, nEvtsWCTrackMatch = 0, nEvtsTrackZPos = 0, nEvntsTPC = 0;
 int nEvtsTOF = 0, nEvtsPID = 0, nLowZTrkEvents = 0;
-int nNonShowerEvents = 0, nTOFHits = 0, nEventsStopProton = 0;
+int nNonShowerEvents = 0, nTOFHits = 0, nEventsStopProton = 0, ElenaStoppingNumber = 0;
+int ElenaHault = 0;
 
 // #######################################################
 // ### Providing an index for the Matched WC/TPC track ###
@@ -996,6 +1009,8 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
    // ### Creating a flag for through going tracks ###
    // ################################################
    bool ThroughGoingTrack[1000]={false};
+
+   bool ElenaStoppingProton = false;
    
    // ############################
    // ### Loop over all tracks ###
@@ -1015,6 +1030,8 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
          trkendy[nTPCtrk] < -19 || trkendz[nTPCtrk] > 89.0)
          {ThroughGoingTrack[nTPCtrk] = true;}      
       
+
+      if (trkendz[nTPCtrk] < 70.0) {ElenaStoppingProton = true;}
       
       // ### Skipping events which are non-stopping ###
       if(ThroughGoingTrack[nTPCtrk]){continue;}
@@ -1023,7 +1040,9 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
       float TrackLength = 0;
       float ELength = 0;
       float ECalo = 0;
-      
+     
+
+ 
       // ###############################################################
       // ### Looping over the calorimetry spacepoints for this track ###
       // ###############################################################
@@ -1073,11 +1092,18 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
    
 	 
 	 if(DataSptsX[npoints] > 42 || DataSptsX[npoints] < 5 || DataSptsY[npoints] > 15 || 
-	    DataSptsY[npoints] < -15|| DataSptsZ[npoints] > 80) //Change Z back to 85!!!
+	    DataSptsY[npoints] < -15|| DataSptsZ[npoints] > 85) //Change Z back to 85!!!
 	    {CloseToTheEdge = true;}
 
-	 
-         if(LowIonizingTrack == true || CloseToTheEdge == true) {continue;}
+         //if(CloseToTheEdge == false && DataSptsZ[npoints] < 60) {ElenaStoppingProton = true;}	 
+
+         if(LowIonizingTrack == true || CloseToTheEdge == true) 
+            {
+
+            ElenaStoppingProton = false;
+            continue;
+
+            }
          TrackLength += DataSptPitch[npoints];
          ECalo += DataSptPitch[npoints]*DatadEdX[npoints];
          hCaloRecodEdX->Fill(DatadEdX[npoints]);
@@ -1087,6 +1113,7 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
       
       //std::cout<<"Right Before The Stopping Proton Counter"<<std::endl;
       // ### Skip this track if it is minimum ionizing or too close to the edge
+      if(LowIonizingTrack == true || CloseToTheEdge == true) {ElenaStoppingProton = false;}
       if(LowIonizingTrack == true || CloseToTheEdge == true) {continue;}
          hCaloRecoTrackLength->Fill(TrackLength);
          hEnergyCalo->Fill(ECalo);
@@ -1130,7 +1157,21 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
    nEventsStopProton++; 
 
 
-   std::cout<<"Run = "<<RunNum<<", Subrun = "<<SubRunNum<<", Event = "<<EventNum<<std::endl;
+   //std::cout<<"Run = "<<RunNum<<", Subrun = "<<SubRunNum<<", Event = "<<EventNum<<std::endl;
+   if (ElenaStoppingProton == true) 
+      {
+
+      ElenaStoppingNumber++;
+      
+      if (ElenaHault < ElenaRunIICut)
+         {
+
+         ElenaTxt <<RunNum<<" "<<SubRunNum<<" "<<EventNum<<"\n";
+         ElenaHault++;
+
+         }
+
+      }
 
 
    // =========================================================================================================================================
@@ -1202,6 +1243,12 @@ std::cout<<"### Number of Events where the proton track is stopping in the TPC =
 std::cout<<"########################################################################"<<std::endl;
 std::cout<<std::endl; 
 
+
+
+std::cout<<"Amount of Stopping Protons for Elena = "<<ElenaStoppingNumber<<std::endl;
+
+
+
 // ##########################
 // ### Dividing the plots ###
 // ##########################
@@ -1210,7 +1257,16 @@ hPhivsThetaELossDivided->Divide(hPhivsThetaELoss, hPhivsThetaELossFlux);
    
 
 
-TFile myfile("./ROOTFILES/RunIIPosPolData_StoppingProtons_Elena.root", "CREATE");
+
+
+ElenaTxt.close();
+
+
+
+
+
+
+TFile myfile("./ROOTFILES/RunIIPosPolData_StoppingProtons.root", "RECREATE");
 
 
 // ===========================================================================================
