@@ -177,7 +177,7 @@ Long64_t nbytes = 0, nb = 0;
 
 
 
-ofstream ElenaTxt ("StoppingProtonEventsRunII.txt");
+ofstream ElenaTxt ("StoppingProtonEventsRunI_All.txt");
 //ElenaTxt <<"Run Subrun Event\n";
 
 
@@ -293,8 +293,8 @@ float slab_width = 0.0045;//in m
 float MeandEdxRI = 8.158;
 float MeandEdxRII = 7.99;
 
-int ElenaRunICut = 450;
-int ElenaRunIICut = 4500;
+int ElenaRunICut = 4500;
+int ElenaRunIICut = 45000;
 
 //###################################|
 //### Load the Calibration Tables ###|
@@ -1117,7 +1117,7 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
       if(LowIonizingTrack == true || CloseToTheEdge == true) {continue;}
          hCaloRecoTrackLength->Fill(TrackLength);
          hEnergyCalo->Fill(ECalo);
-         ELength = TrackLength*MeandEdxRII;
+         ELength = TrackLength*MeandEdxRI;
          hEnergyLength->Fill(ELength);
 
          hInitialKEWC4->Fill(kineticEnergyInitial);
@@ -1266,7 +1266,7 @@ ElenaTxt.close();
 
 
 
-TFile myfile("./ROOTFILES/RunIIPosPolData_StoppingProtons.root", "RECREATE");
+TFile myfile("./ROOTFILES/RunIPosPolData_StoppingProtons.root", "RECREATE");
 
 
 // ===========================================================================================
