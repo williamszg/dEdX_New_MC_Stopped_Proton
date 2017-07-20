@@ -322,7 +322,14 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
    Long64_t ientry = LoadTree(jentry);
    if (ientry < 0) break;
    nb = fChain->GetEntry(jentry);   nbytes += nb;
-   
+
+
+   int RunNum = run;
+   int SubRunNum = subrun;
+   int EventNum = event;
+
+
+
    // #############################
    // ### Counting Total Events ###
    // #############################
@@ -1066,7 +1073,7 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
    
 	 
 	 if(DataSptsX[npoints] > 42 || DataSptsX[npoints] < 5 || DataSptsY[npoints] > 15 || 
-	    DataSptsY[npoints] < -15|| DataSptsZ[npoints] > 85)
+	    DataSptsY[npoints] < -15|| DataSptsZ[npoints] > 80) //Change Z back to 85!!!
 	    {CloseToTheEdge = true;}
 
 	 
@@ -1120,7 +1127,10 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
    if(nStopProtons != 1){continue;}
 
    //std::cout<<"Right Before The Stopping Proton Counter"<<std::endl;
-   nEventsStopProton++;   
+   nEventsStopProton++; 
+
+
+   std::cout<<"Run = "<<RunNum<<", Subrun = "<<SubRunNum<<", Event = "<<EventNum<<std::endl;
 
 
    // =========================================================================================================================================
@@ -1200,7 +1210,7 @@ hPhivsThetaELossDivided->Divide(hPhivsThetaELoss, hPhivsThetaELossFlux);
    
 
 
-TFile myfile("./ROOTFILES/RunIIPosPolData_StoppingProtons.root", "RECREATE");
+TFile myfile("./ROOTFILES/RunIIPosPolData_StoppingProtons_Elena.root", "CREATE");
 
 
 // ===========================================================================================
