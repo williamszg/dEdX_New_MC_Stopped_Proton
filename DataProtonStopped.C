@@ -161,6 +161,37 @@ TH1D *hDeltaKEFlatVsLength = new TH1D("hDeltaKEFlatVsLength", "#Delta KE (Flat -
 
 
 
+//-----------------------------|
+//--- Energy Deposition MPV ---|
+//-----------------------------|
+double MPVArgon(double x)
+{
+  
+    double x0 = 0.2;
+    double x1 = 3.0;
+    double Cbar = 5.2146;
+    double a = 0.19559;
+    double k = 3.0;
+    double K = 0.307075;
+    int Z = 18;
+    double A = 39.948;
+    double m_e = 0.511;
+    double M_proton = 938.272;
+    double I = 188e-6;
+    double width = 0.47;
+    double rho = 1.396;
+    double j = 0.2;
+    double zeta = (K/2)*(Z/A)*width*rho;
+  
+    double MPV = (zeta*(M_proton*M_proton/x/x+1)*(log((2*m_e/I)*(x*x/M_proton/M_proton))+log(zeta/I*(M_proton*M_proton/x/x+1))+0.2-       (1/(M_proton*M_proton/x/x+1))-((x<M_proton*exp(0.2*log(10)))*0+(M_proton*exp(0.2*log(10))<=x && x<M_proton*exp(3.0*log(10)))*(2*         log(x/M_proton)-Cbar+a*pow(x1-log(x/M_proton)/log(10),3.))+(x>=M_proton*exp(3.0*log(10)))*(2*log(x/M_proton)-Cbar)))/(width*rho)) *      rho;
+     return MPV;
+ 
+} //<--- Close MPV on Argon function
+//-----------------------------|
+
+
+
+
 // ===================================================================================================================
 // ===================================================================================================================
 // ===================================================================================================================
