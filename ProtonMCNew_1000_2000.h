@@ -5,8 +5,8 @@
 // found on file: /lariat/data/users/jasaadi/v06_34_01/DDMC_RunI_PickyTrkPosPol_Proton_anatree.root
 //////////////////////////////////////////////////////////
 
-#ifndef ProtonMC_h
-#define ProtonMC_h
+#ifndef ProtonMCNew_1000_2000_h
+#define ProtonMCNew_1000_2000_h
 
 #include <TROOT.h>
 #include <TChain.h>
@@ -16,7 +16,7 @@
 #include "vector"
 #include "vector"
 
-class ProtonMC {
+class ProtonMCNew_1000_2000 {
 public :
    TTree          *fChain;   //!pointer to the analyzed TTree or TChain
    Int_t           fCurrent; //!current Tree number in a TChain
@@ -437,8 +437,8 @@ public :
    TBranch        *b_dEdxPerPlaneShw;   //!
    TBranch        *b_TotalMIPEShw;   //!
 
-   ProtonMC(TTree *tree=0);
-   virtual ~ProtonMC();
+   ProtonMCNew_1000_2000(TTree *tree=0);
+   virtual ~ProtonMCNew_1000_2000();
    virtual Int_t    Cut(Long64_t entry);
    virtual Int_t    GetEntry(Long64_t entry);
    virtual Long64_t LoadTree(Long64_t entry);
@@ -450,36 +450,36 @@ public :
 
 #endif
 
-#ifdef ProtonMC_cxx
-ProtonMC::ProtonMC(TTree *tree) : fChain(0) 
+#ifdef ProtonMCNew_1000_2000_cxx
+ProtonMCNew_1000_2000::ProtonMCNew_1000_2000(TTree *tree) : fChain(0) 
 {
 // if parameter tree is not specified (or zero), connect the file
 // used to generate this class and read the Tree.
    if (tree == 0) {
-      TFile *f = (TFile*)gROOT->GetListOfFiles()->FindObject("/lariat/data/users/zwilliam/ProtonMCMap/NewMCMapMethod_0_1000.root");
+      TFile *f = (TFile*)gROOT->GetListOfFiles()->FindObject("/lariat/data/users/zwilliam/ProtonMCMap/NewMCMapMethod_1000_2000.root");
       if (!f || !f->IsOpen()) {
-         f = new TFile("/lariat/data/users/zwilliam/ProtonMCMap/NewMCMapMethod_0_1000.root");
+         f = new TFile("/lariat/data/users/zwilliam/ProtonMCMap/NewMCMapMethod_1000_2000.root");
       }
-      TDirectory * dir = (TDirectory*)f->Get("/lariat/data/users/zwilliam/ProtonMCMap/NewMCMapMethod_0_1000.root:/anatree");
+      TDirectory * dir = (TDirectory*)f->Get("/lariat/data/users/zwilliam/ProtonMCMap/NewMCMapMethod_1000_2000.root:/anatree");
       dir->GetObject("anatree",tree);
 
    }
    Init(tree);
 }
 
-ProtonMC::~ProtonMC()
+ProtonMCNew_1000_2000::~ProtonMCNew_1000_2000()
 {
    if (!fChain) return;
    delete fChain->GetCurrentFile();
 }
 
-Int_t ProtonMC::GetEntry(Long64_t entry)
+Int_t ProtonMCNew_1000_2000::GetEntry(Long64_t entry)
 {
 // Read contents of entry.
    if (!fChain) return 0;
    return fChain->GetEntry(entry);
 }
-Long64_t ProtonMC::LoadTree(Long64_t entry)
+Long64_t ProtonMCNew_1000_2000::LoadTree(Long64_t entry)
 {
 // Set the environment to read one entry
    if (!fChain) return -5;
@@ -492,7 +492,7 @@ Long64_t ProtonMC::LoadTree(Long64_t entry)
    return centry;
 }
 
-void ProtonMC::Init(TTree *tree)
+void ProtonMCNew_1000_2000::Init(TTree *tree)
 {
    // The Init() function is called when the selector needs to initialize
    // a new tree or chain. Typically here the branch addresses and branch
@@ -721,7 +721,7 @@ void ProtonMC::Init(TTree *tree)
    Notify();
 }
 
-Bool_t ProtonMC::Notify()
+Bool_t ProtonMCNew_1000_2000::Notify()
 {
    // The Notify() function is called when a new file is opened. This
    // can be either for a new TTree in a TChain or when when a new TTree
@@ -732,14 +732,14 @@ Bool_t ProtonMC::Notify()
    return kTRUE;
 }
 
-void ProtonMC::Show(Long64_t entry)
+void ProtonMCNew_1000_2000::Show(Long64_t entry)
 {
 // Print contents of entry.
 // If entry is not specified, print current entry
    if (!fChain) return;
    fChain->Show(entry);
 }
-Int_t ProtonMC::Cut(Long64_t entry)
+Int_t ProtonMCNew_1000_2000::Cut(Long64_t entry)
 {
 // This function may be called from Loop.
 // returns  1 if entry is accepted.
