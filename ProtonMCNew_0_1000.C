@@ -255,6 +255,43 @@ TH1D *hRDeltaInTPC = new TH1D("hRDeltaInTPC", "#Delta E_{Loss} Inside the TPC of
 
 //--------------------------------------|
 
+
+//=================================|
+//=== Breaking up theta and phi ===|
+//=================================|
+
+//--- Left ---|
+TH2D *hPhivsThetaELossL = new TH2D("hPhivsThetaELossL", "Phi vs Energy Loss ", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxL = new TH2D("hPhivsThetaELossFluxL", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedL = new TH2D("hPhivsThetaELossDividedL", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hELossXvsYL = new TH2D("hELossXvsYL", "Energy Loss X vs Y", 200, 0, 50, 200, -25, 25);
+TH2D *hELossXvsYFluxL = new TH2D("hELossXvsYFluxL", "Energy Loss X vs Y", 200, 0, 50, 200, -25, 25);
+TH2D *hELossXvsYDivideL = new TH2D("hELossXvsYDivideL", "Energy Loss X vs Y", 200, 0, 50, 200, -25, 25);
+
+//--- Middle ---|
+TH2D *hPhivsThetaELossM = new TH2D("hPhivsThetaELossM", "Phi vs Energy Loss ", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxM = new TH2D("hPhivsThetaELossFluxM", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedM = new TH2D("hPhivsThetaELossDividedM", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hELossXvsYM = new TH2D("hELossXvsYM", "Energy Loss X vs Y", 200, 0, 50, 200, -25, 25);
+TH2D *hELossXvsYFluxM = new TH2D("hELossXvsYFluxM", "Energy Loss X vs Y", 200, 0, 50, 200, -25, 25);
+TH2D *hELossXvsYDivideM = new TH2D("hELossXvsYDivideM", "Energy Loss X vs Y", 200, 0, 50, 200, -25, 25);
+
+//--- Right ---|
+TH2D *hPhivsThetaELossR = new TH2D("hPhivsThetaELossR", "Phi vs Energy Loss ", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxR = new TH2D("hPhivsThetaELossFluxR", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedR = new TH2D("hPhivsThetaELossDividedR", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hELossXvsYR = new TH2D("hELossXvsYR", "Energy Loss X vs Y", 200, 0, 50, 200, -25, 25);
+TH2D *hELossXvsYFluxR = new TH2D("hELossXvsYFluxR", "Energy Loss X vs Y", 200, 0, 50, 200, -25, 25);
+TH2D *hELossXvsYDivideR = new TH2D("hELossXvsYDivideR", "Energy Loss X vs Y", 200, 0, 50, 200, -25, 25);
+
+//=================================|
+
+
+
+
 // ===================================================================================================================
 // ===================================================================================================================
 
