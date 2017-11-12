@@ -330,7 +330,7 @@ void ProtonMCNew_0_1000::Loop()
 // ##########################################################
 // ### Putting in some counters for event reduction table ###
 // ##########################################################
-int nTotalEvents = 0, TrueStoppingParticle = 0, nRecoEvents = 0, nEntries = 100000;
+int nTotalEvents = 0, TrueStoppingParticle = 0, nRecoEvents = 0, nEntries = 10000;
 
 
 float particle_mass = 938.28 ;
@@ -362,7 +362,7 @@ Long64_t nbytes = 0, nb = 0;
 // #######################################################
 // ###                 Looping over events             ###
 // ####################################################### 
-for (Long64_t jentry=0; jentry<nentries;jentry++) 
+for (Long64_t jentry=0; jentry<nentries; jentry++) 
    {
    Long64_t ientry = LoadTree(jentry);
    if (ientry < 0) break;
