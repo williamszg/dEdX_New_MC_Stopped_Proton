@@ -1269,7 +1269,14 @@ hMCPrimaryYvsZWeirdPeak1Divide->Divide(hMCPrimaryYvsZWeirdPeak1, hMCPrimaryYvsZW
 hMCPrimaryXvsZNotWeirdPeakDivide->Divide(hMCPrimaryXvsZNotWeirdPeak, hMCPrimaryXvsZNotWeirdPeakFlux);
 hMCPrimaryYvsZNotWeirdPeakDivide->Divide(hMCPrimaryYvsZNotWeirdPeak, hMCPrimaryYvsZNotWeirdPeakFlux);
 
+hPhivsThetaELossDividedR->Divide(hPhivsThetaELossR, hPhivsThetaELossFluxR);
+hELossXvsYDivideR->Divide(hELossXvsYR, hELossXvsYFluxR);
 
+hPhivsThetaELossDividedM->Divide(hPhivsThetaELossM, hPhivsThetaELossFluxM);
+hELossXvsYDivideM->Divide(hELossXvsYM, hELossXvsYFluxM);
+
+hPhivsThetaELossDividedL->Divide(hPhivsThetaELossL, hPhivsThetaELossFluxL);
+hELossXvsYDivideL->Divide(hELossXvsYL, hELossXvsYFluxL);
 
 
 
