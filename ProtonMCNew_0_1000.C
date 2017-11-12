@@ -738,7 +738,46 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
          hPhivsThetaELossBottom->Fill(mcPhi*(180/3.14159) ,mcTheta*(180/3.14159), EnergyLossOutsideTPC);
          hPhivsThetaELossFluxBottom->Fill(mcPhi*(180/3.14159) ,mcTheta*(180/3.14159));
 	 }
-      
+
+
+
+
+
+       // ####################################################
+       // ### Getting the energy loss for Right Theta Phi  ###
+       // ####################################################
+       if (mcPhi*(180/3.14159) > 240 && mcPhi*(180/3.14159) < 360)
+          {
+          hPhivsThetaELossR->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+	  hPhivsThetaELossFluxR->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	  hELossXvsYR->Fill(FirstPoint_X, FirstPoint_Y, EnergyLossOutsideTPC);
+	  hELossXvsYFluxR->Fill(FirstPoint_X, FirstPoint_Y);
+	  }
+
+       // ####################################################
+       // ### Getting the energy loss for Middle Theta Phi ###
+       // ####################################################
+       if (mcPhi*(180/3.14159) > 160 && mcPhi*(180/3.14159) < 240)
+          {
+          hPhivsThetaELossM->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+	  hPhivsThetaELossFluxM->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	  hELossXvsYM->Fill(FirstPoint_X, FirstPoint_Y, EnergyLossOutsideTPC);
+	  hELossXvsYFluxM->Fill(FirstPoint_X, FirstPoint_Y);
+	  }
+
+
+       // ####################################################
+       // ###  Getting the energy loss for Left Theta Phi  ###
+       // ####################################################
+       if (mcPhi*(180/3.14159) > 0 && mcPhi*(180/3.14159) < 160)
+          {
+          hPhivsThetaELossL->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+	  hPhivsThetaELossFluxL->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	  hELossXvsYL->Fill(FirstPoint_X, FirstPoint_Y, EnergyLossOutsideTPC);
+	  hELossXvsYFluxL->Fill(FirstPoint_X, FirstPoint_Y);
+	  }
+
+
       // ###################################################################
       // ### Calculating the remaining energy of the particle from truth ###
       // ###################################################################
@@ -1402,5 +1441,28 @@ hRDeltaInTPC->Write();
 hDeltaTotalTruevsReco->Write();
 
 hMCPrimaryPUnWeighted->Write();
+
+
+
+hPhivsThetaELossL->Write();
+hPhivsThetaELossFluxL->Write();
+hPhivsThetaELossDividedL->Write();
+hELossXvsYL->Write();
+hELossXvsYFluxL->Write();
+hELossXvsYDivideL->Write();
+
+hPhivsThetaELossM->Write();
+hPhivsThetaELossFluxM->Write();
+hPhivsThetaELossDividedM->Write();
+hELossXvsYM->Write();
+hELossXvsYFluxM->Write();
+hELossXvsYDivideM->Write();
+
+hPhivsThetaELossR->Write();
+hPhivsThetaELossFluxR->Write();
+hPhivsThetaELossDividedR->Write();
+hELossXvsYR->Write();
+hELossXvsYFluxR->Write();
+hELossXvsYDivideR->Write();
 
 }//<----End Loop()

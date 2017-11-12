@@ -255,6 +255,43 @@ TH1D *hRDeltaInTPC = new TH1D("hRDeltaInTPC", "#Delta E_{Loss} Inside the TPC of
 
 //--------------------------------------|
 
+
+//=================================|
+//=== Breaking up theta and phi ===|
+//=================================|
+
+//--- Left ---|
+TH2D *hPhivsThetaELossL = new TH2D("hPhivsThetaELossL", "Phi vs Energy Loss ", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxL = new TH2D("hPhivsThetaELossFluxL", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedL = new TH2D("hPhivsThetaELossDividedL", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hELossXvsYL = new TH2D("hELossXvsYL", "Energy Loss X vs Y", 200, 0, 50, 200, -25, 25);
+TH2D *hELossXvsYFluxL = new TH2D("hELossXvsYFluxL", "Energy Loss X vs Y", 200, 0, 50, 200, -25, 25);
+TH2D *hELossXvsYDivideL = new TH2D("hELossXvsYDivideL", "Energy Loss X vs Y", 200, 0, 50, 200, -25, 25);
+
+//--- Middle ---|
+TH2D *hPhivsThetaELossM = new TH2D("hPhivsThetaELossM", "Phi vs Energy Loss ", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxM = new TH2D("hPhivsThetaELossFluxM", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedM = new TH2D("hPhivsThetaELossDividedM", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hELossXvsYM = new TH2D("hELossXvsYM", "Energy Loss X vs Y", 200, 0, 50, 200, -25, 25);
+TH2D *hELossXvsYFluxM = new TH2D("hELossXvsYFluxM", "Energy Loss X vs Y", 200, 0, 50, 200, -25, 25);
+TH2D *hELossXvsYDivideM = new TH2D("hELossXvsYDivideM", "Energy Loss X vs Y", 200, 0, 50, 200, -25, 25);
+
+//--- Right ---|
+TH2D *hPhivsThetaELossR = new TH2D("hPhivsThetaELossR", "Phi vs Energy Loss ", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxR = new TH2D("hPhivsThetaELossFluxR", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedR = new TH2D("hPhivsThetaELossDividedR", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hELossXvsYR = new TH2D("hELossXvsYR", "Energy Loss X vs Y", 200, 0, 50, 200, -25, 25);
+TH2D *hELossXvsYFluxR = new TH2D("hELossXvsYFluxR", "Energy Loss X vs Y", 200, 0, 50, 200, -25, 25);
+TH2D *hELossXvsYDivideR = new TH2D("hELossXvsYDivideR", "Energy Loss X vs Y", 200, 0, 50, 200, -25, 25);
+
+//=================================|
+
+
+
+
 // ===================================================================================================================
 // ===================================================================================================================
 
@@ -701,7 +738,46 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
          hPhivsThetaELossBottom->Fill(mcPhi*(180/3.14159) ,mcTheta*(180/3.14159), EnergyLossOutsideTPC);
          hPhivsThetaELossFluxBottom->Fill(mcPhi*(180/3.14159) ,mcTheta*(180/3.14159));
 	 }
-      
+
+
+
+
+
+       // ####################################################
+       // ### Getting the energy loss for Right Theta Phi  ###
+       // ####################################################
+       if (mcPhi*(180/3.14159) > 240 && mcPhi*(180/3.14159) < 360)
+          {
+          hPhivsThetaELossR->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+	  hPhivsThetaELossFluxR->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	  hELossXvsYR->Fill(FirstPoint_X, FirstPoint_Y, EnergyLossOutsideTPC);
+	  hELossXvsYFluxR->Fill(FirstPoint_X, FirstPoint_Y);
+	  }
+
+       // ####################################################
+       // ### Getting the energy loss for Middle Theta Phi ###
+       // ####################################################
+       if (mcPhi*(180/3.14159) > 160 && mcPhi*(180/3.14159) < 240)
+          {
+          hPhivsThetaELossM->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+	  hPhivsThetaELossFluxM->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	  hELossXvsYM->Fill(FirstPoint_X, FirstPoint_Y, EnergyLossOutsideTPC);
+	  hELossXvsYFluxM->Fill(FirstPoint_X, FirstPoint_Y);
+	  }
+
+
+       // ####################################################
+       // ###  Getting the energy loss for Left Theta Phi  ###
+       // ####################################################
+       if (mcPhi*(180/3.14159) > 0 && mcPhi*(180/3.14159) < 160)
+          {
+          hPhivsThetaELossL->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+	  hPhivsThetaELossFluxL->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	  hELossXvsYL->Fill(FirstPoint_X, FirstPoint_Y, EnergyLossOutsideTPC);
+	  hELossXvsYFluxL->Fill(FirstPoint_X, FirstPoint_Y);
+	  }
+
+
       // ###################################################################
       // ### Calculating the remaining energy of the particle from truth ###
       // ###################################################################
@@ -1232,7 +1308,14 @@ hMCPrimaryYvsZWeirdPeak1Divide->Divide(hMCPrimaryYvsZWeirdPeak1, hMCPrimaryYvsZW
 hMCPrimaryXvsZNotWeirdPeakDivide->Divide(hMCPrimaryXvsZNotWeirdPeak, hMCPrimaryXvsZNotWeirdPeakFlux);
 hMCPrimaryYvsZNotWeirdPeakDivide->Divide(hMCPrimaryYvsZNotWeirdPeak, hMCPrimaryYvsZNotWeirdPeakFlux);
 
+hPhivsThetaELossDividedR->Divide(hPhivsThetaELossR, hPhivsThetaELossFluxR);
+hELossXvsYDivideR->Divide(hELossXvsYR, hELossXvsYFluxR);
 
+hPhivsThetaELossDividedM->Divide(hPhivsThetaELossM, hPhivsThetaELossFluxM);
+hELossXvsYDivideM->Divide(hELossXvsYM, hELossXvsYFluxM);
+
+hPhivsThetaELossDividedL->Divide(hPhivsThetaELossL, hPhivsThetaELossFluxL);
+hELossXvsYDivideL->Divide(hELossXvsYL, hELossXvsYFluxL);
 
 
 
@@ -1358,5 +1441,28 @@ hRDeltaInTPC->Write();
 hDeltaTotalTruevsReco->Write();
 
 hMCPrimaryPUnWeighted->Write();
+
+
+
+hPhivsThetaELossL->Write();
+hPhivsThetaELossFluxL->Write();
+hPhivsThetaELossDividedL->Write();
+hELossXvsYL->Write();
+hELossXvsYFluxL->Write();
+hELossXvsYDivideL->Write();
+
+hPhivsThetaELossM->Write();
+hPhivsThetaELossFluxM->Write();
+hPhivsThetaELossDividedM->Write();
+hELossXvsYM->Write();
+hELossXvsYFluxM->Write();
+hELossXvsYDivideM->Write();
+
+hPhivsThetaELossR->Write();
+hPhivsThetaELossFluxR->Write();
+hPhivsThetaELossDividedR->Write();
+hELossXvsYR->Write();
+hELossXvsYFluxR->Write();
+hELossXvsYDivideR->Write();
 
 }//<----End Loop()
