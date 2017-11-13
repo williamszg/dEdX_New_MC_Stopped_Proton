@@ -289,6 +289,413 @@ TH2D *hELossXvsYDivideR = new TH2D("hELossXvsYDivideR", "Energy Loss X vs Y", 20
 
 //=================================|
 
+//=================================|
+//=== New Map Method Histograms ===|
+//=================================|
+
+TH2D *hPhivsThetaELossX0Y0 = new TH2D("hPhivsThetaELossX0Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX0Y0 = new TH2D("hPhivsThetaELossX0Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX0Y0 = new TH2D("hPhivsThetaELossX0Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX0Y1 = new TH2D("hPhivsThetaELossX0Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX0Y1 = new TH2D("hPhivsThetaELossX0Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX0Y1 = new TH2D("hPhivsThetaELossX0Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX0Y2 = new TH2D("hPhivsThetaELossX0Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX0Y2 = new TH2D("hPhivsThetaELossX0Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX0Y2 = new TH2D("hPhivsThetaELossX0Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX0Y3 = new TH2D("hPhivsThetaELossX0Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX0Y3 = new TH2D("hPhivsThetaELossX0Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX0Y3 = new TH2D("hPhivsThetaELossX0Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX0Y4 = new TH2D("hPhivsThetaELossX0Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX0Y4 = new TH2D("hPhivsThetaELossX0Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX0Y4 = new TH2D("hPhivsThetaELossX0Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX0Y5 = new TH2D("hPhivsThetaELossX0Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX0Y5 = new TH2D("hPhivsThetaELossX0Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX0Y5 = new TH2D("hPhivsThetaELossX0Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX0Y6 = new TH2D("hPhivsThetaELossX0Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX0Y6 = new TH2D("hPhivsThetaELossX0Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX0Y6 = new TH2D("hPhivsThetaELossX0Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX0Y7 = new TH2D("hPhivsThetaELossX0Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX0Y7 = new TH2D("hPhivsThetaELossX0Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX0Y7 = new TH2D("hPhivsThetaELossX0Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX0Y8 = new TH2D("hPhivsThetaELossX0Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX0Y8 = new TH2D("hPhivsThetaELossX0Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX0Y8 = new TH2D("hPhivsThetaELossX0Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX0Y9 = new TH2D("hPhivsThetaELossX0Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX0Y9 = new TH2D("hPhivsThetaELossX0Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX0Y9 = new TH2D("hPhivsThetaELossX0Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX1Y0 = new TH2D("hPhivsThetaELossX1Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX1Y0 = new TH2D("hPhivsThetaELossX1Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX1Y0 = new TH2D("hPhivsThetaELossX1Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX1Y1 = new TH2D("hPhivsThetaELossX1Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX1Y1 = new TH2D("hPhivsThetaELossX1Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX1Y1 = new TH2D("hPhivsThetaELossX1Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX1Y2 = new TH2D("hPhivsThetaELossX1Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX1Y2 = new TH2D("hPhivsThetaELossX1Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX1Y2 = new TH2D("hPhivsThetaELossX1Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX1Y3 = new TH2D("hPhivsThetaELossX1Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX1Y3 = new TH2D("hPhivsThetaELossX1Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX1Y3 = new TH2D("hPhivsThetaELossX1Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX1Y4 = new TH2D("hPhivsThetaELossX1Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX1Y4 = new TH2D("hPhivsThetaELossX1Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX1Y4 = new TH2D("hPhivsThetaELossX1Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX1Y5 = new TH2D("hPhivsThetaELossX1Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX1Y5 = new TH2D("hPhivsThetaELossX1Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX1Y5 = new TH2D("hPhivsThetaELossX1Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX1Y6 = new TH2D("hPhivsThetaELossX1Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX1Y6 = new TH2D("hPhivsThetaELossX1Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX1Y6 = new TH2D("hPhivsThetaELossX1Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX1Y7 = new TH2D("hPhivsThetaELossX1Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX1Y7 = new TH2D("hPhivsThetaELossX1Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX1Y7 = new TH2D("hPhivsThetaELossX1Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX1Y8 = new TH2D("hPhivsThetaELossX1Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX1Y8 = new TH2D("hPhivsThetaELossX1Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX1Y8 = new TH2D("hPhivsThetaELossX1Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX1Y9 = new TH2D("hPhivsThetaELossX1Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX1Y9 = new TH2D("hPhivsThetaELossX1Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX1Y9 = new TH2D("hPhivsThetaELossX1Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX2Y0 = new TH2D("hPhivsThetaELossX2Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX2Y0 = new TH2D("hPhivsThetaELossX2Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX2Y0 = new TH2D("hPhivsThetaELossX2Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX2Y1 = new TH2D("hPhivsThetaELossX2Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX2Y1 = new TH2D("hPhivsThetaELossX2Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX2Y1 = new TH2D("hPhivsThetaELossX2Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX2Y2 = new TH2D("hPhivsThetaELossX2Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX2Y2 = new TH2D("hPhivsThetaELossX2Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX2Y2 = new TH2D("hPhivsThetaELossX2Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX2Y3 = new TH2D("hPhivsThetaELossX2Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX2Y3 = new TH2D("hPhivsThetaELossX2Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX2Y3 = new TH2D("hPhivsThetaELossX2Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX2Y4 = new TH2D("hPhivsThetaELossX2Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX2Y4 = new TH2D("hPhivsThetaELossX2Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX2Y4 = new TH2D("hPhivsThetaELossX2Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX2Y5 = new TH2D("hPhivsThetaELossX2Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX2Y5 = new TH2D("hPhivsThetaELossX2Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX2Y5 = new TH2D("hPhivsThetaELossX2Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX2Y6 = new TH2D("hPhivsThetaELossX2Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX2Y6 = new TH2D("hPhivsThetaELossX2Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX0Y6 = new TH2D("hPhivsThetaELossX2Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX2Y7 = new TH2D("hPhivsThetaELossX2Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX2Y7 = new TH2D("hPhivsThetaELossX2Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX2Y7 = new TH2D("hPhivsThetaELossX2Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX2Y8 = new TH2D("hPhivsThetaELossX2Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX2Y8 = new TH2D("hPhivsThetaELossX2Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX2Y8 = new TH2D("hPhivsThetaELossX2Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX2Y9 = new TH2D("hPhivsThetaELossX2Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX2Y9 = new TH2D("hPhivsThetaELossX2Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX2Y9 = new TH2D("hPhivsThetaELossX2Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX3Y0 = new TH2D("hPhivsThetaELossX3Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX3Y0 = new TH2D("hPhivsThetaELossX3Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX3Y0 = new TH2D("hPhivsThetaELossX3Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX3Y1 = new TH2D("hPhivsThetaELossX3Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX3Y1 = new TH2D("hPhivsThetaELossX3Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX3Y1 = new TH2D("hPhivsThetaELossX3Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX3Y2 = new TH2D("hPhivsThetaELossX3Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX3Y2 = new TH2D("hPhivsThetaELossX3Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX3Y2 = new TH2D("hPhivsThetaELossX3Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX3Y3 = new TH2D("hPhivsThetaELossX3Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX3Y3 = new TH2D("hPhivsThetaELossX3Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX3Y3 = new TH2D("hPhivsThetaELossX3Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX3Y4 = new TH2D("hPhivsThetaELossX3Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX3Y4 = new TH2D("hPhivsThetaELossX3Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX3Y4 = new TH2D("hPhivsThetaELossX3Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX3Y5 = new TH2D("hPhivsThetaELossX3Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX3Y5 = new TH2D("hPhivsThetaELossX3Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX3Y5 = new TH2D("hPhivsThetaELossX3Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX3Y6 = new TH2D("hPhivsThetaELossX3Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX3Y6 = new TH2D("hPhivsThetaELossX3Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX3Y6 = new TH2D("hPhivsThetaELossX3Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX3Y7 = new TH2D("hPhivsThetaELossX3Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX3Y7 = new TH2D("hPhivsThetaELossX3Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX3Y7 = new TH2D("hPhivsThetaELossX3Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX3Y8 = new TH2D("hPhivsThetaELossX3Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX3Y8 = new TH2D("hPhivsThetaELossX3Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX3Y8 = new TH2D("hPhivsThetaELossX3Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX3Y9 = new TH2D("hPhivsThetaELossX3Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX3Y9 = new TH2D("hPhivsThetaELossX3Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX3Y9 = new TH2D("hPhivsThetaELossX3Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX4Y0 = new TH2D("hPhivsThetaELossX4Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX4Y0 = new TH2D("hPhivsThetaELossX4Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX4Y0 = new TH2D("hPhivsThetaELossX4Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX4Y1 = new TH2D("hPhivsThetaELossX4Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX4Y1 = new TH2D("hPhivsThetaELossX4Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX4Y1 = new TH2D("hPhivsThetaELossX4Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX4Y2 = new TH2D("hPhivsThetaELossX4Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX4Y2 = new TH2D("hPhivsThetaELossX4Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX4Y2 = new TH2D("hPhivsThetaELossX4Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX4Y3 = new TH2D("hPhivsThetaELossX4Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX4Y3 = new TH2D("hPhivsThetaELossX4Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX4Y3 = new TH2D("hPhivsThetaELossX4Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX4Y4 = new TH2D("hPhivsThetaELossX4Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX4Y4 = new TH2D("hPhivsThetaELossX4Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX4Y4 = new TH2D("hPhivsThetaELossX4Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX4Y5 = new TH2D("hPhivsThetaELossX4Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX4Y5 = new TH2D("hPhivsThetaELossX4Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX4Y5 = new TH2D("hPhivsThetaELossX4Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX4Y6 = new TH2D("hPhivsThetaELossX4Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX4Y6 = new TH2D("hPhivsThetaELossX4Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX4Y6 = new TH2D("hPhivsThetaELossX4Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX4Y7 = new TH2D("hPhivsThetaELossX4Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX4Y7 = new TH2D("hPhivsThetaELossX4Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX4Y7 = new TH2D("hPhivsThetaELossX4Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX4Y8 = new TH2D("hPhivsThetaELossX4Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX4Y8 = new TH2D("hPhivsThetaELossX4Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX4Y8 = new TH2D("hPhivsThetaELossX4Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX4Y9 = new TH2D("hPhivsThetaELossX4Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX4Y9 = new TH2D("hPhivsThetaELossX4Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX4Y9 = new TH2D("hPhivsThetaELossX4Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX5Y0 = new TH2D("hPhivsThetaELossX5Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX5Y0 = new TH2D("hPhivsThetaELossX5Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX5Y0 = new TH2D("hPhivsThetaELossX5Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX5Y1 = new TH2D("hPhivsThetaELossX5Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX5Y1 = new TH2D("hPhivsThetaELossX5Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX5Y1 = new TH2D("hPhivsThetaELossX5Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX5Y2 = new TH2D("hPhivsThetaELossX5Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX5Y2 = new TH2D("hPhivsThetaELossX5Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX5Y2 = new TH2D("hPhivsThetaELossX5Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX5Y3 = new TH2D("hPhivsThetaELossX5Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX5Y3 = new TH2D("hPhivsThetaELossX5Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX5Y3 = new TH2D("hPhivsThetaELossX5Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX5Y4 = new TH2D("hPhivsThetaELossX5Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX5Y4 = new TH2D("hPhivsThetaELossX5Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX5Y4 = new TH2D("hPhivsThetaELossX5Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX5Y5 = new TH2D("hPhivsThetaELossX5Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX5Y5 = new TH2D("hPhivsThetaELossX5Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX5Y5 = new TH2D("hPhivsThetaELossX5Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX5Y6 = new TH2D("hPhivsThetaELossX5Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX5Y6 = new TH2D("hPhivsThetaELossX5Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX5Y6 = new TH2D("hPhivsThetaELossX5Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX5Y7 = new TH2D("hPhivsThetaELossX5Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX5Y7 = new TH2D("hPhivsThetaELossX5Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX5Y7 = new TH2D("hPhivsThetaELossX5Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX5Y8 = new TH2D("hPhivsThetaELossX5Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX5Y8 = new TH2D("hPhivsThetaELossX5Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX5Y8 = new TH2D("hPhivsThetaELossX5Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX5Y9 = new TH2D("hPhivsThetaELossX5Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX5Y9 = new TH2D("hPhivsThetaELossX5Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX5Y9 = new TH2D("hPhivsThetaELossX5Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX6Y0 = new TH2D("hPhivsThetaELossX6Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX6Y0 = new TH2D("hPhivsThetaELossX6Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX6Y0 = new TH2D("hPhivsThetaELossX6Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX6Y1 = new TH2D("hPhivsThetaELossX6Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX6Y1 = new TH2D("hPhivsThetaELossX6Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX6Y1 = new TH2D("hPhivsThetaELossX6Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX6Y2 = new TH2D("hPhivsThetaELossX6Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX6Y2 = new TH2D("hPhivsThetaELossX6Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX6Y2 = new TH2D("hPhivsThetaELossX6Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX6Y3 = new TH2D("hPhivsThetaELossX6Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX6Y3 = new TH2D("hPhivsThetaELossX6Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX6Y3 = new TH2D("hPhivsThetaELossX6Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX6Y4 = new TH2D("hPhivsThetaELossX6Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX6Y4 = new TH2D("hPhivsThetaELossX6Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX6Y4 = new TH2D("hPhivsThetaELossX6Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX6Y5 = new TH2D("hPhivsThetaELossX6Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX6Y5 = new TH2D("hPhivsThetaELossX6Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX6Y5 = new TH2D("hPhivsThetaELossX6Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX6Y6 = new TH2D("hPhivsThetaELossX6Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX6Y6 = new TH2D("hPhivsThetaELossX6Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX6Y6 = new TH2D("hPhivsThetaELossX6Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX6Y7 = new TH2D("hPhivsThetaELossX6Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX6Y7 = new TH2D("hPhivsThetaELossX6Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX6Y7 = new TH2D("hPhivsThetaELossX6Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX6Y8 = new TH2D("hPhivsThetaELossX6Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX6Y8 = new TH2D("hPhivsThetaELossX6Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX6Y8 = new TH2D("hPhivsThetaELossX6Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX6Y9 = new TH2D("hPhivsThetaELossX6Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX6Y9 = new TH2D("hPhivsThetaELossX6Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX6Y9 = new TH2D("hPhivsThetaELossX6Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX7Y0 = new TH2D("hPhivsThetaELossX7Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX7Y0 = new TH2D("hPhivsThetaELossX7Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX7Y0 = new TH2D("hPhivsThetaELossX7Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX7Y1 = new TH2D("hPhivsThetaELossX7Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX7Y1 = new TH2D("hPhivsThetaELossX7Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX7Y1 = new TH2D("hPhivsThetaELossX7Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX7Y2 = new TH2D("hPhivsThetaELossX7Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX7Y2 = new TH2D("hPhivsThetaELossX7Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX7Y2 = new TH2D("hPhivsThetaELossX7Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX7Y3 = new TH2D("hPhivsThetaELossX7Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX7Y3 = new TH2D("hPhivsThetaELossX7Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX7Y3 = new TH2D("hPhivsThetaELossX7Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX7Y4 = new TH2D("hPhivsThetaELossX7Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX7Y4 = new TH2D("hPhivsThetaELossX7Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX7Y4 = new TH2D("hPhivsThetaELossX7Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX7Y5 = new TH2D("hPhivsThetaELossX7Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX7Y5 = new TH2D("hPhivsThetaELossX7Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX7Y5 = new TH2D("hPhivsThetaELossX7Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX7Y6 = new TH2D("hPhivsThetaELossX7Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX7Y6 = new TH2D("hPhivsThetaELossX7Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX7Y6 = new TH2D("hPhivsThetaELossX7Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX7Y7 = new TH2D("hPhivsThetaELossX7Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX7Y7 = new TH2D("hPhivsThetaELossX7Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX7Y7 = new TH2D("hPhivsThetaELossX7Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX7Y8 = new TH2D("hPhivsThetaELossX7Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX7Y8 = new TH2D("hPhivsThetaELossX7Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX7Y8 = new TH2D("hPhivsThetaELossX7Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX7Y9 = new TH2D("hPhivsThetaELossX7Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX7Y9 = new TH2D("hPhivsThetaELossX7Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX7Y9 = new TH2D("hPhivsThetaELossX7Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX8Y0 = new TH2D("hPhivsThetaELossX8Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX8Y0 = new TH2D("hPhivsThetaELossX8Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX8Y0 = new TH2D("hPhivsThetaELossX8Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX8Y1 = new TH2D("hPhivsThetaELossX8Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX8Y1 = new TH2D("hPhivsThetaELossX8Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX8Y1 = new TH2D("hPhivsThetaELossX8Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX8Y2 = new TH2D("hPhivsThetaELossX8Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX8Y2 = new TH2D("hPhivsThetaELossX8Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX8Y2 = new TH2D("hPhivsThetaELossX8Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX8Y3 = new TH2D("hPhivsThetaELossX8Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX8Y3 = new TH2D("hPhivsThetaELossX8Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX8Y3 = new TH2D("hPhivsThetaELossX8Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX8Y4 = new TH2D("hPhivsThetaELossX8Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX8Y4 = new TH2D("hPhivsThetaELossX8Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX8Y4 = new TH2D("hPhivsThetaELossX8Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX8Y5 = new TH2D("hPhivsThetaELossX8Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX8Y5 = new TH2D("hPhivsThetaELossX8Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX8Y5 = new TH2D("hPhivsThetaELossX8Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX8Y6 = new TH2D("hPhivsThetaELossX8Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX8Y6 = new TH2D("hPhivsThetaELossX8Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX8Y6 = new TH2D("hPhivsThetaELossX8Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX8Y7 = new TH2D("hPhivsThetaELossX8Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX8Y7 = new TH2D("hPhivsThetaELossX8Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX8Y7 = new TH2D("hPhivsThetaELossX8Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX8Y8 = new TH2D("hPhivsThetaELossX8Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX8Y8 = new TH2D("hPhivsThetaELossX8Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX8Y8 = new TH2D("hPhivsThetaELossX8Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX8Y9 = new TH2D("hPhivsThetaELossX8Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX8Y9 = new TH2D("hPhivsThetaELossX8Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX8Y9 = new TH2D("hPhivsThetaELossX8Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX9Y0 = new TH2D("hPhivsThetaELossX9Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX9Y0 = new TH2D("hPhivsThetaELossX9Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX9Y0 = new TH2D("hPhivsThetaELossX9Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX9Y1 = new TH2D("hPhivsThetaELossX9Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX9Y1 = new TH2D("hPhivsThetaELossX9Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX9Y1 = new TH2D("hPhivsThetaELossX9Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX9Y2 = new TH2D("hPhivsThetaELossX9Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX9Y2 = new TH2D("hPhivsThetaELossX9Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX9Y2 = new TH2D("hPhivsThetaELossX9Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX9Y3 = new TH2D("hPhivsThetaELossX9Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX9Y3 = new TH2D("hPhivsThetaELossX9Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX9Y3 = new TH2D("hPhivsThetaELossX9Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX9Y4 = new TH2D("hPhivsThetaELossX9Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX9Y4 = new TH2D("hPhivsThetaELossX9Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX9Y4 = new TH2D("hPhivsThetaELossX9Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX9Y5 = new TH2D("hPhivsThetaELossX9Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX9Y5 = new TH2D("hPhivsThetaELossX9Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX9Y5 = new TH2D("hPhivsThetaELossX9Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX9Y6 = new TH2D("hPhivsThetaELossX9Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX9Y6 = new TH2D("hPhivsThetaELossX9Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX9Y6 = new TH2D("hPhivsThetaELossX9Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX9Y7 = new TH2D("hPhivsThetaELossX9Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX9Y7 = new TH2D("hPhivsThetaELossX9Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX9Y7 = new TH2D("hPhivsThetaELossX9Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX9Y8 = new TH2D("hPhivsThetaELossX9Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX9Y8 = new TH2D("hPhivsThetaELossX9Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX9Y8 = new TH2D("hPhivsThetaELossX9Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+TH2D *hPhivsThetaELossX9Y9 = new TH2D("hPhivsThetaELossX9Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX9Y9 = new TH2D("hPhivsThetaELossX9Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX9Y9 = new TH2D("hPhivsThetaELossX9Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+
+//=================================|
+
+
 
 
 
@@ -376,7 +783,7 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
    
    
    // === Outputting every nEvents to the screen ===
-   if(nTotalEvents % 1000 == 0){std::cout<<"Event = "<<nTotalEvents<<std::endl;}
+   if(nTotalEvents % 10000 == 0){std::cout<<"Event = "<<nTotalEvents<<std::endl;}
 
    //=======================================================================================================================
    //					      GEANT 4 Information
@@ -776,6 +1183,625 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
 	  hELossXvsYL->Fill(FirstPoint_X, FirstPoint_Y, EnergyLossOutsideTPC);
 	  hELossXvsYFluxL->Fill(FirstPoint_X, FirstPoint_Y);
 	  }
+
+
+
+
+
+      // ###########################################################
+      // ###                Making New Map Method                ###
+      // ###########################################################
+
+      if (FirstPoint_X > 10 && FirstPoint_X < 13 && FirstPoint_Y > -15 && FirstPoint_Y < -12)
+	 {
+         hPhivsThetaELossX0Y0->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX0Y0->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 10 && FirstPoint_X < 13 && FirstPoint_Y > -12 && FirstPoint_Y < -9)
+	 {
+         hPhivsThetaELossX0Y1->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX0Y1->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 10 && FirstPoint_X < 13 && FirstPoint_Y > -9 && FirstPoint_Y < -6)
+	 {
+         hPhivsThetaELossX0Y2->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX0Y2->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 10 && FirstPoint_X < 13 && FirstPoint_Y > -6 && FirstPoint_Y < -3)
+	 {
+         hPhivsThetaELossX0Y3->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX0Y3->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 10 && FirstPoint_X < 13 && FirstPoint_Y > -3 && FirstPoint_Y < 0)
+	 {
+         hPhivsThetaELossX0Y4->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX0Y4->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 10 && FirstPoint_X < 13 && FirstPoint_Y > 0 && FirstPoint_Y < 3)
+	 {
+         hPhivsThetaELossX0Y5->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX0Y5->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 10 && FirstPoint_X < 13 && FirstPoint_Y > 3 && FirstPoint_Y < 6)
+	 {
+         hPhivsThetaELossX0Y6->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX0Y6->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 10 && FirstPoint_X < 13 && FirstPoint_Y > 6 && FirstPoint_Y < 9)
+	 {
+         hPhivsThetaELossX0Y7->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX0Y7->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 10 && FirstPoint_X < 13 && FirstPoint_Y > 9 && FirstPoint_Y < 12)
+	 {
+         hPhivsThetaELossX0Y8->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX0Y8->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 10 && FirstPoint_X < 13 && FirstPoint_Y > 12 && FirstPoint_Y < 15)
+	 {
+         hPhivsThetaELossX0Y9->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX0Y9->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 13 && FirstPoint_X < 16 && FirstPoint_Y > -15 && FirstPoint_Y < -12)
+	 {
+         hPhivsThetaELossX1Y0->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX1Y0->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 13 && FirstPoint_X < 16 && FirstPoint_Y > -12 && FirstPoint_Y < -9)
+	 {
+         hPhivsThetaELossX1Y1->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX1Y1->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 13 && FirstPoint_X < 16 && FirstPoint_Y > -9 && FirstPoint_Y < -6)
+	 {
+         hPhivsThetaELossX1Y2->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX1Y2->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 13 && FirstPoint_X < 16 && FirstPoint_Y > -6 && FirstPoint_Y < -3)
+	 {
+         hPhivsThetaELossX1Y3->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX1Y3->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 13 && FirstPoint_X < 16 && FirstPoint_Y > -3 && FirstPoint_Y < 0)
+	 {
+         hPhivsThetaELossX1Y4->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX1Y4->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 13 && FirstPoint_X < 16 && FirstPoint_Y > 0 && FirstPoint_Y < 3)
+	 {
+         hPhivsThetaELossX1Y5->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX1Y5->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 13 && FirstPoint_X < 16 && FirstPoint_Y > 3 && FirstPoint_Y < 6)
+	 {
+         hPhivsThetaELossX1Y6->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX1Y6->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 13 && FirstPoint_X < 16 && FirstPoint_Y > 6 && FirstPoint_Y < 9)
+	 {
+         hPhivsThetaELossX1Y7->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX1Y7->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 13 && FirstPoint_X < 16 && FirstPoint_Y > 9 && FirstPoint_Y < 12)
+	 {
+         hPhivsThetaELossX1Y8->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX1Y8->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 13 && FirstPoint_X < 16 && FirstPoint_Y > 12 && FirstPoint_Y < 15)
+	 {
+         hPhivsThetaELossX1Y9->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX1Y9->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 16 && FirstPoint_X < 19 && FirstPoint_Y > -15 && FirstPoint_Y < -12)
+	 {
+         hPhivsThetaELossX2Y0->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX2Y0->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 16 && FirstPoint_X < 19 && FirstPoint_Y > -12 && FirstPoint_Y < -9)
+	 {
+         hPhivsThetaELossX2Y1->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX2Y1->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 16 && FirstPoint_X < 19 && FirstPoint_Y > -9 && FirstPoint_Y < -6)
+	 {
+         hPhivsThetaELossX2Y2->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX2Y2->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 16 && FirstPoint_X < 19 && FirstPoint_Y > -6 && FirstPoint_Y < -3)
+	 {
+         hPhivsThetaELossX2Y3->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX2Y3->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 16 && FirstPoint_X < 19 && FirstPoint_Y > -3 && FirstPoint_Y < 0)
+	 {
+         hPhivsThetaELossX2Y4->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX2Y4->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 16 && FirstPoint_X < 19 && FirstPoint_Y > 0 && FirstPoint_Y < 3)
+	 {
+         hPhivsThetaELossX2Y5->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX2Y5->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 16 && FirstPoint_X < 19 && FirstPoint_Y > 3 && FirstPoint_Y < 6)
+	 {
+         hPhivsThetaELossX2Y6->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX2Y6->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 16 && FirstPoint_X < 19 && FirstPoint_Y > 6 && FirstPoint_Y < 9)
+	 {
+         hPhivsThetaELossX2Y7->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX2Y7->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 16 && FirstPoint_X < 19 && FirstPoint_Y > 9 && FirstPoint_Y < 12)
+	 {
+         hPhivsThetaELossX2Y8->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX2Y8->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 16 && FirstPoint_X < 19 && FirstPoint_Y > 12 && FirstPoint_Y < 15)
+	 {
+         hPhivsThetaELossX2Y9->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX2Y9->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 19 && FirstPoint_X < 22 && FirstPoint_Y > -15 && FirstPoint_Y < -12)
+	 {
+         hPhivsThetaELossX3Y0->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX3Y0->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 19 && FirstPoint_X < 22 && FirstPoint_Y > -12 && FirstPoint_Y < -9)
+	 {
+         hPhivsThetaELossX3Y1->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX3Y1->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 19 && FirstPoint_X < 22 && FirstPoint_Y > -9 && FirstPoint_Y < -6)
+	 {
+         hPhivsThetaELossX3Y2->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX3Y2->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 19 && FirstPoint_X < 22 && FirstPoint_Y > -6 && FirstPoint_Y < -3)
+	 {
+         hPhivsThetaELossX3Y3->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX3Y3->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 19 && FirstPoint_X < 22 && FirstPoint_Y > -3 && FirstPoint_Y < 0)
+	 {
+         hPhivsThetaELossX3Y4->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX3Y4->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 19 && FirstPoint_X < 22 && FirstPoint_Y > 0 && FirstPoint_Y < 3)
+	 {
+         hPhivsThetaELossX3Y5->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX3Y5->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 19 && FirstPoint_X < 22 && FirstPoint_Y > 3 && FirstPoint_Y < 6)
+	 {
+         hPhivsThetaELossX3Y6->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX3Y6->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 19 && FirstPoint_X < 22 && FirstPoint_Y > 6 && FirstPoint_Y < 9)
+	 {
+         hPhivsThetaELossX3Y7->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX3Y7->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 19 && FirstPoint_X < 22 && FirstPoint_Y > 9 && FirstPoint_Y < 12)
+	 {
+         hPhivsThetaELossX3Y8->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX3Y8->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 19 && FirstPoint_X < 22 && FirstPoint_Y > 12 && FirstPoint_Y < 15)
+	 {
+         hPhivsThetaELossX3Y9->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX3Y9->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 22 && FirstPoint_X < 25 && FirstPoint_Y > -15 && FirstPoint_Y < -12)
+	 {
+         hPhivsThetaELossX4Y0->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX4Y0->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 22 && FirstPoint_X < 25 && FirstPoint_Y > -12 && FirstPoint_Y < -9)
+	 {
+         hPhivsThetaELossX4Y1->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX4Y1->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 22 && FirstPoint_X < 25 && FirstPoint_Y > -9 && FirstPoint_Y < -6)
+	 {
+         hPhivsThetaELossX4Y2->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX4Y2->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 22 && FirstPoint_X < 25 && FirstPoint_Y > -6 && FirstPoint_Y < -3)
+	 {
+         hPhivsThetaELossX4Y3->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX4Y3->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 22 && FirstPoint_X < 25 && FirstPoint_Y > -3 && FirstPoint_Y < 0)
+	 {
+         hPhivsThetaELossX4Y4->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX4Y4->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 22 && FirstPoint_X < 25 && FirstPoint_Y > 0 && FirstPoint_Y < 3)
+	 {
+         hPhivsThetaELossX4Y5->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX4Y5->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 22 && FirstPoint_X < 25 && FirstPoint_Y > 3 && FirstPoint_Y < 6)
+	 {
+         hPhivsThetaELossX4Y6->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX4Y6->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 22 && FirstPoint_X < 25 && FirstPoint_Y > 6 && FirstPoint_Y < 9)
+	 {
+         hPhivsThetaELossX4Y7->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX4Y7->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 22 && FirstPoint_X < 25 && FirstPoint_Y > 9 && FirstPoint_Y < 12)
+	 {
+         hPhivsThetaELossX4Y8->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX4Y8->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 22 && FirstPoint_X < 25 && FirstPoint_Y > 12 && FirstPoint_Y < 15)
+	 {
+         hPhivsThetaELossX4Y9->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX4Y9->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 25 && FirstPoint_X < 28 && FirstPoint_Y > -15 && FirstPoint_Y < -12)
+	 {
+         hPhivsThetaELossX5Y0->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX5Y0->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 25 && FirstPoint_X < 28 && FirstPoint_Y > -12 && FirstPoint_Y < -9)
+	 {
+         hPhivsThetaELossX5Y1->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX5Y1->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 25 && FirstPoint_X < 28 && FirstPoint_Y > -9 && FirstPoint_Y < -6)
+	 {
+         hPhivsThetaELossX5Y2->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX5Y2->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 25 && FirstPoint_X < 28 && FirstPoint_Y > -6 && FirstPoint_Y < -3)
+	 {
+         hPhivsThetaELossX5Y3->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX5Y3->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 25 && FirstPoint_X < 28 && FirstPoint_Y > -3 && FirstPoint_Y < 0)
+	 {
+         hPhivsThetaELossX5Y4->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX5Y4->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 25 && FirstPoint_X < 28 && FirstPoint_Y > 0 && FirstPoint_Y < 3)
+	 {
+         hPhivsThetaELossX5Y5->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX5Y5->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 25 && FirstPoint_X < 28 && FirstPoint_Y > 3 && FirstPoint_Y < 6)
+	 {
+         hPhivsThetaELossX5Y6->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX5Y6->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 25 && FirstPoint_X < 28 && FirstPoint_Y > 6 && FirstPoint_Y < 9)
+	 {
+         hPhivsThetaELossX5Y7->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX5Y7->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 25 && FirstPoint_X < 28 && FirstPoint_Y > 9 && FirstPoint_Y < 12)
+	 {
+         hPhivsThetaELossX5Y8->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX5Y8->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 25 && FirstPoint_X < 28 && FirstPoint_Y > 12 && FirstPoint_Y < 15)
+	 {
+         hPhivsThetaELossX5Y9->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX5Y9->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 28 && FirstPoint_X < 31 && FirstPoint_Y > -15 && FirstPoint_Y < -12)
+	 {
+         hPhivsThetaELossX6Y0->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX6Y0->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 28 && FirstPoint_X < 31 && FirstPoint_Y > -12 && FirstPoint_Y < -9)
+	 {
+         hPhivsThetaELossX6Y1->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX6Y1->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 28 && FirstPoint_X < 31 && FirstPoint_Y > -9 && FirstPoint_Y < -6)
+	 {
+         hPhivsThetaELossX6Y2->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX6Y2->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 28 && FirstPoint_X < 31 && FirstPoint_Y > -6 && FirstPoint_Y < -3)
+	 {
+         hPhivsThetaELossX6Y3->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX6Y3->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 28 && FirstPoint_X < 31 && FirstPoint_Y > -3 && FirstPoint_Y < 0)
+	 {
+         hPhivsThetaELossX6Y4->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX6Y4->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 28 && FirstPoint_X < 31 && FirstPoint_Y > 0 && FirstPoint_Y < 3)
+	 {
+         hPhivsThetaELossX6Y5->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX6Y5->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 28 && FirstPoint_X < 31 && FirstPoint_Y > 3 && FirstPoint_Y < 6)
+	 {
+         hPhivsThetaELossX6Y6->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX6Y6->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 28 && FirstPoint_X < 31 && FirstPoint_Y > 6 && FirstPoint_Y < 9)
+	 {
+         hPhivsThetaELossX6Y7->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX6Y7->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 28 && FirstPoint_X < 31 && FirstPoint_Y > 9 && FirstPoint_Y < 12)
+	 {
+         hPhivsThetaELossX6Y8->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX6Y8->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 28 && FirstPoint_X < 31 && FirstPoint_Y > 12 && FirstPoint_Y < 15)
+	 {
+         hPhivsThetaELossX6Y9->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX6Y9->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 31 && FirstPoint_X < 34 && FirstPoint_Y > -15 && FirstPoint_Y < -12)
+	 {
+         hPhivsThetaELossX7Y0->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX7Y0->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 31 && FirstPoint_X < 34 && FirstPoint_Y > -12 && FirstPoint_Y < -9)
+	 {
+         hPhivsThetaELossX7Y1->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX7Y1->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 31 && FirstPoint_X < 34 && FirstPoint_Y > -9 && FirstPoint_Y < -6)
+	 {
+         hPhivsThetaELossX7Y2->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX7Y2->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 31 && FirstPoint_X < 34 && FirstPoint_Y > -6 && FirstPoint_Y < -3)
+	 {
+         hPhivsThetaELossX7Y3->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX7Y3->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 31 && FirstPoint_X < 34 && FirstPoint_Y > -3 && FirstPoint_Y < 0)
+	 {
+         hPhivsThetaELossX7Y4->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX7Y4->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 31 && FirstPoint_X < 34 && FirstPoint_Y > 0 && FirstPoint_Y < 3)
+	 {
+         hPhivsThetaELossX7Y5->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX7Y5->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 31 && FirstPoint_X < 34 && FirstPoint_Y > 3 && FirstPoint_Y < 6)
+	 {
+         hPhivsThetaELossX7Y6->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX7Y6->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 31 && FirstPoint_X < 34 && FirstPoint_Y > 6 && FirstPoint_Y < 9)
+	 {
+         hPhivsThetaELossX7Y7->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX7Y7->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 31 && FirstPoint_X < 34 && FirstPoint_Y > 9 && FirstPoint_Y < 12)
+	 {
+         hPhivsThetaELossX7Y8->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX7Y8->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 31 && FirstPoint_X < 34 && FirstPoint_Y > 12 && FirstPoint_Y < 15)
+	 {
+         hPhivsThetaELossX7Y9->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX7Y9->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 34 && FirstPoint_X < 37 && FirstPoint_Y > -15 && FirstPoint_Y < -12)
+	 {
+         hPhivsThetaELossX8Y0->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX8Y0->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 34 && FirstPoint_X < 37 && FirstPoint_Y > -12 && FirstPoint_Y < -9)
+	 {
+         hPhivsThetaELossX8Y1->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX8Y1->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 34 && FirstPoint_X < 37 && FirstPoint_Y > -9 && FirstPoint_Y < -6)
+	 {
+         hPhivsThetaELossX8Y2->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX8Y2->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 34 && FirstPoint_X < 37 && FirstPoint_Y > -6 && FirstPoint_Y < -3)
+	 {
+         hPhivsThetaELossX8Y3->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX8Y3->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 34 && FirstPoint_X < 37 && FirstPoint_Y > -3 && FirstPoint_Y < 0)
+	 {
+         hPhivsThetaELossX8Y4->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX8Y4->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 34 && FirstPoint_X < 37 && FirstPoint_Y > 0 && FirstPoint_Y < 3)
+	 {
+         hPhivsThetaELossX8Y5->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX8Y5->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 34 && FirstPoint_X < 37 && FirstPoint_Y > 3 && FirstPoint_Y < 6)
+	 {
+         hPhivsThetaELossX8Y6->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX8Y6->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 34 && FirstPoint_X < 37 && FirstPoint_Y > 6 && FirstPoint_Y < 9)
+	 {
+         hPhivsThetaELossX8Y7->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX8Y7->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 34 && FirstPoint_X < 37 && FirstPoint_Y > 9 && FirstPoint_Y < 12)
+	 {
+         hPhivsThetaELossX8Y8->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX8Y8->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 34 && FirstPoint_X < 37 && FirstPoint_Y > 12 && FirstPoint_Y < 15)
+	 {
+         hPhivsThetaELossX8Y9->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX8Y9->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 37 && FirstPoint_X < 40 && FirstPoint_Y > -15 && FirstPoint_Y < -12)
+	 {
+         hPhivsThetaELossX9Y0->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX9Y0->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 37 && FirstPoint_X < 40 && FirstPoint_Y > -12 && FirstPoint_Y < -9)
+	 {
+         hPhivsThetaELossX9Y1->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX9Y1->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 37 && FirstPoint_X < 40 && FirstPoint_Y > -9 && FirstPoint_Y < -6)
+	 {
+         hPhivsThetaELossX9Y2->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX9Y2->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 37 && FirstPoint_X < 40 && FirstPoint_Y > -6 && FirstPoint_Y < -3)
+	 {
+         hPhivsThetaELossX9Y3->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX9Y3->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 37 && FirstPoint_X < 40 && FirstPoint_Y > -3 && FirstPoint_Y < 0)
+	 {
+         hPhivsThetaELossX9Y4->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX9Y4->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 37 && FirstPoint_X < 40 && FirstPoint_Y > 0 && FirstPoint_Y < 3)
+	 {
+         hPhivsThetaELossX9Y5->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX9Y5->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 37 && FirstPoint_X < 40 && FirstPoint_Y > 3 && FirstPoint_Y < 6)
+	 {
+         hPhivsThetaELossX9Y6->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX9Y6->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 37 && FirstPoint_X < 40 && FirstPoint_Y > 6 && FirstPoint_Y < 9)
+	 {
+         hPhivsThetaELossX9Y7->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX9Y7->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 37 && FirstPoint_X < 40 && FirstPoint_Y > 9 && FirstPoint_Y < 12)
+	 {
+         hPhivsThetaELossX9Y8->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX9Y8->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      if (FirstPoint_X > 37 && FirstPoint_X < 40 && FirstPoint_Y > 12 && FirstPoint_Y < 15)
+	 {
+         hPhivsThetaELossX9Y9->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159), EnergyLossOutsideTPC);
+         hPhivsThetaELossFluxX9Y9->Fill(mcPhi*(180/3.14159), mcTheta*(180/3.14159));
+	 }
+
+      // ###########################################################
+
+
+
+
+
+
+
+
+
 
 
       // ###################################################################
@@ -1318,6 +2344,122 @@ hPhivsThetaELossDividedL->Divide(hPhivsThetaELossL, hPhivsThetaELossFluxL);
 hELossXvsYDivideL->Divide(hELossXvsYL, hELossXvsYFluxL);
 
 
+// ==================================|
+// === Divided New Map Histograms ===|
+// ==================================|
+
+hPhivsThetaELossDividedX0Y0->Divide(hPhivsThetaELossX0Y0, hPhivsThetaELossFluxX0Y0);
+hPhivsThetaELossDividedX0Y1->Divide(hPhivsThetaELossX0Y1, hPhivsThetaELossFluxX0Y1);
+hPhivsThetaELossDividedX0Y2->Divide(hPhivsThetaELossX0Y2, hPhivsThetaELossFluxX0Y2);
+hPhivsThetaELossDividedX0Y3->Divide(hPhivsThetaELossX0Y3, hPhivsThetaELossFluxX0Y3);
+hPhivsThetaELossDividedX0Y4->Divide(hPhivsThetaELossX0Y4, hPhivsThetaELossFluxX0Y4);
+hPhivsThetaELossDividedX0Y5->Divide(hPhivsThetaELossX0Y5, hPhivsThetaELossFluxX0Y5);
+hPhivsThetaELossDividedX0Y6->Divide(hPhivsThetaELossX0Y6, hPhivsThetaELossFluxX0Y6);
+hPhivsThetaELossDividedX0Y7->Divide(hPhivsThetaELossX0Y7, hPhivsThetaELossFluxX0Y7);
+hPhivsThetaELossDividedX0Y8->Divide(hPhivsThetaELossX0Y8, hPhivsThetaELossFluxX0Y8);
+hPhivsThetaELossDividedX0Y9->Divide(hPhivsThetaELossX0Y9, hPhivsThetaELossFluxX0Y9);
+
+hPhivsThetaELossDividedX1Y0->Divide(hPhivsThetaELossX1Y0, hPhivsThetaELossFluxX1Y0);
+hPhivsThetaELossDividedX1Y1->Divide(hPhivsThetaELossX1Y1, hPhivsThetaELossFluxX1Y1);
+hPhivsThetaELossDividedX1Y2->Divide(hPhivsThetaELossX1Y2, hPhivsThetaELossFluxX1Y2);
+hPhivsThetaELossDividedX1Y3->Divide(hPhivsThetaELossX1Y3, hPhivsThetaELossFluxX1Y3);
+hPhivsThetaELossDividedX1Y4->Divide(hPhivsThetaELossX1Y4, hPhivsThetaELossFluxX1Y4);
+hPhivsThetaELossDividedX1Y5->Divide(hPhivsThetaELossX1Y5, hPhivsThetaELossFluxX1Y5);
+hPhivsThetaELossDividedX1Y6->Divide(hPhivsThetaELossX1Y6, hPhivsThetaELossFluxX1Y6);
+hPhivsThetaELossDividedX1Y7->Divide(hPhivsThetaELossX1Y7, hPhivsThetaELossFluxX1Y7);
+hPhivsThetaELossDividedX1Y8->Divide(hPhivsThetaELossX1Y8, hPhivsThetaELossFluxX1Y8);
+hPhivsThetaELossDividedX1Y9->Divide(hPhivsThetaELossX1Y9, hPhivsThetaELossFluxX1Y9);
+
+hPhivsThetaELossDividedX2Y0->Divide(hPhivsThetaELossX2Y0, hPhivsThetaELossFluxX2Y0);
+hPhivsThetaELossDividedX2Y1->Divide(hPhivsThetaELossX2Y1, hPhivsThetaELossFluxX2Y1);
+hPhivsThetaELossDividedX2Y2->Divide(hPhivsThetaELossX2Y2, hPhivsThetaELossFluxX2Y2);
+hPhivsThetaELossDividedX2Y3->Divide(hPhivsThetaELossX2Y3, hPhivsThetaELossFluxX2Y3);
+hPhivsThetaELossDividedX2Y4->Divide(hPhivsThetaELossX2Y4, hPhivsThetaELossFluxX2Y4);
+hPhivsThetaELossDividedX2Y5->Divide(hPhivsThetaELossX2Y5, hPhivsThetaELossFluxX2Y5);
+hPhivsThetaELossDividedX2Y6->Divide(hPhivsThetaELossX2Y6, hPhivsThetaELossFluxX2Y6);
+hPhivsThetaELossDividedX2Y7->Divide(hPhivsThetaELossX2Y7, hPhivsThetaELossFluxX2Y7);
+hPhivsThetaELossDividedX2Y8->Divide(hPhivsThetaELossX2Y8, hPhivsThetaELossFluxX2Y8);
+hPhivsThetaELossDividedX2Y9->Divide(hPhivsThetaELossX2Y9, hPhivsThetaELossFluxX2Y9);
+
+hPhivsThetaELossDividedX3Y0->Divide(hPhivsThetaELossX3Y0, hPhivsThetaELossFluxX3Y0);
+hPhivsThetaELossDividedX3Y1->Divide(hPhivsThetaELossX3Y1, hPhivsThetaELossFluxX3Y1);
+hPhivsThetaELossDividedX3Y2->Divide(hPhivsThetaELossX3Y2, hPhivsThetaELossFluxX3Y2);
+hPhivsThetaELossDividedX3Y3->Divide(hPhivsThetaELossX3Y3, hPhivsThetaELossFluxX3Y3);
+hPhivsThetaELossDividedX3Y4->Divide(hPhivsThetaELossX3Y4, hPhivsThetaELossFluxX3Y4);
+hPhivsThetaELossDividedX3Y5->Divide(hPhivsThetaELossX3Y5, hPhivsThetaELossFluxX3Y5);
+hPhivsThetaELossDividedX3Y6->Divide(hPhivsThetaELossX3Y6, hPhivsThetaELossFluxX3Y6);
+hPhivsThetaELossDividedX3Y7->Divide(hPhivsThetaELossX3Y7, hPhivsThetaELossFluxX3Y7);
+hPhivsThetaELossDividedX3Y8->Divide(hPhivsThetaELossX3Y8, hPhivsThetaELossFluxX3Y8);
+hPhivsThetaELossDividedX3Y9->Divide(hPhivsThetaELossX3Y9, hPhivsThetaELossFluxX3Y9);
+
+hPhivsThetaELossDividedX4Y0->Divide(hPhivsThetaELossX4Y0, hPhivsThetaELossFluxX4Y0);
+hPhivsThetaELossDividedX4Y1->Divide(hPhivsThetaELossX4Y1, hPhivsThetaELossFluxX4Y1);
+hPhivsThetaELossDividedX4Y2->Divide(hPhivsThetaELossX4Y2, hPhivsThetaELossFluxX4Y2);
+hPhivsThetaELossDividedX4Y3->Divide(hPhivsThetaELossX4Y3, hPhivsThetaELossFluxX4Y3);
+hPhivsThetaELossDividedX4Y4->Divide(hPhivsThetaELossX4Y4, hPhivsThetaELossFluxX4Y4);
+hPhivsThetaELossDividedX4Y5->Divide(hPhivsThetaELossX4Y5, hPhivsThetaELossFluxX4Y5);
+hPhivsThetaELossDividedX4Y6->Divide(hPhivsThetaELossX4Y6, hPhivsThetaELossFluxX4Y6);
+hPhivsThetaELossDividedX4Y7->Divide(hPhivsThetaELossX4Y7, hPhivsThetaELossFluxX4Y7);
+hPhivsThetaELossDividedX4Y8->Divide(hPhivsThetaELossX4Y8, hPhivsThetaELossFluxX4Y8);
+hPhivsThetaELossDividedX4Y9->Divide(hPhivsThetaELossX4Y9, hPhivsThetaELossFluxX4Y9);
+
+hPhivsThetaELossDividedX5Y0->Divide(hPhivsThetaELossX5Y0, hPhivsThetaELossFluxX5Y0);
+hPhivsThetaELossDividedX5Y1->Divide(hPhivsThetaELossX5Y1, hPhivsThetaELossFluxX5Y1);
+hPhivsThetaELossDividedX5Y2->Divide(hPhivsThetaELossX5Y2, hPhivsThetaELossFluxX5Y2);
+hPhivsThetaELossDividedX5Y3->Divide(hPhivsThetaELossX5Y3, hPhivsThetaELossFluxX5Y3);
+hPhivsThetaELossDividedX5Y4->Divide(hPhivsThetaELossX5Y4, hPhivsThetaELossFluxX5Y4);
+hPhivsThetaELossDividedX5Y5->Divide(hPhivsThetaELossX5Y5, hPhivsThetaELossFluxX5Y5);
+hPhivsThetaELossDividedX5Y6->Divide(hPhivsThetaELossX5Y6, hPhivsThetaELossFluxX5Y6);
+hPhivsThetaELossDividedX5Y7->Divide(hPhivsThetaELossX5Y7, hPhivsThetaELossFluxX5Y7);
+hPhivsThetaELossDividedX5Y8->Divide(hPhivsThetaELossX5Y8, hPhivsThetaELossFluxX5Y8);
+hPhivsThetaELossDividedX5Y9->Divide(hPhivsThetaELossX5Y9, hPhivsThetaELossFluxX5Y9);
+
+hPhivsThetaELossDividedX6Y0->Divide(hPhivsThetaELossX6Y0, hPhivsThetaELossFluxX6Y0);
+hPhivsThetaELossDividedX6Y1->Divide(hPhivsThetaELossX6Y1, hPhivsThetaELossFluxX6Y1);
+hPhivsThetaELossDividedX6Y2->Divide(hPhivsThetaELossX6Y2, hPhivsThetaELossFluxX6Y2);
+hPhivsThetaELossDividedX6Y3->Divide(hPhivsThetaELossX6Y3, hPhivsThetaELossFluxX6Y3);
+hPhivsThetaELossDividedX6Y4->Divide(hPhivsThetaELossX6Y4, hPhivsThetaELossFluxX6Y4);
+hPhivsThetaELossDividedX6Y5->Divide(hPhivsThetaELossX6Y5, hPhivsThetaELossFluxX6Y5);
+hPhivsThetaELossDividedX6Y6->Divide(hPhivsThetaELossX6Y6, hPhivsThetaELossFluxX6Y6);
+hPhivsThetaELossDividedX6Y7->Divide(hPhivsThetaELossX6Y7, hPhivsThetaELossFluxX6Y7);
+hPhivsThetaELossDividedX6Y8->Divide(hPhivsThetaELossX6Y8, hPhivsThetaELossFluxX6Y8);
+hPhivsThetaELossDividedX6Y9->Divide(hPhivsThetaELossX6Y9, hPhivsThetaELossFluxX6Y9);
+
+hPhivsThetaELossDividedX7Y0->Divide(hPhivsThetaELossX7Y0, hPhivsThetaELossFluxX7Y0);
+hPhivsThetaELossDividedX7Y1->Divide(hPhivsThetaELossX7Y1, hPhivsThetaELossFluxX7Y1);
+hPhivsThetaELossDividedX7Y2->Divide(hPhivsThetaELossX7Y2, hPhivsThetaELossFluxX7Y2);
+hPhivsThetaELossDividedX7Y3->Divide(hPhivsThetaELossX7Y3, hPhivsThetaELossFluxX7Y3);
+hPhivsThetaELossDividedX7Y4->Divide(hPhivsThetaELossX7Y4, hPhivsThetaELossFluxX7Y4);
+hPhivsThetaELossDividedX7Y5->Divide(hPhivsThetaELossX7Y5, hPhivsThetaELossFluxX7Y5);
+hPhivsThetaELossDividedX7Y6->Divide(hPhivsThetaELossX7Y6, hPhivsThetaELossFluxX7Y6);
+hPhivsThetaELossDividedX7Y7->Divide(hPhivsThetaELossX7Y7, hPhivsThetaELossFluxX7Y7);
+hPhivsThetaELossDividedX7Y8->Divide(hPhivsThetaELossX7Y8, hPhivsThetaELossFluxX7Y8);
+hPhivsThetaELossDividedX7Y9->Divide(hPhivsThetaELossX7Y9, hPhivsThetaELossFluxX7Y9);
+
+hPhivsThetaELossDividedX8Y0->Divide(hPhivsThetaELossX8Y0, hPhivsThetaELossFluxX8Y0);
+hPhivsThetaELossDividedX8Y1->Divide(hPhivsThetaELossX8Y1, hPhivsThetaELossFluxX8Y1);
+hPhivsThetaELossDividedX8Y2->Divide(hPhivsThetaELossX8Y2, hPhivsThetaELossFluxX8Y2);
+hPhivsThetaELossDividedX8Y3->Divide(hPhivsThetaELossX8Y3, hPhivsThetaELossFluxX8Y3);
+hPhivsThetaELossDividedX8Y4->Divide(hPhivsThetaELossX8Y4, hPhivsThetaELossFluxX8Y4);
+hPhivsThetaELossDividedX8Y5->Divide(hPhivsThetaELossX8Y5, hPhivsThetaELossFluxX8Y5);
+hPhivsThetaELossDividedX8Y6->Divide(hPhivsThetaELossX8Y6, hPhivsThetaELossFluxX8Y6);
+hPhivsThetaELossDividedX8Y7->Divide(hPhivsThetaELossX8Y7, hPhivsThetaELossFluxX8Y7);
+hPhivsThetaELossDividedX8Y8->Divide(hPhivsThetaELossX8Y8, hPhivsThetaELossFluxX8Y8);
+hPhivsThetaELossDividedX8Y9->Divide(hPhivsThetaELossX8Y9, hPhivsThetaELossFluxX8Y9);
+
+hPhivsThetaELossDividedX9Y0->Divide(hPhivsThetaELossX9Y0, hPhivsThetaELossFluxX9Y0);
+hPhivsThetaELossDividedX9Y1->Divide(hPhivsThetaELossX9Y1, hPhivsThetaELossFluxX9Y1);
+hPhivsThetaELossDividedX9Y2->Divide(hPhivsThetaELossX9Y2, hPhivsThetaELossFluxX9Y2);
+hPhivsThetaELossDividedX9Y3->Divide(hPhivsThetaELossX9Y3, hPhivsThetaELossFluxX9Y3);
+hPhivsThetaELossDividedX9Y4->Divide(hPhivsThetaELossX9Y4, hPhivsThetaELossFluxX9Y4);
+hPhivsThetaELossDividedX9Y5->Divide(hPhivsThetaELossX9Y5, hPhivsThetaELossFluxX9Y5);
+hPhivsThetaELossDividedX9Y6->Divide(hPhivsThetaELossX9Y6, hPhivsThetaELossFluxX9Y6);
+hPhivsThetaELossDividedX9Y7->Divide(hPhivsThetaELossX9Y7, hPhivsThetaELossFluxX9Y7);
+hPhivsThetaELossDividedX9Y8->Divide(hPhivsThetaELossX9Y8, hPhivsThetaELossFluxX9Y8);
+hPhivsThetaELossDividedX9Y9->Divide(hPhivsThetaELossX9Y9, hPhivsThetaELossFluxX9Y9);
+
+// ==================================|
+
 
 
 
@@ -1464,5 +2606,121 @@ hPhivsThetaELossDividedR->Write();
 hELossXvsYR->Write();
 hELossXvsYFluxR->Write();
 hELossXvsYDivideR->Write();
+
+// =======================|
+// === New Map Writing ===|
+// =======================|
+
+hPhivsThetaELossDividedX0Y0->Write();
+hPhivsThetaELossDividedX0Y1->Write();
+hPhivsThetaELossDividedX0Y2->Write();
+hPhivsThetaELossDividedX0Y3->Write();
+hPhivsThetaELossDividedX0Y4->Write();
+hPhivsThetaELossDividedX0Y5->Write();
+hPhivsThetaELossDividedX0Y6->Write();
+hPhivsThetaELossDividedX0Y7->Write();
+hPhivsThetaELossDividedX0Y8->Write();
+hPhivsThetaELossDividedX0Y9->Write();
+
+hPhivsThetaELossDividedX1Y0->Write();
+hPhivsThetaELossDividedX1Y1->Write();
+hPhivsThetaELossDividedX1Y2->Write();
+hPhivsThetaELossDividedX1Y3->Write();
+hPhivsThetaELossDividedX1Y4->Write();
+hPhivsThetaELossDividedX1Y5->Write();
+hPhivsThetaELossDividedX1Y6->Write();
+hPhivsThetaELossDividedX1Y7->Write();
+hPhivsThetaELossDividedX1Y8->Write();
+hPhivsThetaELossDividedX1Y9->Write();
+
+hPhivsThetaELossDividedX2Y0->Write();
+hPhivsThetaELossDividedX2Y1->Write();
+hPhivsThetaELossDividedX2Y2->Write();
+hPhivsThetaELossDividedX2Y3->Write();
+hPhivsThetaELossDividedX2Y4->Write();
+hPhivsThetaELossDividedX2Y5->Write();
+hPhivsThetaELossDividedX2Y6->Write();
+hPhivsThetaELossDividedX2Y7->Write();
+hPhivsThetaELossDividedX2Y8->Write();
+hPhivsThetaELossDividedX2Y9->Write();
+
+hPhivsThetaELossDividedX3Y0->Write();
+hPhivsThetaELossDividedX3Y1->Write();
+hPhivsThetaELossDividedX3Y2->Write();
+hPhivsThetaELossDividedX3Y3->Write();
+hPhivsThetaELossDividedX3Y4->Write();
+hPhivsThetaELossDividedX3Y5->Write();
+hPhivsThetaELossDividedX3Y6->Write();
+hPhivsThetaELossDividedX3Y7->Write();
+hPhivsThetaELossDividedX3Y8->Write();
+hPhivsThetaELossDividedX3Y9->Write();
+
+hPhivsThetaELossDividedX4Y0->Write();
+hPhivsThetaELossDividedX4Y1->Write();
+hPhivsThetaELossDividedX4Y2->Write();
+hPhivsThetaELossDividedX4Y3->Write();
+hPhivsThetaELossDividedX4Y4->Write();
+hPhivsThetaELossDividedX4Y5->Write();
+hPhivsThetaELossDividedX4Y6->Write();
+hPhivsThetaELossDividedX4Y7->Write();
+hPhivsThetaELossDividedX4Y8->Write();
+hPhivsThetaELossDividedX4Y9->Write();
+
+hPhivsThetaELossDividedX5Y0->Write();
+hPhivsThetaELossDividedX5Y1->Write();
+hPhivsThetaELossDividedX5Y2->Write();
+hPhivsThetaELossDividedX5Y3->Write();
+hPhivsThetaELossDividedX5Y4->Write();
+hPhivsThetaELossDividedX5Y5->Write();
+hPhivsThetaELossDividedX5Y6->Write();
+hPhivsThetaELossDividedX5Y7->Write();
+hPhivsThetaELossDividedX5Y8->Write();
+hPhivsThetaELossDividedX5Y9->Write();
+
+hPhivsThetaELossDividedX6Y0->Write();
+hPhivsThetaELossDividedX6Y1->Write();
+hPhivsThetaELossDividedX6Y2->Write();
+hPhivsThetaELossDividedX6Y3->Write();
+hPhivsThetaELossDividedX6Y4->Write();
+hPhivsThetaELossDividedX6Y5->Write();
+hPhivsThetaELossDividedX6Y6->Write();
+hPhivsThetaELossDividedX6Y7->Write();
+hPhivsThetaELossDividedX6Y8->Write();
+hPhivsThetaELossDividedX6Y9->Write();
+
+hPhivsThetaELossDividedX7Y0->Write();
+hPhivsThetaELossDividedX7Y1->Write();
+hPhivsThetaELossDividedX7Y2->Write();
+hPhivsThetaELossDividedX7Y3->Write();
+hPhivsThetaELossDividedX7Y4->Write();
+hPhivsThetaELossDividedX7Y5->Write();
+hPhivsThetaELossDividedX7Y6->Write();
+hPhivsThetaELossDividedX7Y7->Write();
+hPhivsThetaELossDividedX7Y8->Write();
+hPhivsThetaELossDividedX7Y9->Write();
+
+hPhivsThetaELossDividedX8Y0->Write();
+hPhivsThetaELossDividedX8Y1->Write();
+hPhivsThetaELossDividedX8Y2->Write();
+hPhivsThetaELossDividedX8Y3->Write();
+hPhivsThetaELossDividedX8Y4->Write();
+hPhivsThetaELossDividedX8Y5->Write();
+hPhivsThetaELossDividedX8Y6->Write();
+hPhivsThetaELossDividedX8Y7->Write();
+hPhivsThetaELossDividedX8Y8->Write();
+hPhivsThetaELossDividedX8Y9->Write();
+
+hPhivsThetaELossDividedX9Y0->Write();
+hPhivsThetaELossDividedX9Y1->Write();
+hPhivsThetaELossDividedX9Y2->Write();
+hPhivsThetaELossDividedX9Y3->Write();
+hPhivsThetaELossDividedX9Y4->Write();
+hPhivsThetaELossDividedX9Y5->Write();
+hPhivsThetaELossDividedX9Y6->Write();
+hPhivsThetaELossDividedX9Y7->Write();
+hPhivsThetaELossDividedX9Y8->Write();
+hPhivsThetaELossDividedX9Y9->Write();
+
+// =======================|
 
 }//<----End Loop()
