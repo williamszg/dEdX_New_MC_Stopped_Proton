@@ -1825,100 +1825,2265 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
       float PhiInDegrees   = mcPhi *(180/3.14159);
       float ThetaInDegrees = mcTheta *(180/3.14159);
       
-      
-      // ################################################
-      // ### Deterimine which histogram I should open ###
-      // ################################################
-      if(FirstPoint_Y > 5 && FirstPoint_Y < 15)
-         {
-	 TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedTop");
-	 
-	 // ### Loop over the phi bins ###
-	 for(int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+
+      // ###############################################|
+      // ### New Determining Which Histogram to Open ###|
+      // ###############################################|
+
+      if (FirstPoint_X > 10 && FirstPoint_X < 13)
+	 {
+
+         if (FirstPoint_Y > -15 && FirstPoint_Y < -12)
             {
-	    // ### Match the phi angle ###
-	    if(PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
-	       {
-	       // ### Loop over the theta bins ###
-	       for(int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX0Y0");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
 	          {
-	          // ### Match the theta angle ###
-		  if(ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
-		     {
-	             EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
-		     
-		     //std::cout<<"PhiInDegrees = "<<PhiInDegrees<<", ThetaInDegrees = "<<ThetaInDegrees<<std::endl;
-		     //std::cout<<"EnergyLossFromMap = "<<EnergyLossFromMap<<std::endl;
-	    
-	             }//<---End only looking if theta is matched
-	          }//<---End nYbins loop
-	       }//<---End only looking if the Phi is matched
-	    }//<---End nXbins loop
-	 
-	 }//<---End Y in the top
-      
-      // ################################################
-      // ### Deterimine which histogram I should open ###
-      // ################################################
-      if(FirstPoint_Y > -5 && FirstPoint_Y < 5)
-         {
-	 TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedMid");
-	 
-	 // ### Loop over the phi bins ###
-	 for(int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y0 if
+
+         if (FirstPoint_Y > -12 && FirstPoint_Y < -9)
             {
-	    // ### Match the phi angle ###
-	    if(PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
-	       {
-	       // ### Loop over the theta bins ###
-	       for(int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX0Y1");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
 	          {
-	          // ### Match the theta angle ###
-		  if(ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
-		     {
-	             EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
-		     
-		     //std::cout<<"PhiInDegrees = "<<PhiInDegrees<<", ThetaInDegrees = "<<ThetaInDegrees<<std::endl;
-		     //std::cout<<"EnergyLossFromMap = "<<EnergyLossFromMap<<std::endl;
-	    
-	             }//<---End only looking if theta is matched
-	          }//<---End nYbins loop
-	       }//<---End only looking if the Phi is matched
-	    }//<---End nXbins loop
-	 
-	 }//<---End Y in the top
-      
-      // ################################################
-      // ### Deterimine which histogram I should open ###
-      // ################################################
-      if(FirstPoint_Y > -15 && FirstPoint_Y < -5)
-         {
-	 TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedBottom");
-	 
-	 // ### Loop over the phi bins ###
-	 for(int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y1 if
+
+         if (FirstPoint_Y > -9 && FirstPoint_Y < -6)
             {
-	    // ### Match the phi angle ###
-	    if(PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
-	       {
-	       // ### Loop over the theta bins ###
-	       for(int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX0Y2");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
 	          {
-	          // ### Match the theta angle ###
-		  if(ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
-		     {
-	             EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
-		     
-		     //std::cout<<"PhiInDegrees = "<<PhiInDegrees<<", ThetaInDegrees = "<<ThetaInDegrees<<std::endl;
-		     //std::cout<<"EnergyLossFromMap = "<<EnergyLossFromMap<<std::endl;
-	    
-	             }//<---End only looking if theta is matched
-	          }//<---End nYbins loop
-	       }//<---End only looking if the Phi is matched
-	    }//<---End nXbins loop
-	 
-	 }//<---End Y in the top    
-      
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y2 if
+
+         if (FirstPoint_Y > -6 && FirstPoint_Y < -3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX0Y3");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y3 if
+
+         if (FirstPoint_Y > -3 && FirstPoint_Y < 0)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX0Y4");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y4 if
+
+         if (FirstPoint_Y > 0 && FirstPoint_Y < 3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX0Y5");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y5 if
+
+         if (FirstPoint_Y > 3 && FirstPoint_Y < 6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX0Y6");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y6 if
+
+         if (FirstPoint_Y > 6 && FirstPoint_Y < 9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX0Y7");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y7 if
+
+         if (FirstPoint_Y > 9 && FirstPoint_Y < 12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX0Y8");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y8 if
+
+         if (FirstPoint_Y > 12 && FirstPoint_Y < 15)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX0Y9");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y9 if
+
+         }//<---End X0 if
+
+      if (FirstPoint_X > 13 && FirstPoint_X < 16)
+	 {
+
+         if (FirstPoint_Y > -15 && FirstPoint_Y < -12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX1Y0");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y0 if
+
+         if (FirstPoint_Y > -12 && FirstPoint_Y < -9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX1Y1");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y1 if
+
+         if (FirstPoint_Y > -9 && FirstPoint_Y < -6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX1Y2");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y2 if
+
+         if (FirstPoint_Y > -6 && FirstPoint_Y < -3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX1Y3");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y3 if
+
+         if (FirstPoint_Y > -3 && FirstPoint_Y < 0)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX1Y4");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y4 if
+
+         if (FirstPoint_Y > 0 && FirstPoint_Y < 3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX1Y5");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y5 if
+
+         if (FirstPoint_Y > 3 && FirstPoint_Y < 6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX1Y6");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y6 if
+
+         if (FirstPoint_Y > 6 && FirstPoint_Y < 9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX1Y7");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y7 if
+
+         if (FirstPoint_Y > 9 && FirstPoint_Y < 12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX1Y8");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y8 if
+
+         if (FirstPoint_Y > 12 && FirstPoint_Y < 15)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX1Y9");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y9 if
+
+         }//<---End X1 if
+
+      if (FirstPoint_X > 16 && FirstPoint_X < 19)
+	 {
+
+         if (FirstPoint_Y > -15 && FirstPoint_Y < -12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX2Y0");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y0 if
+
+         if (FirstPoint_Y > -12 && FirstPoint_Y < -9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX2Y1");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y1 if
+
+         if (FirstPoint_Y > -9 && FirstPoint_Y < -6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX2Y2");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y2 if
+
+         if (FirstPoint_Y > -6 && FirstPoint_Y < -3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX2Y3");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y3 if
+
+         if (FirstPoint_Y > -3 && FirstPoint_Y < 0)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX2Y4");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y4 if
+
+         if (FirstPoint_Y > 0 && FirstPoint_Y < 3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX2Y5");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y5 if
+
+         if (FirstPoint_Y > 3 && FirstPoint_Y < 6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX2Y6");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y6 if
+
+         if (FirstPoint_Y > 6 && FirstPoint_Y < 9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX2Y7");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y7 if
+
+         if (FirstPoint_Y > 9 && FirstPoint_Y < 12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX2Y8");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y8 if
+
+         if (FirstPoint_Y > 12 && FirstPoint_Y < 15)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX2Y9");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y9 if
+
+         }//<---End X2 if
+
+      if (FirstPoint_X > 19 && FirstPoint_X < 22)
+	 {
+
+         if (FirstPoint_Y > -15 && FirstPoint_Y < -12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX3Y0");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y0 if
+
+         if (FirstPoint_Y > -12 && FirstPoint_Y < -9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX3Y1");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y1 if
+
+         if (FirstPoint_Y > -9 && FirstPoint_Y < -6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX3Y2");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y2 if
+
+         if (FirstPoint_Y > -6 && FirstPoint_Y < -3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX3Y3");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y3 if
+
+         if (FirstPoint_Y > -3 && FirstPoint_Y < 0)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX3Y4");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y4 if
+
+         if (FirstPoint_Y > 0 && FirstPoint_Y < 3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX3Y5");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y5 if
+
+         if (FirstPoint_Y > 3 && FirstPoint_Y < 6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX3Y6");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y6 if
+
+         if (FirstPoint_Y > 6 && FirstPoint_Y < 9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX3Y7");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y7 if
+
+         if (FirstPoint_Y > 9 && FirstPoint_Y < 12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX3Y8");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y8 if
+
+         if (FirstPoint_Y > 12 && FirstPoint_Y < 15)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX3Y9");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y9 if
+
+         }//<---End X3 if
+
+      if (FirstPoint_X > 22 && FirstPoint_X < 25)
+	 {
+
+         if (FirstPoint_Y > -15 && FirstPoint_Y < -12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX4Y0");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y0 if
+
+         if (FirstPoint_Y > -12 && FirstPoint_Y < -9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX4Y1");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y1 if
+
+         if (FirstPoint_Y > -9 && FirstPoint_Y < -6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX4Y2");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y2 if
+
+         if (FirstPoint_Y > -6 && FirstPoint_Y < -3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX4Y3");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y3 if
+
+         if (FirstPoint_Y > -3 && FirstPoint_Y < 0)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX4Y4");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y4 if
+
+         if (FirstPoint_Y > 0 && FirstPoint_Y < 3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX4Y5");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y5 if
+
+         if (FirstPoint_Y > 3 && FirstPoint_Y < 6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX4Y6");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y6 if
+
+         if (FirstPoint_Y > 6 && FirstPoint_Y < 9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX4Y7");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y7 if
+
+         if (FirstPoint_Y > 9 && FirstPoint_Y < 12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX4Y8");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y8 if
+
+         if (FirstPoint_Y > 12 && FirstPoint_Y < 15)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX4Y9");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y9 if
+
+         }//<---End X4 if
+
+      if (FirstPoint_X > 25 && FirstPoint_X < 28)
+	 {
+
+         if (FirstPoint_Y > -15 && FirstPoint_Y < -12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX5Y0");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y0 if
+
+         if (FirstPoint_Y > -12 && FirstPoint_Y < -9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX5Y1");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y1 if
+
+         if (FirstPoint_Y > -9 && FirstPoint_Y < -6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX5Y2");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y2 if
+
+         if (FirstPoint_Y > -6 && FirstPoint_Y < -3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX5Y3");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y3 if
+
+         if (FirstPoint_Y > -3 && FirstPoint_Y < 0)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX5Y4");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y4 if
+
+         if (FirstPoint_Y > 0 && FirstPoint_Y < 3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX5Y5");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y5 if
+
+         if (FirstPoint_Y > 3 && FirstPoint_Y < 6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX5Y6");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y6 if
+
+         if (FirstPoint_Y > 6 && FirstPoint_Y < 9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX5Y7");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y7 if
+
+         if (FirstPoint_Y > 9 && FirstPoint_Y < 12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX5Y8");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y8 if
+
+         if (FirstPoint_Y > 12 && FirstPoint_Y < 15)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX5Y9");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y9 if
+
+         }//<---End X5 if
+
+      if (FirstPoint_X > 28 && FirstPoint_X < 31)
+	 {
+
+         if (FirstPoint_Y > -15 && FirstPoint_Y < -12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX6Y0");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y0 if
+
+         if (FirstPoint_Y > -12 && FirstPoint_Y < -9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX6Y1");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y1 if
+
+         if (FirstPoint_Y > -9 && FirstPoint_Y < -6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX6Y2");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y2 if
+
+         if (FirstPoint_Y > -6 && FirstPoint_Y < -3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX6Y3");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y3 if
+
+         if (FirstPoint_Y > -3 && FirstPoint_Y < 0)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX6Y4");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y4 if
+
+         if (FirstPoint_Y > 0 && FirstPoint_Y < 3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX6Y5");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y5 if
+
+         if (FirstPoint_Y > 3 && FirstPoint_Y < 6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX6Y6");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y6 if
+
+         if (FirstPoint_Y > 6 && FirstPoint_Y < 9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX6Y7");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y7 if
+
+         if (FirstPoint_Y > 9 && FirstPoint_Y < 12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX6Y8");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y8 if
+
+         if (FirstPoint_Y > 12 && FirstPoint_Y < 15)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX6Y9");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y9 if
+
+         }//<---End X6 if
+
+      if (FirstPoint_X > 31 && FirstPoint_X < 34)
+	 {
+
+         if (FirstPoint_Y > -15 && FirstPoint_Y < -12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX7Y0");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y0 if
+
+         if (FirstPoint_Y > -12 && FirstPoint_Y < -9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX7Y1");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y1 if
+
+         if (FirstPoint_Y > -9 && FirstPoint_Y < -6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX7Y2");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y2 if
+
+         if (FirstPoint_Y > -6 && FirstPoint_Y < -3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX7Y3");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y3 if
+
+         if (FirstPoint_Y > -3 && FirstPoint_Y < 0)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX7Y4");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y4 if
+
+         if (FirstPoint_Y > 0 && FirstPoint_Y < 3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX7Y5");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y5 if
+
+         if (FirstPoint_Y > 3 && FirstPoint_Y < 6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX7Y6");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y6 if
+
+         if (FirstPoint_Y > 6 && FirstPoint_Y < 9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX7Y7");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y7 if
+
+         if (FirstPoint_Y > 9 && FirstPoint_Y < 12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX7Y8");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y8 if
+
+         if (FirstPoint_Y > 12 && FirstPoint_Y < 15)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX7Y9");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y9 if
+
+         }//<---End X7 if
+
+      if (FirstPoint_X > 34 && FirstPoint_X < 37)
+	 {
+
+         if (FirstPoint_Y > -15 && FirstPoint_Y < -12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX8Y0");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y0 if
+
+         if (FirstPoint_Y > -12 && FirstPoint_Y < -9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX8Y1");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y1 if
+
+         if (FirstPoint_Y > -9 && FirstPoint_Y < -6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX8Y2");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y2 if
+
+         if (FirstPoint_Y > -6 && FirstPoint_Y < -3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX8Y3");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y3 if
+
+         if (FirstPoint_Y > -3 && FirstPoint_Y < 0)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX8Y4");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y4 if
+
+         if (FirstPoint_Y > 0 && FirstPoint_Y < 3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX8Y5");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y5 if
+
+         if (FirstPoint_Y > 3 && FirstPoint_Y < 6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX8Y6");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y6 if
+
+         if (FirstPoint_Y > 6 && FirstPoint_Y < 9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX8Y7");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y7 if
+
+         if (FirstPoint_Y > 9 && FirstPoint_Y < 12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX8Y8");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y8 if
+
+         if (FirstPoint_Y > 12 && FirstPoint_Y < 15)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX8Y9");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y9 if
+
+         }//<---End X8 if
+
+      if (FirstPoint_X > 37 && FirstPoint_X < 40)
+	 {
+
+         if (FirstPoint_Y > -15 && FirstPoint_Y < -12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX9Y0");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y0 if
+
+         if (FirstPoint_Y > -12 && FirstPoint_Y < -9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX9Y1");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y1 if
+
+         if (FirstPoint_Y > -9 && FirstPoint_Y < -6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX9Y2");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y2 if
+
+         if (FirstPoint_Y > -6 && FirstPoint_Y < -3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX9Y3");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y3 if
+
+         if (FirstPoint_Y > -3 && FirstPoint_Y < 0)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX9Y4");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y4 if
+
+         if (FirstPoint_Y > 0 && FirstPoint_Y < 3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX9Y5");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y5 if
+
+         if (FirstPoint_Y > 3 && FirstPoint_Y < 6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX9Y6");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y6 if
+
+         if (FirstPoint_Y > 6 && FirstPoint_Y < 9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX9Y7");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y7 if
+
+         if (FirstPoint_Y > 9 && FirstPoint_Y < 12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX9Y8");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y8 if
+
+         if (FirstPoint_Y > 12 && FirstPoint_Y < 15)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX9Y9");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y9 if
+
+         }//<---End X9 if
+
+      // ###############################################|
+
+
+
       if(EnergyLossFromMap == 0){EnergyLossFromMap = 66.6;}
       
       // ###################################################################
@@ -2143,93 +4308,2266 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
    
    
    // ### Skipping events which aren't reconstructed ###
-   if(nMCRecoSpts < 1){ReconstructedEvent = false; continue;}
-   
-   
-   
-   // ################################################
-   // ### Deterimine which histogram I should open ###
-   // ################################################
-   if(FirstSpacePointY > 5 && FirstSpacePointY < 15)
-      {
-      TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedTop");
-      
-      // ### Loop over the phi bins ###
-      for(int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
-         {
-	 // ### Match the phi angle ###
-	 if(RecoTPCPhi > (nXbins - 1)*5 && RecoTPCPhi < nXbins * 5)
-	    {
-	    // ### Loop over the theta bins ###
-	    for(int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
-	       {
-	       // ### Match the theta angle ###
-	       if(RecoTPCTheta > ((nYbins - 1)*5) - 10 && RecoTPCTheta < (nYbins*5) - 10)
-	          {
-		  EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
-		  
-		  }//<---End only looking if theta is matched
-	       }//<---End nYbins loop
-	    }//<---End only looking if the Phi is matched
-	 }//<---End nXbins loop
-	 
-      }//<---End Y in the top
-      
-   // ################################################
-   // ### Deterimine which histogram I should open ###
-   // ################################################
-   if(FirstSpacePointY > -5 && FirstSpacePointY < 5)
-      {
-      TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedMid");
-      
-      // ### Loop over the phi bins ###
-      for(int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
-         {
-	 // ### Match the phi angle ###
-	 if(RecoTPCPhi > (nXbins - 1)*5 && RecoTPCPhi < nXbins * 5)
-	    {
-	    // ### Loop over the theta bins ###
-	    for(int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
-	       {
-	       // ### Match the theta angle ###
-	       if(RecoTPCTheta > ((nYbins - 1)*5) - 10 && RecoTPCTheta < (nYbins*5) - 10)
-	          {
-	          EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
-		
-	          }//<---End only looking if theta is matched
-	       }//<---End nYbins loop
-	    }//<---End only looking if the Phi is matched
-	 }//<---End nXbins loop
-      }//<---End Y in the top
-      
-   // ################################################
-   // ### Deterimine which histogram I should open ###
-   // ################################################
-   if(FirstSpacePointY > -15 && FirstSpacePointY < -5)        
-      {
-      TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedBottom");
-      
-      // ### Loop over the phi bins ###
-      for(int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
-         {
-	 // ### Match the phi angle ###
-	 if(RecoTPCPhi > (nXbins - 1)*5 && RecoTPCPhi < nXbins * 5)
-	    {
-	   // ### Loop over the theta bins ###
-	    for(int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
-               {
-               // ### Match the theta angle ###
-	       if(RecoTPCTheta > ((nYbins - 1)*5) - 10 && RecoTPCTheta < (nYbins*5) - 10)
-	          {
-		  EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+   if(nMCRecoSpts < 1){ReconstructedEvent = false; continue;} 
+     
 
-	          }//<---End only looking if theta is matched
-	       }//<---End nYbins loop
-	    }//<---End only looking if the Phi is matched
-	 }//<---End nXbins loop
-	 
-      }//<---End Y in the top    
-      
+      // ###############################################|
+      // ### New Determining Which Histogram to Open ###|
+      // ###############################################|
+
+      if (FirstPoint_X > 10 && FirstPoint_X < 13)
+	 {
+
+         if (FirstPoint_Y > -15 && FirstPoint_Y < -12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX0Y0");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y0 if
+
+         if (FirstPoint_Y > -12 && FirstPoint_Y < -9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX0Y1");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y1 if
+
+         if (FirstPoint_Y > -9 && FirstPoint_Y < -6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX0Y2");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y2 if
+
+         if (FirstPoint_Y > -6 && FirstPoint_Y < -3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX0Y3");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y3 if
+
+         if (FirstPoint_Y > -3 && FirstPoint_Y < 0)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX0Y4");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y4 if
+
+         if (FirstPoint_Y > 0 && FirstPoint_Y < 3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX0Y5");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y5 if
+
+         if (FirstPoint_Y > 3 && FirstPoint_Y < 6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX0Y6");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y6 if
+
+         if (FirstPoint_Y > 6 && FirstPoint_Y < 9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX0Y7");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y7 if
+
+         if (FirstPoint_Y > 9 && FirstPoint_Y < 12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX0Y8");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y8 if
+
+         if (FirstPoint_Y > 12 && FirstPoint_Y < 15)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX0Y9");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y9 if
+
+         }//<---End X0 if
+
+      if (FirstPoint_X > 13 && FirstPoint_X < 16)
+	 {
+
+         if (FirstPoint_Y > -15 && FirstPoint_Y < -12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX1Y0");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y0 if
+
+         if (FirstPoint_Y > -12 && FirstPoint_Y < -9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX1Y1");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y1 if
+
+         if (FirstPoint_Y > -9 && FirstPoint_Y < -6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX1Y2");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y2 if
+
+         if (FirstPoint_Y > -6 && FirstPoint_Y < -3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX1Y3");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y3 if
+
+         if (FirstPoint_Y > -3 && FirstPoint_Y < 0)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX1Y4");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y4 if
+
+         if (FirstPoint_Y > 0 && FirstPoint_Y < 3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX1Y5");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y5 if
+
+         if (FirstPoint_Y > 3 && FirstPoint_Y < 6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX1Y6");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y6 if
+
+         if (FirstPoint_Y > 6 && FirstPoint_Y < 9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX1Y7");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y7 if
+
+         if (FirstPoint_Y > 9 && FirstPoint_Y < 12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX1Y8");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y8 if
+
+         if (FirstPoint_Y > 12 && FirstPoint_Y < 15)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX1Y9");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y9 if
+
+         }//<---End X1 if
+
+      if (FirstPoint_X > 16 && FirstPoint_X < 19)
+	 {
+
+         if (FirstPoint_Y > -15 && FirstPoint_Y < -12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX2Y0");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y0 if
+
+         if (FirstPoint_Y > -12 && FirstPoint_Y < -9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX2Y1");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y1 if
+
+         if (FirstPoint_Y > -9 && FirstPoint_Y < -6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX2Y2");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y2 if
+
+         if (FirstPoint_Y > -6 && FirstPoint_Y < -3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX2Y3");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y3 if
+
+         if (FirstPoint_Y > -3 && FirstPoint_Y < 0)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX2Y4");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y4 if
+
+         if (FirstPoint_Y > 0 && FirstPoint_Y < 3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX2Y5");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y5 if
+
+         if (FirstPoint_Y > 3 && FirstPoint_Y < 6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX2Y6");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y6 if
+
+         if (FirstPoint_Y > 6 && FirstPoint_Y < 9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX2Y7");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y7 if
+
+         if (FirstPoint_Y > 9 && FirstPoint_Y < 12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX2Y8");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y8 if
+
+         if (FirstPoint_Y > 12 && FirstPoint_Y < 15)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX2Y9");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y9 if
+
+         }//<---End X2 if
+
+      if (FirstPoint_X > 19 && FirstPoint_X < 22)
+	 {
+
+         if (FirstPoint_Y > -15 && FirstPoint_Y < -12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX3Y0");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y0 if
+
+         if (FirstPoint_Y > -12 && FirstPoint_Y < -9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX3Y1");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y1 if
+
+         if (FirstPoint_Y > -9 && FirstPoint_Y < -6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX3Y2");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y2 if
+
+         if (FirstPoint_Y > -6 && FirstPoint_Y < -3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX3Y3");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y3 if
+
+         if (FirstPoint_Y > -3 && FirstPoint_Y < 0)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX3Y4");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y4 if
+
+         if (FirstPoint_Y > 0 && FirstPoint_Y < 3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX3Y5");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y5 if
+
+         if (FirstPoint_Y > 3 && FirstPoint_Y < 6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX3Y6");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y6 if
+
+         if (FirstPoint_Y > 6 && FirstPoint_Y < 9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX3Y7");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y7 if
+
+         if (FirstPoint_Y > 9 && FirstPoint_Y < 12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX3Y8");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y8 if
+
+         if (FirstPoint_Y > 12 && FirstPoint_Y < 15)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX3Y9");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y9 if
+
+         }//<---End X3 if
+
+      if (FirstPoint_X > 22 && FirstPoint_X < 25)
+	 {
+
+         if (FirstPoint_Y > -15 && FirstPoint_Y < -12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX4Y0");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y0 if
+
+         if (FirstPoint_Y > -12 && FirstPoint_Y < -9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX4Y1");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y1 if
+
+         if (FirstPoint_Y > -9 && FirstPoint_Y < -6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX4Y2");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y2 if
+
+         if (FirstPoint_Y > -6 && FirstPoint_Y < -3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX4Y3");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y3 if
+
+         if (FirstPoint_Y > -3 && FirstPoint_Y < 0)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX4Y4");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y4 if
+
+         if (FirstPoint_Y > 0 && FirstPoint_Y < 3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX4Y5");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y5 if
+
+         if (FirstPoint_Y > 3 && FirstPoint_Y < 6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX4Y6");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y6 if
+
+         if (FirstPoint_Y > 6 && FirstPoint_Y < 9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX4Y7");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y7 if
+
+         if (FirstPoint_Y > 9 && FirstPoint_Y < 12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX4Y8");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y8 if
+
+         if (FirstPoint_Y > 12 && FirstPoint_Y < 15)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX4Y9");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y9 if
+
+         }//<---End X4 if
+
+      if (FirstPoint_X > 25 && FirstPoint_X < 28)
+	 {
+
+         if (FirstPoint_Y > -15 && FirstPoint_Y < -12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX5Y0");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y0 if
+
+         if (FirstPoint_Y > -12 && FirstPoint_Y < -9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX5Y1");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y1 if
+
+         if (FirstPoint_Y > -9 && FirstPoint_Y < -6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX5Y2");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y2 if
+
+         if (FirstPoint_Y > -6 && FirstPoint_Y < -3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX5Y3");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y3 if
+
+         if (FirstPoint_Y > -3 && FirstPoint_Y < 0)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX5Y4");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y4 if
+
+         if (FirstPoint_Y > 0 && FirstPoint_Y < 3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX5Y5");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y5 if
+
+         if (FirstPoint_Y > 3 && FirstPoint_Y < 6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX5Y6");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y6 if
+
+         if (FirstPoint_Y > 6 && FirstPoint_Y < 9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX5Y7");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y7 if
+
+         if (FirstPoint_Y > 9 && FirstPoint_Y < 12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX5Y8");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y8 if
+
+         if (FirstPoint_Y > 12 && FirstPoint_Y < 15)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX5Y9");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y9 if
+
+         }//<---End X5 if
+
+      if (FirstPoint_X > 28 && FirstPoint_X < 31)
+	 {
+
+         if (FirstPoint_Y > -15 && FirstPoint_Y < -12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX6Y0");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y0 if
+
+         if (FirstPoint_Y > -12 && FirstPoint_Y < -9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX6Y1");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y1 if
+
+         if (FirstPoint_Y > -9 && FirstPoint_Y < -6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX6Y2");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y2 if
+
+         if (FirstPoint_Y > -6 && FirstPoint_Y < -3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX6Y3");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y3 if
+
+         if (FirstPoint_Y > -3 && FirstPoint_Y < 0)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX6Y4");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y4 if
+
+         if (FirstPoint_Y > 0 && FirstPoint_Y < 3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX6Y5");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y5 if
+
+         if (FirstPoint_Y > 3 && FirstPoint_Y < 6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX6Y6");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y6 if
+
+         if (FirstPoint_Y > 6 && FirstPoint_Y < 9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX6Y7");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y7 if
+
+         if (FirstPoint_Y > 9 && FirstPoint_Y < 12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX6Y8");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y8 if
+
+         if (FirstPoint_Y > 12 && FirstPoint_Y < 15)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX6Y9");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y9 if
+
+         }//<---End X6 if
+
+      if (FirstPoint_X > 31 && FirstPoint_X < 34)
+	 {
+
+         if (FirstPoint_Y > -15 && FirstPoint_Y < -12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX7Y0");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y0 if
+
+         if (FirstPoint_Y > -12 && FirstPoint_Y < -9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX7Y1");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y1 if
+
+         if (FirstPoint_Y > -9 && FirstPoint_Y < -6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX7Y2");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y2 if
+
+         if (FirstPoint_Y > -6 && FirstPoint_Y < -3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX7Y3");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y3 if
+
+         if (FirstPoint_Y > -3 && FirstPoint_Y < 0)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX7Y4");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y4 if
+
+         if (FirstPoint_Y > 0 && FirstPoint_Y < 3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX7Y5");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y5 if
+
+         if (FirstPoint_Y > 3 && FirstPoint_Y < 6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX7Y6");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y6 if
+
+         if (FirstPoint_Y > 6 && FirstPoint_Y < 9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX7Y7");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y7 if
+
+         if (FirstPoint_Y > 9 && FirstPoint_Y < 12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX7Y8");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y8 if
+
+         if (FirstPoint_Y > 12 && FirstPoint_Y < 15)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX7Y9");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y9 if
+
+         }//<---End X7 if
+
+      if (FirstPoint_X > 34 && FirstPoint_X < 37)
+	 {
+
+         if (FirstPoint_Y > -15 && FirstPoint_Y < -12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX8Y0");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y0 if
+
+         if (FirstPoint_Y > -12 && FirstPoint_Y < -9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX8Y1");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y1 if
+
+         if (FirstPoint_Y > -9 && FirstPoint_Y < -6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX8Y2");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y2 if
+
+         if (FirstPoint_Y > -6 && FirstPoint_Y < -3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX8Y3");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y3 if
+
+         if (FirstPoint_Y > -3 && FirstPoint_Y < 0)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX8Y4");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y4 if
+
+         if (FirstPoint_Y > 0 && FirstPoint_Y < 3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX8Y5");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y5 if
+
+         if (FirstPoint_Y > 3 && FirstPoint_Y < 6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX8Y6");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y6 if
+
+         if (FirstPoint_Y > 6 && FirstPoint_Y < 9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX8Y7");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y7 if
+
+         if (FirstPoint_Y > 9 && FirstPoint_Y < 12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX8Y8");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y8 if
+
+         if (FirstPoint_Y > 12 && FirstPoint_Y < 15)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX8Y9");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y9 if
+
+         }//<---End X8 if
+
+      if (FirstPoint_X > 37 && FirstPoint_X < 40)
+	 {
+
+         if (FirstPoint_Y > -15 && FirstPoint_Y < -12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX9Y0");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y0 if
+
+         if (FirstPoint_Y > -12 && FirstPoint_Y < -9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX9Y1");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y1 if
+
+         if (FirstPoint_Y > -9 && FirstPoint_Y < -6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX9Y2");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y2 if
+
+         if (FirstPoint_Y > -6 && FirstPoint_Y < -3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX9Y3");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y3 if
+
+         if (FirstPoint_Y > -3 && FirstPoint_Y < 0)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX9Y4");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y4 if
+
+         if (FirstPoint_Y > 0 && FirstPoint_Y < 3)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX9Y5");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y5 if
+
+         if (FirstPoint_Y > 3 && FirstPoint_Y < 6)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX9Y6");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y6 if
+
+         if (FirstPoint_Y > 6 && FirstPoint_Y < 9)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX9Y7");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y7 if
+
+         if (FirstPoint_Y > 9 && FirstPoint_Y < 12)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX9Y8");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y8 if
+
+         if (FirstPoint_Y > 12 && FirstPoint_Y < 15)
+            {
+	    TH1F *hMCELossMap = (TH1F*)f1->Get("hPhivsThetaELossDividedX9Y9");
+	    // ### Loop over the phi bins ###
+	    for (int nXbins = 1; nXbins < hMCELossMap->GetNbinsX(); nXbins++)
+               {
+	       // ### Match the phi angle ###
+	       if (PhiInDegrees > (nXbins - 1)*5 && PhiInDegrees < nXbins * 5)
+	          {
+	          // ### Loop over the theta bins ###
+	          for (int nYbins = 1; nYbins < hMCELossMap->GetNbinsY(); nYbins++)
+	             {
+	             // ### Match the theta angle ###
+		     if (ThetaInDegrees > ((nYbins - 1)*5) - 10 && ThetaInDegrees < (nYbins*5) - 10)
+		        {
+	                EnergyLossFromMap = hMCELossMap->GetBinContent(nXbins, nYbins);
+	                }//<---End only looking if theta is matched
+	             }//<---End nYbins loop
+	          }//<---End only looking if the Phi is matched
+	       }//<---End nXbins loop
+	    }//<---End Y9 if
+
+         }//<---End X9 if
+
+      // ###############################################|
+
+
    if(EnergyLossFromMap == 0){EnergyLossFromMap = 66.6;}
    
    hMCELossUpstreamTPCRecoMap->Fill(EnergyLossFromMap);
