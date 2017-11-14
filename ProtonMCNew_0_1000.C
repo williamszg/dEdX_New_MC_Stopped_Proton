@@ -399,7 +399,7 @@ TH2D *hPhivsThetaELossDividedX2Y5 = new TH2D("hPhivsThetaELossX2Y5", "Phi vs Ene
 
 TH2D *hPhivsThetaELossX2Y6 = new TH2D("hPhivsThetaELossX2Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 TH2D *hPhivsThetaELossFluxX2Y6 = new TH2D("hPhivsThetaELossX2Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX0Y6 = new TH2D("hPhivsThetaELossX2Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX2Y6 = new TH2D("hPhivsThetaELossX2Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX2Y7 = new TH2D("hPhivsThetaELossX2Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 TH2D *hPhivsThetaELossFluxX2Y7 = new TH2D("hPhivsThetaELossX2Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
@@ -1825,7 +1825,7 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
       float PhiInDegrees   = mcPhi *(180/3.14159);
       float ThetaInDegrees = mcTheta *(180/3.14159);
       
-
+/*
       // ###############################################|
       // ### New Determining Which Histogram to Open ###|
       // ###############################################|
@@ -4081,7 +4081,7 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
          }//<---End X9 if
 
       // ###############################################|
-
+*/
 
 
       if(EnergyLossFromMap == 0){EnergyLossFromMap = 66.6;}
@@ -4311,6 +4311,12 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
    if(nMCRecoSpts < 1){ReconstructedEvent = false; continue;} 
      
 
+   float PhiInDegrees = RecoTPCPhi;
+   float ThetaInDegrees = RecoTPCTheta;
+
+   float FirstPoint_X = FirstSpacePointX;
+   float FirstPoint_Y = FirstSpacePointY;
+/*
       // ###############################################|
       // ### New Determining Which Histogram to Open ###|
       // ###############################################|
@@ -6566,7 +6572,7 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
          }//<---End X9 if
 
       // ###############################################|
-
+*/
 
    if(EnergyLossFromMap == 0){EnergyLossFromMap = 66.6;}
    
