@@ -294,404 +294,404 @@ TH2D *hELossXvsYDivideR = new TH2D("hELossXvsYDivideR", "Energy Loss X vs Y", 20
 //=================================|
 
 TH2D *hPhivsThetaELossX0Y0 = new TH2D("hPhivsThetaELossX0Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX0Y0 = new TH2D("hPhivsThetaELossX0Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX0Y0 = new TH2D("hPhivsThetaELossX0Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX0Y0 = new TH2D("hPhivsThetaELossFluxX0Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX0Y0 = new TH2D("hPhivsThetaELossDividedX0Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX0Y1 = new TH2D("hPhivsThetaELossX0Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX0Y1 = new TH2D("hPhivsThetaELossX0Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX0Y1 = new TH2D("hPhivsThetaELossX0Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX0Y1 = new TH2D("hPhivsThetaELossFluxX0Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX0Y1 = new TH2D("hPhivsThetaELossDividedX0Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX0Y2 = new TH2D("hPhivsThetaELossX0Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX0Y2 = new TH2D("hPhivsThetaELossX0Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX0Y2 = new TH2D("hPhivsThetaELossX0Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX0Y2 = new TH2D("hPhivsThetaELossFluxX0Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX0Y2 = new TH2D("hPhivsThetaELossDividedX0Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX0Y3 = new TH2D("hPhivsThetaELossX0Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX0Y3 = new TH2D("hPhivsThetaELossX0Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX0Y3 = new TH2D("hPhivsThetaELossX0Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX0Y3 = new TH2D("hPhivsThetaELossFluxX0Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX0Y3 = new TH2D("hPhivsThetaELossDividedX0Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX0Y4 = new TH2D("hPhivsThetaELossX0Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX0Y4 = new TH2D("hPhivsThetaELossX0Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX0Y4 = new TH2D("hPhivsThetaELossX0Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX0Y4 = new TH2D("hPhivsThetaELossFluxX0Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX0Y4 = new TH2D("hPhivsThetaELossDividedX0Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX0Y5 = new TH2D("hPhivsThetaELossX0Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX0Y5 = new TH2D("hPhivsThetaELossX0Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX0Y5 = new TH2D("hPhivsThetaELossX0Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX0Y5 = new TH2D("hPhivsThetaELossFluxX0Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX0Y5 = new TH2D("hPhivsThetaELossDividedX0Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX0Y6 = new TH2D("hPhivsThetaELossX0Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX0Y6 = new TH2D("hPhivsThetaELossX0Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX0Y6 = new TH2D("hPhivsThetaELossX0Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX0Y6 = new TH2D("hPhivsThetaELossFluxX0Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX0Y6 = new TH2D("hPhivsThetaELossDividedX0Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX0Y7 = new TH2D("hPhivsThetaELossX0Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX0Y7 = new TH2D("hPhivsThetaELossX0Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX0Y7 = new TH2D("hPhivsThetaELossX0Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX0Y7 = new TH2D("hPhivsThetaELossFluxX0Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX0Y7 = new TH2D("hPhivsThetaELossDividedX0Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX0Y8 = new TH2D("hPhivsThetaELossX0Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX0Y8 = new TH2D("hPhivsThetaELossX0Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX0Y8 = new TH2D("hPhivsThetaELossX0Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX0Y8 = new TH2D("hPhivsThetaELossFluxX0Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX0Y8 = new TH2D("hPhivsThetaELossDividedX0Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX0Y9 = new TH2D("hPhivsThetaELossX0Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX0Y9 = new TH2D("hPhivsThetaELossX0Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX0Y9 = new TH2D("hPhivsThetaELossX0Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX0Y9 = new TH2D("hPhivsThetaELossFluxX0Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX0Y9 = new TH2D("hPhivsThetaELossDividedX0Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX1Y0 = new TH2D("hPhivsThetaELossX1Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX1Y0 = new TH2D("hPhivsThetaELossX1Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX1Y0 = new TH2D("hPhivsThetaELossX1Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX1Y0 = new TH2D("hPhivsThetaELossFluxX1Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX1Y0 = new TH2D("hPhivsThetaELossDividedX1Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX1Y1 = new TH2D("hPhivsThetaELossX1Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX1Y1 = new TH2D("hPhivsThetaELossX1Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX1Y1 = new TH2D("hPhivsThetaELossX1Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX1Y1 = new TH2D("hPhivsThetaELossFluxX1Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX1Y1 = new TH2D("hPhivsThetaELossDividedX1Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX1Y2 = new TH2D("hPhivsThetaELossX1Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX1Y2 = new TH2D("hPhivsThetaELossX1Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX1Y2 = new TH2D("hPhivsThetaELossX1Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX1Y2 = new TH2D("hPhivsThetaELossFluxX1Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX1Y2 = new TH2D("hPhivsThetaELossDividedX1Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX1Y3 = new TH2D("hPhivsThetaELossX1Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX1Y3 = new TH2D("hPhivsThetaELossX1Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX1Y3 = new TH2D("hPhivsThetaELossX1Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX1Y3 = new TH2D("hPhivsThetaELossFluxX1Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX1Y3 = new TH2D("hPhivsThetaELossDividedX1Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX1Y4 = new TH2D("hPhivsThetaELossX1Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX1Y4 = new TH2D("hPhivsThetaELossX1Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX1Y4 = new TH2D("hPhivsThetaELossX1Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX1Y4 = new TH2D("hPhivsThetaELossFluxX1Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX1Y4 = new TH2D("hPhivsThetaELossDividedX1Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX1Y5 = new TH2D("hPhivsThetaELossX1Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX1Y5 = new TH2D("hPhivsThetaELossX1Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX1Y5 = new TH2D("hPhivsThetaELossX1Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX1Y5 = new TH2D("hPhivsThetaELossFluxX1Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX1Y5 = new TH2D("hPhivsThetaELossDividedX1Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX1Y6 = new TH2D("hPhivsThetaELossX1Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX1Y6 = new TH2D("hPhivsThetaELossX1Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX1Y6 = new TH2D("hPhivsThetaELossX1Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX1Y6 = new TH2D("hPhivsThetaELossFluxX1Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX1Y6 = new TH2D("hPhivsThetaELossDividedX1Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX1Y7 = new TH2D("hPhivsThetaELossX1Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX1Y7 = new TH2D("hPhivsThetaELossX1Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX1Y7 = new TH2D("hPhivsThetaELossX1Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX1Y7 = new TH2D("hPhivsThetaELossFluxX1Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX1Y7 = new TH2D("hPhivsThetaELossDividedX1Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX1Y8 = new TH2D("hPhivsThetaELossX1Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX1Y8 = new TH2D("hPhivsThetaELossX1Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX1Y8 = new TH2D("hPhivsThetaELossX1Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX1Y8 = new TH2D("hPhivsThetaELossFluxX1Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX1Y8 = new TH2D("hPhivsThetaELossDividedX1Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX1Y9 = new TH2D("hPhivsThetaELossX1Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX1Y9 = new TH2D("hPhivsThetaELossX1Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX1Y9 = new TH2D("hPhivsThetaELossX1Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX1Y9 = new TH2D("hPhivsThetaELossFluxX1Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX1Y9 = new TH2D("hPhivsThetaELossDividedX1Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX2Y0 = new TH2D("hPhivsThetaELossX2Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX2Y0 = new TH2D("hPhivsThetaELossX2Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX2Y0 = new TH2D("hPhivsThetaELossX2Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX2Y0 = new TH2D("hPhivsThetaELossFluxX2Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX2Y0 = new TH2D("hPhivsThetaELossDividedX2Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX2Y1 = new TH2D("hPhivsThetaELossX2Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX2Y1 = new TH2D("hPhivsThetaELossX2Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX2Y1 = new TH2D("hPhivsThetaELossX2Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX2Y1 = new TH2D("hPhivsThetaELossFluxX2Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX2Y1 = new TH2D("hPhivsThetaELossDividedX2Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX2Y2 = new TH2D("hPhivsThetaELossX2Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX2Y2 = new TH2D("hPhivsThetaELossX2Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX2Y2 = new TH2D("hPhivsThetaELossX2Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX2Y2 = new TH2D("hPhivsThetaELossFluxX2Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX2Y2 = new TH2D("hPhivsThetaELossDividedX2Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX2Y3 = new TH2D("hPhivsThetaELossX2Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX2Y3 = new TH2D("hPhivsThetaELossX2Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX2Y3 = new TH2D("hPhivsThetaELossX2Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX2Y3 = new TH2D("hPhivsThetaELossFluxX2Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX2Y3 = new TH2D("hPhivsThetaELossDividedX2Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX2Y4 = new TH2D("hPhivsThetaELossX2Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX2Y4 = new TH2D("hPhivsThetaELossX2Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX2Y4 = new TH2D("hPhivsThetaELossX2Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX2Y4 = new TH2D("hPhivsThetaELossFluxX2Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX2Y4 = new TH2D("hPhivsThetaELossDividedX2Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX2Y5 = new TH2D("hPhivsThetaELossX2Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX2Y5 = new TH2D("hPhivsThetaELossX2Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX2Y5 = new TH2D("hPhivsThetaELossX2Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX2Y5 = new TH2D("hPhivsThetaELossFluxX2Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX2Y5 = new TH2D("hPhivsThetaELossDividedX2Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX2Y6 = new TH2D("hPhivsThetaELossX2Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX2Y6 = new TH2D("hPhivsThetaELossX2Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX2Y6 = new TH2D("hPhivsThetaELossX2Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX2Y6 = new TH2D("hPhivsThetaELossFluxX2Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX2Y6 = new TH2D("hPhivsThetaELossDividedX2Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX2Y7 = new TH2D("hPhivsThetaELossX2Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX2Y7 = new TH2D("hPhivsThetaELossX2Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX2Y7 = new TH2D("hPhivsThetaELossX2Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX2Y7 = new TH2D("hPhivsThetaELossFluxX2Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX2Y7 = new TH2D("hPhivsThetaELossDividedX2Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX2Y8 = new TH2D("hPhivsThetaELossX2Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX2Y8 = new TH2D("hPhivsThetaELossX2Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX2Y8 = new TH2D("hPhivsThetaELossX2Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX2Y8 = new TH2D("hPhivsThetaELossFluxX2Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX2Y8 = new TH2D("hPhivsThetaELossDividedX2Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX2Y9 = new TH2D("hPhivsThetaELossX2Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX2Y9 = new TH2D("hPhivsThetaELossX2Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX2Y9 = new TH2D("hPhivsThetaELossX2Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX2Y9 = new TH2D("hPhivsThetaELossFluxX2Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX2Y9 = new TH2D("hPhivsThetaELossDividedX2Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX3Y0 = new TH2D("hPhivsThetaELossX3Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX3Y0 = new TH2D("hPhivsThetaELossX3Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX3Y0 = new TH2D("hPhivsThetaELossX3Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX3Y0 = new TH2D("hPhivsThetaELossFluxX3Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX3Y0 = new TH2D("hPhivsThetaELossDividedX3Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX3Y1 = new TH2D("hPhivsThetaELossX3Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX3Y1 = new TH2D("hPhivsThetaELossX3Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX3Y1 = new TH2D("hPhivsThetaELossX3Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX3Y1 = new TH2D("hPhivsThetaELossFluxX3Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX3Y1 = new TH2D("hPhivsThetaELossDividedX3Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX3Y2 = new TH2D("hPhivsThetaELossX3Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX3Y2 = new TH2D("hPhivsThetaELossX3Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX3Y2 = new TH2D("hPhivsThetaELossX3Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX3Y2 = new TH2D("hPhivsThetaELossFluxX3Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX3Y2 = new TH2D("hPhivsThetaELossDividedX3Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX3Y3 = new TH2D("hPhivsThetaELossX3Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX3Y3 = new TH2D("hPhivsThetaELossX3Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX3Y3 = new TH2D("hPhivsThetaELossX3Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX3Y3 = new TH2D("hPhivsThetaELossFluxX3Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX3Y3 = new TH2D("hPhivsThetaELossDividedX3Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX3Y4 = new TH2D("hPhivsThetaELossX3Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX3Y4 = new TH2D("hPhivsThetaELossX3Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX3Y4 = new TH2D("hPhivsThetaELossX3Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX3Y4 = new TH2D("hPhivsThetaELossFluxX3Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX3Y4 = new TH2D("hPhivsThetaELossDividedX3Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX3Y5 = new TH2D("hPhivsThetaELossX3Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX3Y5 = new TH2D("hPhivsThetaELossX3Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX3Y5 = new TH2D("hPhivsThetaELossX3Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX3Y5 = new TH2D("hPhivsThetaELossFluxX3Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX3Y5 = new TH2D("hPhivsThetaELossDividedX3Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX3Y6 = new TH2D("hPhivsThetaELossX3Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX3Y6 = new TH2D("hPhivsThetaELossX3Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX3Y6 = new TH2D("hPhivsThetaELossX3Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX3Y6 = new TH2D("hPhivsThetaELossFluxX3Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX3Y6 = new TH2D("hPhivsThetaELossDividedX3Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX3Y7 = new TH2D("hPhivsThetaELossX3Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX3Y7 = new TH2D("hPhivsThetaELossX3Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX3Y7 = new TH2D("hPhivsThetaELossX3Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX3Y7 = new TH2D("hPhivsThetaELossFluxX3Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX3Y7 = new TH2D("hPhivsThetaELossDividedX3Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX3Y8 = new TH2D("hPhivsThetaELossX3Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX3Y8 = new TH2D("hPhivsThetaELossX3Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX3Y8 = new TH2D("hPhivsThetaELossX3Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX3Y8 = new TH2D("hPhivsThetaELossFluxX3Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX3Y8 = new TH2D("hPhivsThetaELossDividedX3Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX3Y9 = new TH2D("hPhivsThetaELossX3Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX3Y9 = new TH2D("hPhivsThetaELossX3Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX3Y9 = new TH2D("hPhivsThetaELossX3Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX3Y9 = new TH2D("hPhivsThetaELossFluxX3Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX3Y9 = new TH2D("hPhivsThetaELossDividedX3Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX4Y0 = new TH2D("hPhivsThetaELossX4Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX4Y0 = new TH2D("hPhivsThetaELossX4Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX4Y0 = new TH2D("hPhivsThetaELossX4Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX4Y0 = new TH2D("hPhivsThetaELossFluxX4Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX4Y0 = new TH2D("hPhivsThetaELossDividedX4Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX4Y1 = new TH2D("hPhivsThetaELossX4Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX4Y1 = new TH2D("hPhivsThetaELossX4Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX4Y1 = new TH2D("hPhivsThetaELossX4Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX4Y1 = new TH2D("hPhivsThetaELossFluxX4Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX4Y1 = new TH2D("hPhivsThetaELossDividedX4Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX4Y2 = new TH2D("hPhivsThetaELossX4Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX4Y2 = new TH2D("hPhivsThetaELossX4Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX4Y2 = new TH2D("hPhivsThetaELossX4Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX4Y2 = new TH2D("hPhivsThetaELossFluxX4Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX4Y2 = new TH2D("hPhivsThetaELossDividedX4Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX4Y3 = new TH2D("hPhivsThetaELossX4Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX4Y3 = new TH2D("hPhivsThetaELossX4Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX4Y3 = new TH2D("hPhivsThetaELossX4Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX4Y3 = new TH2D("hPhivsThetaELossFluxX4Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX4Y3 = new TH2D("hPhivsThetaELossDividedX4Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX4Y4 = new TH2D("hPhivsThetaELossX4Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX4Y4 = new TH2D("hPhivsThetaELossX4Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX4Y4 = new TH2D("hPhivsThetaELossX4Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX4Y4 = new TH2D("hPhivsThetaELossFluxX4Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX4Y4 = new TH2D("hPhivsThetaELossDividedX4Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX4Y5 = new TH2D("hPhivsThetaELossX4Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX4Y5 = new TH2D("hPhivsThetaELossX4Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX4Y5 = new TH2D("hPhivsThetaELossX4Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX4Y5 = new TH2D("hPhivsThetaELossFluxX4Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX4Y5 = new TH2D("hPhivsThetaELossDividedX4Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX4Y6 = new TH2D("hPhivsThetaELossX4Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX4Y6 = new TH2D("hPhivsThetaELossX4Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX4Y6 = new TH2D("hPhivsThetaELossX4Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX4Y6 = new TH2D("hPhivsThetaELossFluxX4Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX4Y6 = new TH2D("hPhivsThetaELossDividedX4Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX4Y7 = new TH2D("hPhivsThetaELossX4Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX4Y7 = new TH2D("hPhivsThetaELossX4Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX4Y7 = new TH2D("hPhivsThetaELossX4Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX4Y7 = new TH2D("hPhivsThetaELossFluxX4Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX4Y7 = new TH2D("hPhivsThetaELossDividedX4Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX4Y8 = new TH2D("hPhivsThetaELossX4Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX4Y8 = new TH2D("hPhivsThetaELossX4Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX4Y8 = new TH2D("hPhivsThetaELossX4Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX4Y8 = new TH2D("hPhivsThetaELossFluxX4Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX4Y8 = new TH2D("hPhivsThetaELossDividedX4Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX4Y9 = new TH2D("hPhivsThetaELossX4Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX4Y9 = new TH2D("hPhivsThetaELossX4Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX4Y9 = new TH2D("hPhivsThetaELossX4Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX4Y9 = new TH2D("hPhivsThetaELossFluxX4Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX4Y9 = new TH2D("hPhivsThetaELossDividedX4Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX5Y0 = new TH2D("hPhivsThetaELossX5Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX5Y0 = new TH2D("hPhivsThetaELossX5Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX5Y0 = new TH2D("hPhivsThetaELossX5Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX5Y0 = new TH2D("hPhivsThetaELossFluxX5Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX5Y0 = new TH2D("hPhivsThetaELossDividedX5Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX5Y1 = new TH2D("hPhivsThetaELossX5Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX5Y1 = new TH2D("hPhivsThetaELossX5Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX5Y1 = new TH2D("hPhivsThetaELossX5Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX5Y1 = new TH2D("hPhivsThetaELossFluxX5Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX5Y1 = new TH2D("hPhivsThetaELossDividedX5Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX5Y2 = new TH2D("hPhivsThetaELossX5Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX5Y2 = new TH2D("hPhivsThetaELossX5Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX5Y2 = new TH2D("hPhivsThetaELossX5Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX5Y2 = new TH2D("hPhivsThetaELossFluxX5Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX5Y2 = new TH2D("hPhivsThetaELossDividedX5Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX5Y3 = new TH2D("hPhivsThetaELossX5Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX5Y3 = new TH2D("hPhivsThetaELossX5Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX5Y3 = new TH2D("hPhivsThetaELossX5Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX5Y3 = new TH2D("hPhivsThetaELossFluxX5Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX5Y3 = new TH2D("hPhivsThetaELossDividedX5Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX5Y4 = new TH2D("hPhivsThetaELossX5Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX5Y4 = new TH2D("hPhivsThetaELossX5Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX5Y4 = new TH2D("hPhivsThetaELossX5Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX5Y4 = new TH2D("hPhivsThetaELossFluxX5Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX5Y4 = new TH2D("hPhivsThetaELossDividedX5Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX5Y5 = new TH2D("hPhivsThetaELossX5Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX5Y5 = new TH2D("hPhivsThetaELossX5Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX5Y5 = new TH2D("hPhivsThetaELossX5Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX5Y5 = new TH2D("hPhivsThetaELossFluxX5Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX5Y5 = new TH2D("hPhivsThetaELossDividedX5Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX5Y6 = new TH2D("hPhivsThetaELossX5Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX5Y6 = new TH2D("hPhivsThetaELossX5Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX5Y6 = new TH2D("hPhivsThetaELossX5Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX5Y6 = new TH2D("hPhivsThetaELossFluxX5Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX5Y6 = new TH2D("hPhivsThetaELossDividedX5Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX5Y7 = new TH2D("hPhivsThetaELossX5Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX5Y7 = new TH2D("hPhivsThetaELossX5Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX5Y7 = new TH2D("hPhivsThetaELossX5Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX5Y7 = new TH2D("hPhivsThetaELossFluxX5Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX5Y7 = new TH2D("hPhivsThetaELossDividedX5Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX5Y8 = new TH2D("hPhivsThetaELossX5Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX5Y8 = new TH2D("hPhivsThetaELossX5Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX5Y8 = new TH2D("hPhivsThetaELossX5Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX5Y8 = new TH2D("hPhivsThetaELossFluxX5Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX5Y8 = new TH2D("hPhivsThetaELossDividedX5Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX5Y9 = new TH2D("hPhivsThetaELossX5Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX5Y9 = new TH2D("hPhivsThetaELossX5Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX5Y9 = new TH2D("hPhivsThetaELossX5Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX5Y9 = new TH2D("hPhivsThetaELossFluxX5Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX5Y9 = new TH2D("hPhivsThetaELossDividedX5Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX6Y0 = new TH2D("hPhivsThetaELossX6Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX6Y0 = new TH2D("hPhivsThetaELossX6Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX6Y0 = new TH2D("hPhivsThetaELossX6Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX6Y0 = new TH2D("hPhivsThetaELossFluxX6Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX6Y0 = new TH2D("hPhivsThetaELossDividedX6Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX6Y1 = new TH2D("hPhivsThetaELossX6Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX6Y1 = new TH2D("hPhivsThetaELossX6Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX6Y1 = new TH2D("hPhivsThetaELossX6Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX6Y1 = new TH2D("hPhivsThetaELossFluxX6Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX6Y1 = new TH2D("hPhivsThetaELossDividedX6Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX6Y2 = new TH2D("hPhivsThetaELossX6Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX6Y2 = new TH2D("hPhivsThetaELossX6Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX6Y2 = new TH2D("hPhivsThetaELossX6Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX6Y2 = new TH2D("hPhivsThetaELossFluxX6Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX6Y2 = new TH2D("hPhivsThetaELossDividedX6Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX6Y3 = new TH2D("hPhivsThetaELossX6Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX6Y3 = new TH2D("hPhivsThetaELossX6Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX6Y3 = new TH2D("hPhivsThetaELossX6Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX6Y3 = new TH2D("hPhivsThetaELossFluxX6Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX6Y3 = new TH2D("hPhivsThetaELossDividedX6Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX6Y4 = new TH2D("hPhivsThetaELossX6Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX6Y4 = new TH2D("hPhivsThetaELossX6Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX6Y4 = new TH2D("hPhivsThetaELossX6Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX6Y4 = new TH2D("hPhivsThetaELossFluxX6Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX6Y4 = new TH2D("hPhivsThetaELossDividedX6Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX6Y5 = new TH2D("hPhivsThetaELossX6Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX6Y5 = new TH2D("hPhivsThetaELossX6Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX6Y5 = new TH2D("hPhivsThetaELossX6Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX6Y5 = new TH2D("hPhivsThetaELossFluxX6Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX6Y5 = new TH2D("hPhivsThetaELossDividedX6Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX6Y6 = new TH2D("hPhivsThetaELossX6Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX6Y6 = new TH2D("hPhivsThetaELossX6Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX6Y6 = new TH2D("hPhivsThetaELossX6Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX6Y6 = new TH2D("hPhivsThetaELossFluxX6Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX6Y6 = new TH2D("hPhivsThetaELossDividedX6Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX6Y7 = new TH2D("hPhivsThetaELossX6Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX6Y7 = new TH2D("hPhivsThetaELossX6Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX6Y7 = new TH2D("hPhivsThetaELossX6Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX6Y7 = new TH2D("hPhivsThetaELossFluxX6Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX6Y7 = new TH2D("hPhivsThetaELossDividedX6Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX6Y8 = new TH2D("hPhivsThetaELossX6Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX6Y8 = new TH2D("hPhivsThetaELossX6Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX6Y8 = new TH2D("hPhivsThetaELossX6Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX6Y8 = new TH2D("hPhivsThetaELossFluxX6Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX6Y8 = new TH2D("hPhivsThetaELossDividedX6Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX6Y9 = new TH2D("hPhivsThetaELossX6Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX6Y9 = new TH2D("hPhivsThetaELossX6Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX6Y9 = new TH2D("hPhivsThetaELossX6Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX6Y9 = new TH2D("hPhivsThetaELossFluxX6Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX6Y9 = new TH2D("hPhivsThetaELossDividedX6Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX7Y0 = new TH2D("hPhivsThetaELossX7Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX7Y0 = new TH2D("hPhivsThetaELossX7Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX7Y0 = new TH2D("hPhivsThetaELossX7Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX7Y0 = new TH2D("hPhivsThetaELossFluxX7Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX7Y0 = new TH2D("hPhivsThetaELossDividedX7Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX7Y1 = new TH2D("hPhivsThetaELossX7Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX7Y1 = new TH2D("hPhivsThetaELossX7Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX7Y1 = new TH2D("hPhivsThetaELossX7Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX7Y1 = new TH2D("hPhivsThetaELossFluxX7Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX7Y1 = new TH2D("hPhivsThetaELossDividedX7Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX7Y2 = new TH2D("hPhivsThetaELossX7Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX7Y2 = new TH2D("hPhivsThetaELossX7Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX7Y2 = new TH2D("hPhivsThetaELossX7Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX7Y2 = new TH2D("hPhivsThetaELossFluxX7Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX7Y2 = new TH2D("hPhivsThetaELossDividedX7Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX7Y3 = new TH2D("hPhivsThetaELossX7Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX7Y3 = new TH2D("hPhivsThetaELossX7Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX7Y3 = new TH2D("hPhivsThetaELossX7Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX7Y3 = new TH2D("hPhivsThetaELossFluxX7Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX7Y3 = new TH2D("hPhivsThetaELossDividedX7Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX7Y4 = new TH2D("hPhivsThetaELossX7Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX7Y4 = new TH2D("hPhivsThetaELossX7Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX7Y4 = new TH2D("hPhivsThetaELossX7Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX7Y4 = new TH2D("hPhivsThetaELossFluxX7Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX7Y4 = new TH2D("hPhivsThetaELossDividedX7Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX7Y5 = new TH2D("hPhivsThetaELossX7Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX7Y5 = new TH2D("hPhivsThetaELossX7Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX7Y5 = new TH2D("hPhivsThetaELossX7Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX7Y5 = new TH2D("hPhivsThetaELossFluxX7Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX7Y5 = new TH2D("hPhivsThetaELossDividedX7Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX7Y6 = new TH2D("hPhivsThetaELossX7Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX7Y6 = new TH2D("hPhivsThetaELossX7Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX7Y6 = new TH2D("hPhivsThetaELossX7Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX7Y6 = new TH2D("hPhivsThetaELossFluxX7Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX7Y6 = new TH2D("hPhivsThetaELossDividedX7Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX7Y7 = new TH2D("hPhivsThetaELossX7Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX7Y7 = new TH2D("hPhivsThetaELossX7Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX7Y7 = new TH2D("hPhivsThetaELossX7Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX7Y7 = new TH2D("hPhivsThetaELossFluxX7Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX7Y7 = new TH2D("hPhivsThetaELossDividedX7Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX7Y8 = new TH2D("hPhivsThetaELossX7Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX7Y8 = new TH2D("hPhivsThetaELossX7Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX7Y8 = new TH2D("hPhivsThetaELossX7Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX7Y8 = new TH2D("hPhivsThetaELossFluxX7Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX7Y8 = new TH2D("hPhivsThetaELossDividedX7Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX7Y9 = new TH2D("hPhivsThetaELossX7Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX7Y9 = new TH2D("hPhivsThetaELossX7Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX7Y9 = new TH2D("hPhivsThetaELossX7Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX7Y9 = new TH2D("hPhivsThetaELossFluxX7Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX7Y9 = new TH2D("hPhivsThetaELossDividedX7Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX8Y0 = new TH2D("hPhivsThetaELossX8Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX8Y0 = new TH2D("hPhivsThetaELossX8Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX8Y0 = new TH2D("hPhivsThetaELossX8Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX8Y0 = new TH2D("hPhivsThetaELossFluxX8Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX8Y0 = new TH2D("hPhivsThetaELossDividedX8Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX8Y1 = new TH2D("hPhivsThetaELossX8Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX8Y1 = new TH2D("hPhivsThetaELossX8Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX8Y1 = new TH2D("hPhivsThetaELossX8Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX8Y1 = new TH2D("hPhivsThetaELossFluxX8Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX8Y1 = new TH2D("hPhivsThetaELossDividedX8Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX8Y2 = new TH2D("hPhivsThetaELossX8Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX8Y2 = new TH2D("hPhivsThetaELossX8Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX8Y2 = new TH2D("hPhivsThetaELossX8Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX8Y2 = new TH2D("hPhivsThetaELossFluxX8Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX8Y2 = new TH2D("hPhivsThetaELossDividedX8Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX8Y3 = new TH2D("hPhivsThetaELossX8Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX8Y3 = new TH2D("hPhivsThetaELossX8Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX8Y3 = new TH2D("hPhivsThetaELossX8Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX8Y3 = new TH2D("hPhivsThetaELossFluxX8Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX8Y3 = new TH2D("hPhivsThetaELossDividedX8Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX8Y4 = new TH2D("hPhivsThetaELossX8Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX8Y4 = new TH2D("hPhivsThetaELossX8Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX8Y4 = new TH2D("hPhivsThetaELossX8Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX8Y4 = new TH2D("hPhivsThetaELossFluxX8Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX8Y4 = new TH2D("hPhivsThetaELossDividedX8Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX8Y5 = new TH2D("hPhivsThetaELossX8Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX8Y5 = new TH2D("hPhivsThetaELossX8Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX8Y5 = new TH2D("hPhivsThetaELossX8Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX8Y5 = new TH2D("hPhivsThetaELossFluxX8Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX8Y5 = new TH2D("hPhivsThetaELossDividedX8Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX8Y6 = new TH2D("hPhivsThetaELossX8Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX8Y6 = new TH2D("hPhivsThetaELossX8Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX8Y6 = new TH2D("hPhivsThetaELossX8Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX8Y6 = new TH2D("hPhivsThetaELossFluxX8Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX8Y6 = new TH2D("hPhivsThetaELossDividedX8Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX8Y7 = new TH2D("hPhivsThetaELossX8Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX8Y7 = new TH2D("hPhivsThetaELossX8Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX8Y7 = new TH2D("hPhivsThetaELossX8Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX8Y7 = new TH2D("hPhivsThetaELossFluxX8Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX8Y7 = new TH2D("hPhivsThetaELossDividedX8Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX8Y8 = new TH2D("hPhivsThetaELossX8Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX8Y8 = new TH2D("hPhivsThetaELossX8Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX8Y8 = new TH2D("hPhivsThetaELossX8Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX8Y8 = new TH2D("hPhivsThetaELossFluxX8Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX8Y8 = new TH2D("hPhivsThetaELossDividedX8Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX8Y9 = new TH2D("hPhivsThetaELossX8Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX8Y9 = new TH2D("hPhivsThetaELossX8Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX8Y9 = new TH2D("hPhivsThetaELossX8Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX8Y9 = new TH2D("hPhivsThetaELossFluxX8Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX8Y9 = new TH2D("hPhivsThetaELossDividedX8Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX9Y0 = new TH2D("hPhivsThetaELossX9Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX9Y0 = new TH2D("hPhivsThetaELossX9Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX9Y0 = new TH2D("hPhivsThetaELossX9Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX9Y0 = new TH2D("hPhivsThetaELossFluxX9Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX9Y0 = new TH2D("hPhivsThetaELossDividedX9Y0", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX9Y1 = new TH2D("hPhivsThetaELossX9Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX9Y1 = new TH2D("hPhivsThetaELossX9Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX9Y1 = new TH2D("hPhivsThetaELossX9Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX9Y1 = new TH2D("hPhivsThetaELossFluxX9Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX9Y1 = new TH2D("hPhivsThetaELossDividedX9Y1", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX9Y2 = new TH2D("hPhivsThetaELossX9Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX9Y2 = new TH2D("hPhivsThetaELossX9Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX9Y2 = new TH2D("hPhivsThetaELossX9Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX9Y2 = new TH2D("hPhivsThetaELossFluxX9Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX9Y2 = new TH2D("hPhivsThetaELossDividedX9Y2", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX9Y3 = new TH2D("hPhivsThetaELossX9Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX9Y3 = new TH2D("hPhivsThetaELossX9Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX9Y3 = new TH2D("hPhivsThetaELossX9Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX9Y3 = new TH2D("hPhivsThetaELossFluxX9Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX9Y3 = new TH2D("hPhivsThetaELossDividedX9Y3", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX9Y4 = new TH2D("hPhivsThetaELossX9Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX9Y4 = new TH2D("hPhivsThetaELossX9Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX9Y4 = new TH2D("hPhivsThetaELossX9Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX9Y4 = new TH2D("hPhivsThetaELossFluxX9Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX9Y4 = new TH2D("hPhivsThetaELossDividedX9Y4", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX9Y5 = new TH2D("hPhivsThetaELossX9Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX9Y5 = new TH2D("hPhivsThetaELossX9Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX9Y5 = new TH2D("hPhivsThetaELossX9Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX9Y5 = new TH2D("hPhivsThetaELossFluxX9Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX9Y5 = new TH2D("hPhivsThetaELossDividedX9Y5", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX9Y6 = new TH2D("hPhivsThetaELossX9Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX9Y6 = new TH2D("hPhivsThetaELossX9Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX9Y6 = new TH2D("hPhivsThetaELossX9Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX9Y6 = new TH2D("hPhivsThetaELossFluxX9Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX9Y6 = new TH2D("hPhivsThetaELossDividedX9Y6", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX9Y7 = new TH2D("hPhivsThetaELossX9Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX9Y7 = new TH2D("hPhivsThetaELossX9Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX9Y7 = new TH2D("hPhivsThetaELossX9Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX9Y7 = new TH2D("hPhivsThetaELossFluxX9Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX9Y7 = new TH2D("hPhivsThetaELossDividedX9Y7", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX9Y8 = new TH2D("hPhivsThetaELossX9Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX9Y8 = new TH2D("hPhivsThetaELossX9Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX9Y8 = new TH2D("hPhivsThetaELossX9Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX9Y8 = new TH2D("hPhivsThetaELossFluxX9Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX9Y8 = new TH2D("hPhivsThetaELossDividedX9Y8", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 TH2D *hPhivsThetaELossX9Y9 = new TH2D("hPhivsThetaELossX9Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossFluxX9Y9 = new TH2D("hPhivsThetaELossX9Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
-TH2D *hPhivsThetaELossDividedX9Y9 = new TH2D("hPhivsThetaELossX9Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossFluxX9Y9 = new TH2D("hPhivsThetaELossFluxX9Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
+TH2D *hPhivsThetaELossDividedX9Y9 = new TH2D("hPhivsThetaELossDividedX9Y9", "Phi vs Energy Loss", 72, 0, 360, 8, -10, 30);
 
 //=================================|
 
@@ -1825,7 +1825,7 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
       float PhiInDegrees   = mcPhi *(180/3.14159);
       float ThetaInDegrees = mcTheta *(180/3.14159);
       
-
+/*
       // ###############################################|
       // ### New Determining Which Histogram to Open ###|
       // ###############################################|
@@ -4081,7 +4081,7 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
          }//<---End X9 if
 
       // ###############################################|
-
+*/
 
 
       if(EnergyLossFromMap == 0){EnergyLossFromMap = 66.6;}
@@ -4316,7 +4316,7 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
 
    float FirstPoint_X = FirstSpacePointX;
    float FirstPoint_Y = FirstSpacePointY;
-
+/*
       // ###############################################|
       // ### New Determining Which Histogram to Open ###|
       // ###############################################|
@@ -6572,7 +6572,7 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
          }//<---End X9 if
 
       // ###############################################|
-
+*/
 
    if(EnergyLossFromMap == 0){EnergyLossFromMap = 66.6;}
    
