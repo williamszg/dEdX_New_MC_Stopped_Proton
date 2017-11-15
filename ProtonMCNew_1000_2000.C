@@ -1825,7 +1825,7 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
       float PhiInDegrees   = mcPhi *(180/3.14159);
       float ThetaInDegrees = mcTheta *(180/3.14159);
       
-/*
+
       // ###############################################|
       // ### New Determining Which Histogram to Open ###|
       // ###############################################|
@@ -4081,7 +4081,7 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
          }//<---End X9 if
 
       // ###############################################|
-*/
+
 
 
       if(EnergyLossFromMap == 0){EnergyLossFromMap = 66.6;}
@@ -4316,7 +4316,7 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
 
    float FirstPoint_X = FirstSpacePointX;
    float FirstPoint_Y = FirstSpacePointY;
-/*
+
       // ###############################################|
       // ### New Determining Which Histogram to Open ###|
       // ###############################################|
@@ -6572,7 +6572,7 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
          }//<---End X9 if
 
       // ###############################################|
-*/
+
 
    if(EnergyLossFromMap == 0){EnergyLossFromMap = 66.6;}
    
