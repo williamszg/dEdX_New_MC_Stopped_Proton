@@ -1148,7 +1148,7 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
       if(LowIonizingTrack == true || CloseToTheEdge == true) {continue;}
          hCaloRecoTrackLength->Fill(TrackLength);
          hEnergyCalo->Fill(ECalo);
-         ELength = TrackLength*MeandEdxRI;
+         ELength = TrackLength*MPVArgon(momentum);
          hEnergyLength->Fill(ELength);
 
          hInitialKEWC4->Fill(kineticEnergyInitial);
