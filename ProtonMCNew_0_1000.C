@@ -4095,7 +4095,26 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
       
       
       float DeltaEnergyLoss = EnergyLossOutsideTPC - EnergyLossFromMap;
-      
+/* 
+      if (EnergyLossOutsideTPC < 173 && EnergyLossOutsideTPC > 169) 
+         {
+         std::cout<<"------------------------------------------"<<std::endl;
+         std::cout<<"EnergyLossOutsideTPC = "<<EnergyLossOutsideTPC<<std::endl;
+         std::cout<<"X = "<<FirstPoint_X<<std::endl;
+         std::cout<<"Y = "<<FirstPoint_Y<<std::endl;
+         std::cout<<"Theta = "<<ThetaInDegrees<<std::endl;
+         std::cout<<"Phi = "<<PhiInDegrees<<std::endl;
+         std::cout<<"EnergyLossFromMap = "<<EnergyLossFromMap<<std::endl; 
+         std::cout<<"------------------------------------------"<<std::endl;
+         }
+ 
+      if (DeltaEnergyLoss < 0.5 && DeltaEnergyLoss > -0.5) 
+         {
+         std::cout<<"DeltaEnergyLoss = "<<DeltaEnergyLoss<<std::endl; 
+         std::cout<<"EnergyLossOutsideTPC = "<<EnergyLossOutsideTPC<<std::endl; 
+         std::cout<<"EnergyLossFromMap = "<<EnergyLossFromMap<<std::endl; 
+         }
+*/
       hDeltaEnergyLossTruevsMap->Fill(DeltaEnergyLoss);
       
       // === Filling Histograms ===

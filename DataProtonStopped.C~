@@ -330,7 +330,7 @@ int ElenaRunIICut = 45000;
 //###################################|
 //### Load the Calibration Tables ###|
 //###################################|
-TFile *f1 = new TFile("./ROOTFILES/ProtonMCNew_0_2000.root");
+TFile *f1 = new TFile("./ROOTFILES/DataDrivenProtonMC_EnergyCalibrationTable.root");
 
 
 
