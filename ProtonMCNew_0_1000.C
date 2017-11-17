@@ -173,11 +173,11 @@ TH1D *hERemainMCMap = new TH1D("hERemainMCMap", "Remaining Energy from MC Map", 
 TH1D *hDeltaEnergyLossTruevsMap = new TH1D("hDeltaEnergyLossTruevsMap", "#Delta Energy Loss Upstream (True - Map)", 1000, -75, 75);
 
 /////////////////////////////////// Energy Loss in the upstream region of the beamline flat method ///////////////////////
-TH1D *hMCELossUpstreamFlat = new TH1D("hMCELossUpstreamFlat", "Energy loss prior to entering the TPC (Flat 66.6 MeV)", 1100, -100, 1000);
+TH1D *hMCELossUpstreamFlat = new TH1D("hMCELossUpstreamFlat", "Energy loss prior to entering the TPC (Flat 81.85 MeV)", 1100, -100, 1000);
 
 
 /////////////////////////////////// Final Kinetic Energy in the TPC using Map /////////////////////////
-TH1D *hERemainMCFlat = new TH1D("hERemainMCFlat", "Remaining Energy from MC using flat 66.6 MeV", 1000, -75, 75);
+TH1D *hERemainMCFlat = new TH1D("hERemainMCFlat", "Remaining Energy from MC using flat 81.85 MeV", 1000, -75, 75);
 
 
 
@@ -758,7 +758,7 @@ double ZUpperFid = 90;
 // ###################################
 // ### Load the calibration tables ###
 // ###################################
-TFile *f1 = new TFile("./ROOTFILES/DataDrivenProtonMC_EnergyCalibrationTable.root");
+TFile *f1 = new TFile("./ROOTFILES/ProtonMCNew_0_2000.root");
 
 
 
@@ -1825,7 +1825,7 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
       float PhiInDegrees   = mcPhi *(180/3.14159);
       float ThetaInDegrees = mcTheta *(180/3.14159);
       
-/*
+
       // ###############################################|
       // ### New Determining Which Histogram to Open ###|
       // ###############################################|
@@ -4081,17 +4081,17 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
          }//<---End X9 if
 
       // ###############################################|
-*/
 
 
-      if(EnergyLossFromMap == 0){EnergyLossFromMap = 66.6;}
+
+      if(EnergyLossFromMap == 0){EnergyLossFromMap = 81.85;}
       
       // ###################################################################
       // ### Calculating the remaining energy of the particle from truth ###
       // ###################################################################
       ERemainingMCMap = InitialKineticEnergy - EnergyLossFromMap - EnergyLossInsideTPC;
       
-      ERemainingMCDumbFlat = InitialKineticEnergy - 66.6 - EnergyLossInsideTPC;
+      ERemainingMCDumbFlat = InitialKineticEnergy - 81.85 - EnergyLossInsideTPC;
       
       
       float DeltaEnergyLoss = EnergyLossOutsideTPC - EnergyLossFromMap;
@@ -4106,7 +4106,7 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
       
       hERemainMCMap->Fill(ERemainingMCMap);
       
-      hMCELossUpstreamFlat->Fill(66.6);
+      hMCELossUpstreamFlat->Fill(81.85);
       hERemainMCFlat->Fill(ERemainingMCDumbFlat);
       
       nG4Primary++;
@@ -4316,7 +4316,7 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
 
    float FirstPoint_X = FirstSpacePointX;
    float FirstPoint_Y = FirstSpacePointY;
-/*
+
       // ###############################################|
       // ### New Determining Which Histogram to Open ###|
       // ###############################################|
@@ -6572,9 +6572,9 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
          }//<---End X9 if
 
       // ###############################################|
-*/
 
-   if(EnergyLossFromMap == 0){EnergyLossFromMap = 66.6;}
+
+   if(EnergyLossFromMap == 0){EnergyLossFromMap = 81.85;}
    
    hMCELossUpstreamTPCRecoMap->Fill(EnergyLossFromMap);
    
