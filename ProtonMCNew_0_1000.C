@@ -173,11 +173,11 @@ TH1D *hERemainMCMap = new TH1D("hERemainMCMap", "Remaining Energy from MC Map", 
 TH1D *hDeltaEnergyLossTruevsMap = new TH1D("hDeltaEnergyLossTruevsMap", "#Delta Energy Loss Upstream (True - Map)", 1000, -75, 75);
 
 /////////////////////////////////// Energy Loss in the upstream region of the beamline flat method ///////////////////////
-TH1D *hMCELossUpstreamFlat = new TH1D("hMCELossUpstreamFlat", "Energy loss prior to entering the TPC (Flat 81.85 MeV)", 1100, -100, 1000);
+TH1D *hMCELossUpstreamFlat = new TH1D("hMCELossUpstreamFlat", "Energy loss prior to entering the TPC (Flat 59.24 MeV)", 1100, -100, 1000);
 
 
 /////////////////////////////////// Final Kinetic Energy in the TPC using Map /////////////////////////
-TH1D *hERemainMCFlat = new TH1D("hERemainMCFlat", "Remaining Energy from MC using flat 81.85 MeV", 1000, -75, 75);
+TH1D *hERemainMCFlat = new TH1D("hERemainMCFlat", "Remaining Energy from MC using flat 59.24 MeV", 1000, -75, 75);
 
 
 
@@ -4084,14 +4084,14 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
 
 
 
-      if(EnergyLossFromMap == 0){EnergyLossFromMap = 81.85;}
+      if(EnergyLossFromMap == 0){EnergyLossFromMap = 59.24;}
       
       // ###################################################################
       // ### Calculating the remaining energy of the particle from truth ###
       // ###################################################################
       ERemainingMCMap = InitialKineticEnergy - EnergyLossFromMap - EnergyLossInsideTPC;
       
-      ERemainingMCDumbFlat = InitialKineticEnergy - 81.85 - EnergyLossInsideTPC;
+      ERemainingMCDumbFlat = InitialKineticEnergy - 59.24 - EnergyLossInsideTPC;
       
       
       float DeltaEnergyLoss = EnergyLossOutsideTPC - EnergyLossFromMap;
@@ -4106,7 +4106,7 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
       
       hERemainMCMap->Fill(ERemainingMCMap);
       
-      hMCELossUpstreamFlat->Fill(81.85);
+      hMCELossUpstreamFlat->Fill(59.24);
       hERemainMCFlat->Fill(ERemainingMCDumbFlat);
       
       nG4Primary++;
@@ -6574,7 +6574,7 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
       // ###############################################|
 
 
-   if(EnergyLossFromMap == 0){EnergyLossFromMap = 81.85;}
+   if(EnergyLossFromMap == 0){EnergyLossFromMap = 59.24;}
    
    hMCELossUpstreamTPCRecoMap->Fill(EnergyLossFromMap);
    

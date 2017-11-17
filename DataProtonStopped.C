@@ -308,7 +308,7 @@ double alphaCut = 10;
 // ----------------------------------------------------------------
 
 // ### The assumed energy loss between the cryostat and the TPC ###
-float entryTPCEnergyLoss = 66.6; //MeV
+float entryTPCEnergyLoss = 59.24; //MeV
 
 // ### The assumed mass of the incident particle (here we assume a pion) ###
 float mass = 938.28;
@@ -953,7 +953,7 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
       }//<---Close Y in the Top
    //%%%%%%%%%%%%%%%%%%%|
 
-   if (EnergyLossFromMap == 0) {EnergyLossFromMap = 66.6;}
+   if (EnergyLossFromMap == 0) {EnergyLossFromMap = 59.24;}
 
    hEnergyLossMap->Fill(EnergyLossFromMap);
    //00000000000000000000000000000000000000000000000|
