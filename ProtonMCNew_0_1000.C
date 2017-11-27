@@ -3,6 +3,7 @@
 #include <TH2.h>
 #include <TStyle.h>
 #include <TCanvas.h>
+#include <TRandom.h>
 #include <iostream>
 #include <TVector3.h>
 
@@ -173,11 +174,11 @@ TH1D *hERemainMCMap = new TH1D("hERemainMCMap", "Remaining Energy from MC Map", 
 TH1D *hDeltaEnergyLossTruevsMap = new TH1D("hDeltaEnergyLossTruevsMap", "#Delta Energy Loss Upstream (True - Map)", 1000, -75, 75);
 
 /////////////////////////////////// Energy Loss in the upstream region of the beamline flat method ///////////////////////
-TH1D *hMCELossUpstreamFlat = new TH1D("hMCELossUpstreamFlat", "Energy loss prior to entering the TPC (Flat 59.24 MeV)", 1100, -100, 1000);
+TH1D *hMCELossUpstreamFlat = new TH1D("hMCELossUpstreamFlat", "Energy loss prior to entering the TPC (Flat 66.47 MeV)", 1100, -100, 1000);
 
 
 /////////////////////////////////// Final Kinetic Energy in the TPC using Map /////////////////////////
-TH1D *hERemainMCFlat = new TH1D("hERemainMCFlat", "Remaining Energy from MC using flat 59.24 MeV", 1000, -75, 75);
+TH1D *hERemainMCFlat = new TH1D("hERemainMCFlat", "Remaining Energy from MC using flat 66.47 MeV", 1000, -75, 75);
 
 
 
@@ -254,6 +255,16 @@ TH1D *hRRecoELossInTPC = new TH1D("hRRecoELossInTPC", "The Right Peaks Reconstru
 TH1D *hRDeltaInTPC = new TH1D("hRDeltaInTPC", "#Delta E_{Loss} Inside the TPC of the Right Peak (True - Reco)", 1000, -75, 75);
 
 //--------------------------------------|
+
+
+//------------------------|
+//--- Smart Gaus ELoss ---|
+//------------------------|
+
+TH1D *hSmartTrueELoss = new TH1D("hSmartTrueELoss", "Energy Loss Pulled From Random Gaussian Function for True", 1100, -100, 1000);
+TH1D *hSmartRecoELoss = new TH1D("hSmartRecoELoss", "Energy Loss Pulled From Random Gaussian Function for Reco", 1100, -100, 1000);
+
+//------------------------|
 
 
 //=================================|
@@ -776,6 +787,10 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
    nb = fChain->GetEntry(jentry);   nbytes += nb;
    
    
+   TRandom3 *randELoss = new TRandom3();
+   randELoss->SetSeed(jentry);
+
+
    // #############################
    // ### Counting Total Events ###
    // #############################
@@ -4084,14 +4099,18 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
 
 
 
-      if(EnergyLossFromMap == 0){EnergyLossFromMap = 59.24;}
+      if(EnergyLossFromMap == 0)
+         {
+	 EnergyLossFromMap = randELoss->Gaus(59.24,29.62);
+	 hSmartTrueELoss->Fill(EnergyLossFromMap);
+	 }
       
       // ###################################################################
       // ### Calculating the remaining energy of the particle from truth ###
       // ###################################################################
       ERemainingMCMap = InitialKineticEnergy - EnergyLossFromMap - EnergyLossInsideTPC;
       
-      ERemainingMCDumbFlat = InitialKineticEnergy - 59.24 - EnergyLossInsideTPC;
+      ERemainingMCDumbFlat = InitialKineticEnergy - 66.47 - EnergyLossInsideTPC;
       
       
       float DeltaEnergyLoss = EnergyLossOutsideTPC - EnergyLossFromMap;
@@ -4125,7 +4144,7 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
       
       hERemainMCMap->Fill(ERemainingMCMap);
       
-      hMCELossUpstreamFlat->Fill(59.24);
+      hMCELossUpstreamFlat->Fill(66.47);
       hERemainMCFlat->Fill(ERemainingMCDumbFlat);
       
       nG4Primary++;
@@ -6593,7 +6612,11 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
       // ###############################################|
 
 
-   if(EnergyLossFromMap == 0){EnergyLossFromMap = 59.24;}
+   if(EnergyLossFromMap == 0)
+      {
+      EnergyLossFromMap = randELoss->Gaus(59.24,29.62);
+      hSmartRecoELoss->Fill(EnergyLossFromMap);
+      }
    
    hMCELossUpstreamTPCRecoMap->Fill(EnergyLossFromMap);
    
@@ -7085,5 +7108,11 @@ hPhivsThetaELossDividedX9Y8->Write();
 hPhivsThetaELossDividedX9Y9->Write();
 
 // =======================|
+
+
+hSmartTrueELoss->Write();
+hSmartRecoELoss->Write();
+
+
 
 }//<----End Loop()
