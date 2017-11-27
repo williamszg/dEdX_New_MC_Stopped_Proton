@@ -3,6 +3,7 @@
 #include <TH2.h>
 #include <TStyle.h>
 #include <TCanvas.h>
+#include <TRandom.h>
 #include <iostream>
 #include <fstream>
 #include <TVector3.h>
@@ -331,7 +332,7 @@ int ElenaRunIICut = 45000;
 //### Load the Calibration Tables ###|
 //###################################|
 TFile *f1 = new TFile("./ROOTFILES/ProtonMCNew_0_2000.root");
-
+TH1F *hSmartPull = (TH1F*)f1->Get("hMCTrueELossUpstream");
 
 
 
@@ -3219,7 +3220,7 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
 
 
 
-   if (EnergyLossFromMap == 0) {EnergyLossFromMap = 59.24;}
+   if (EnergyLossFromMap == 0) {EnergyLossFromMap = hSmartPull->GetRandom();}
 
    hEnergyLossMap->Fill(EnergyLossFromMap);
    //00000000000000000000000000000000000000000000000|
