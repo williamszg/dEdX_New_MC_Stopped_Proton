@@ -707,6 +707,19 @@ TH2D *hPhivsThetaELossDividedX9Y9 = new TH2D("hPhivsThetaELossDividedX9Y9", "Phi
 //=================================|
 
 
+//------------------------------|
+//---- Delta Position Plots ----|
+//------------------------------|
+
+TH1D *hDeltaX = new TH1D("hDeltaX", "#Delta X (True - Reco)", 1000, -30, 70);
+TH1D *hDeltaY = new TH1D("hDeltaY", "#Delta Y (True - Reco)", 1000, -50, 50);
+
+TH1D *hDeltaT = new TH1D("hDeltaT", "#Delta #Theta (True - Reco)", 1000, -40, 60);
+TH1D *hDeltaP = new TH1D("hDeltaP", "#Delta #Phi (True - Reco)", 3600, 0, 360);
+
+//------------------------------|
+
+
 
 
 
@@ -789,7 +802,20 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
    nb = fChain->GetEntry(jentry);   nbytes += nb;
    
    
+   float DeltaX = 999;
+   float DeltaY = 999;
+   float DeltaT = 999;
+   float DeltaP = 999;
 
+   float TrueX = 999;
+   float TrueY = 999;
+   float TrueT = 999;
+   float TrueP = 999;
+
+   float RecoX = 999;
+   float RecoY = 999;
+   float RecoT = 999;
+   float RecoP = 999;
 
    // #############################
    // ### Counting Total Events ###
@@ -1102,11 +1128,11 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
       // ### Getting everything in the same convention ###
       float mcPhi = 0;
       float mcTheta = 0;
-      
+ 
       // === Calculating Theta for MC ===
       
       mcTheta = acos(z_hat_MC.Dot(p_hat_0_MC)/p_hat_0_MC.Mag());
-      
+
       // === Calculating Phi for MC ===
       
       //---------------------------------------------------------------------------------------------------------------------
@@ -1125,7 +1151,11 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
 	if( p_hat_0_MC.Y() > 0 ){ mcPhi = 3.141592654/2; }
 	else{ mcPhi = 3.141592654*3/2; }
 	}
-      
+
+      TrueX = FirstPoint_X;
+      TrueY = FirstPoint_Y;
+      TrueT = mcTheta*180/3.141592654;
+      TrueP = mcPhi*180/3.141592654; 
       
       // --- Filling the angle plots at the front face of the TPC ---
       hMCPhiAtFrontFace->Fill(mcPhi *(180/3.14159));
@@ -4355,6 +4385,20 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
    float FirstPoint_X = FirstSpacePointX;
    float FirstPoint_Y = FirstSpacePointY;
 
+   RecoX = FirstPoint_X;
+   RecoY = FirstPoint_Y;
+   RecoT = RecoTPCTheta;
+   RecoP = RecoTPCPhi;
+
+   DeltaX = TrueX - RecoX;
+   hDeltaX->Fill(DeltaX);
+   DeltaY = TrueY - RecoY;
+   hDeltaY->Fill(DeltaY);
+   DeltaT = TrueT - RecoT;
+   hDeltaT->Fill(DeltaT);
+   DeltaP = TrueP - RecoP;
+   hDeltaP->Fill(DeltaP);
+
       // ###############################################|
       // ### New Determining Which Histogram to Open ###|
       // ###############################################|
@@ -7114,5 +7158,10 @@ hSmartTrueELoss->Write();
 hSmartRecoELoss->Write();
 
 
+
+hDeltaX->Write();
+hDeltaY->Write();
+hDeltaT->Write();
+hDeltaP->Write();
 
 }//<----End Loop()
