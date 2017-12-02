@@ -715,7 +715,7 @@ TH1D *hDeltaX = new TH1D("hDeltaX", "#Delta X (True - Reco)", 1000, -30, 70);
 TH1D *hDeltaY = new TH1D("hDeltaY", "#Delta Y (True - Reco)", 1000, -50, 50);
 
 TH1D *hDeltaT = new TH1D("hDeltaT", "#Delta #Theta (True - Reco)", 1000, -40, 60);
-TH1D *hDeltaP = new TH1D("hDeltaP", "#Delta #Phi (True - Reco)", 3600, 0, 360);
+TH1D *hDeltaP = new TH1D("hDeltaP", "#Delta #Phi (True - Reco)", 7200, -360, 360);
 
 //------------------------------|
 
