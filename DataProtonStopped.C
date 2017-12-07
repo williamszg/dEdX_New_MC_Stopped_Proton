@@ -209,7 +209,7 @@ Long64_t nbytes = 0, nb = 0;
 
 
 
-ofstream ElenaTxt ("StoppingProtonEventsRunI_All.txt");
+ofstream ElenaTxt ("StoppingProtonEventsRunII_All.txt");
 //ElenaTxt <<"Run Subrun Event\n";
 
 
@@ -301,7 +301,7 @@ double alphaCut = 10;
 // #############################################################################################################
 // #################################        ROOT FILE FOR HISTOGRAM FOR PLOTS           ########################
 // #############################################################################################################
-//TFile myfile("./ROOTFILES/RunIPosPolData_StoppingProtons.root", "RECREATE");
+//TFile myfile("./ROOTFILES/RunIIPosPolData_StoppingProtons.root", "RECREATE");
 
 
 // ----------------------------------------------------------------
@@ -3461,7 +3461,7 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
 
       ElenaStoppingNumber++;
       
-      if (ElenaHault < ElenaRunICut)
+      if (ElenaHault < ElenaRunIICut)
          {
 
          ElenaTxt <<RunNum<<" "<<SubRunNum<<" "<<EventNum<<"\n";
@@ -3564,7 +3564,7 @@ ElenaTxt.close();
 
 
 
-TFile myfile("./ROOTFILES/RunIPosPolData_StoppingProtons.root", "RECREATE");
+TFile myfile("./ROOTFILES/RunIIPosPolData_StoppingProtons.root", "RECREATE");
 
 
 // ===========================================================================================
