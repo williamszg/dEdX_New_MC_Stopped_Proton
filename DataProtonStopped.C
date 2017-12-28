@@ -209,7 +209,7 @@ Long64_t nbytes = 0, nb = 0;
 
 
 
-ofstream ElenaTxt ("StoppingProtonEventsRunI_All.txt");
+ofstream ElenaTxt ("StoppingProtonEventsRunII_All.txt");
 //ElenaTxt <<"Run Subrun Event\n";
 
 
@@ -309,7 +309,7 @@ double alphaCut = 10;
 // ----------------------------------------------------------------
 
 // ### The assumed energy loss between the cryostat and the TPC ###
-float entryTPCEnergyLoss = 60.01; //MeV
+float entryTPCEnergyLoss = 65; //MeV
 
 // ### The assumed mass of the incident particle (here we assume a pion) ###
 float mass = 938.28;
@@ -3564,7 +3564,7 @@ ElenaTxt.close();
 
 
 
-TFile myfile("./ROOTFILES/RunIPosPolData_StoppingProtons.root", "RECREATE");
+TFile myfile("./ROOTFILES/RunIIPosPolData_StoppingProtons.root", "RECREATE");
 
 
 // ===========================================================================================
