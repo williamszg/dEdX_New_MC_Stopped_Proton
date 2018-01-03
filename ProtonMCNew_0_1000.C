@@ -770,7 +770,7 @@ int nTotalEvents = 0, TrueStoppingParticle = 0, nRecoEvents = 0, nEntries = 1000
 
 float particle_mass = 938.28;
 
-float ELossFlat = 60.01
+float ELossFlat = 60.01;
 
 // ########################################################################
 // ### Fiducial Boundry Cuts (used to determine if a track is stopping) ###
