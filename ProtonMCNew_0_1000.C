@@ -63,6 +63,10 @@ TH1D *hMCTrueELossInTPC = new TH1D("hMCTrueELossInTPC", "Energy loss inside the 
 /////////////////////////////////// Final Kinetic Energy in the TPC /////////////////////////
 TH1D *hERemainMCTrue = new TH1D("hERemainMCTrue", "Remaining Energy from MC Truth", 1000, -50, 50);
 
+TH1D *hERemainMCTrueFlat = new TH1D("hERemainMCTrueFlat", "Remaining Energy from MC Truth Flat Method", 1000, -150, 150);
+
+TH1D *hERemainMCRecoFlat = new TH1D("hERemainMCRecoFlat", "Remaining Energy from MC Truth Flat Method", 1000, -150, 150);
+
 /////////////////////////////////// E Loss upstream of the TPC /////////////////////////
 TH2D *hELossXvsY = new TH2D("hELossXvsY", "Energy Loss X vs Y", 200, 0, 50, 200, -25, 25);
 
@@ -174,11 +178,11 @@ TH1D *hERemainMCMap = new TH1D("hERemainMCMap", "Remaining Energy from MC Map", 
 TH1D *hDeltaEnergyLossTruevsMap = new TH1D("hDeltaEnergyLossTruevsMap", "#Delta Energy Loss Upstream (True - Map)", 1000, -75, 75);
 
 /////////////////////////////////// Energy Loss in the upstream region of the beamline flat method ///////////////////////
-TH1D *hMCELossUpstreamFlat = new TH1D("hMCELossUpstreamFlat", "Energy loss prior to entering the TPC (Flat 66.47 MeV)", 1100, -100, 1000);
+TH1D *hMCELossUpstreamFlat = new TH1D("hMCELossUpstreamFlat", "Energy loss prior to entering the TPC (Flat 60.01 MeV)", 1100, -100, 1000);
 
 
 /////////////////////////////////// Final Kinetic Energy in the TPC using Map /////////////////////////
-TH1D *hERemainMCFlat = new TH1D("hERemainMCFlat", "Remaining Energy from MC using flat 66.47 MeV", 1000, -75, 75);
+TH1D *hERemainMCFlat = new TH1D("hERemainMCFlat", "Remaining Energy from MC using flat 60.01 MeV", 1000, -100, 100);
 
 
 
@@ -764,7 +768,9 @@ void ProtonMCNew_0_1000::Loop()
 int nTotalEvents = 0, TrueStoppingParticle = 0, nRecoEvents = 0, nEntries = 10000;
 
 
-float particle_mass = 938.28 ;
+float particle_mass = 938.28;
+
+float ELossFlat = 60.01
 
 // ########################################################################
 // ### Fiducial Boundry Cuts (used to determine if a track is stopping) ###
@@ -854,7 +860,11 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
    float EnergyLossOutsideTPC = 0;
    float EnergyLossInsideTPC = 0;
    float ERemainingMCTrue = 9999;
-   
+  
+   float ERemainingMCTrueFlat = 9999;
+
+   float ERemainingMCRecoFlat = 9999;
+
    float ERemainingMCMap = 9999;
    
    float ERemainingMCDumbFlat = 9999;
@@ -863,7 +873,7 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
    
    float EnergyRemainingRecoTPCOnly = 9999;
    
-   float InitialKineticEnergy = 0;
+   float InitialKineticEnergy = 9999;
    
    float EnergyLossFromMap = 0;
 
@@ -1853,8 +1863,12 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
       // ### Calculating the remaining energy of the particle from truth ###
       // ###################################################################
       ERemainingMCTrue = InitialKineticEnergy - EnergyLossOutsideTPC - EnergyLossInsideTPC;
+      ERemainingMCTrueFlat = InitialKineticEnergy - ELossFlat - EnergyLossInsideTPC;
+      //ERemainingMCRecoFlat = InitialKineticEnergy - ELossFlat - RecoEnergyLossInsideTPC;
       
       hERemainMCTrue->Fill(ERemainingMCTrue);
+      hERemainMCTrueFlat->Fill(ERemainingMCTrueFlat);
+      //hERemainMCRecoFlat->Fill(ERemainingMCRecoFlat);
       
       
       
@@ -4140,7 +4154,7 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
       // ###################################################################
       ERemainingMCMap = InitialKineticEnergy - EnergyLossFromMap - EnergyLossInsideTPC;
       
-      ERemainingMCDumbFlat = InitialKineticEnergy - 66.47 - EnergyLossInsideTPC;
+      ERemainingMCDumbFlat = InitialKineticEnergy - ELossFlat - EnergyLossInsideTPC;
       
       
       float DeltaEnergyLoss = EnergyLossOutsideTPC - EnergyLossFromMap;
@@ -4174,7 +4188,7 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
       
       hERemainMCMap->Fill(ERemainingMCMap);
       
-      hMCELossUpstreamFlat->Fill(66.47);
+      hMCELossUpstreamFlat->Fill(ELossFlat);
       hERemainMCFlat->Fill(ERemainingMCDumbFlat);
       
       nG4Primary++;
@@ -6729,7 +6743,11 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
    EnergyRemainingRecoTPCOnly = InitialKineticEnergy - EnergyLossOutsideTPC - RecoEnergyLossInsideTPC;
    
    hERemainTPCRecoOnly->Fill(EnergyRemainingRecoTPCOnly);
-   
+
+   ERemainingMCRecoFlat = InitialKineticEnergy - ELossFlat - RecoEnergyLossInsideTPC;
+
+   hERemainMCRecoFlat->Fill(ERemainingMCRecoFlat);
+
    if(ReconstructedEvent){nRecoEvents++;}
       
    }//<---End jentry loop
@@ -6915,6 +6933,8 @@ hMCTrueELossUpstream->Write();
 hMCTrueELossInTPC->Write();
 
 hERemainMCTrue->Write();
+hERemainMCTrueFlat->Write();
+hERemainMCRecoFlat->Write();
 
 hELossXvsY->Write();
 hELossXvsYFlux->Write();

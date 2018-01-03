@@ -11,7 +11,8 @@ TFile *f1 = new TFile("./ROOTFILES/RunIPosPolData_StoppingProtons.root");
 TFile *f2 = new TFile("./ROOTFILES/RunIIPosPolData_StoppingProtons.root");
 
 //--- Read in DDProton ROOT File ---|
-TFile *f3 = new TFile("./ROOTFILES/DataDrivenProtonMC_EnergyCalibrationPlots.root");
+//TFile *f3 = new TFile("./ROOTFILES/DataDrivenProtonMC_EnergyCalibrationPlots.root");
+TFile *f3 = new TFile("./ROOTFILES/ProtonMCNew_0_2000.root");
 
 //########################################################|
 
