@@ -172,10 +172,11 @@ TH1D *hMCELossUpstreamLookUp = new TH1D("hMCELossUpstreamLookUp", "Energy loss p
 
 
 /////////////////////////////////// Final Kinetic Energy in the TPC using Map /////////////////////////
-TH1D *hERemainMCMap = new TH1D("hERemainMCMap", "Remaining Energy from MC Map", 1000, -75, 75);
+TH1D *hERemainMCMap = new TH1D("hERemainMCMap", "Remaining Energy from MC Map", 1000, -150, 150);
 
 /////////////////////////////////// Delta Energy Loss between True and Map method /////////////////////////
-TH1D *hDeltaEnergyLossTruevsMap = new TH1D("hDeltaEnergyLossTruevsMap", "#Delta Energy Loss Upstream (True - Map)", 1000, -75, 75);
+TH1D *hDeltaEnergyLossTruevsMap = new TH1D("hDeltaEnergyLossTruevsMap", "#Delta Energy Loss Upstream (True - Map)", 1000, -150, 150);
+TH1D *hDeltaEnergyLossTruevsMapNoPeak = new TH1D("hDeltaEnergyLossTruevsMapNoPeak", "#Delta Energy Loss Upstream (True - Map)", 1000, -150, 150);
 
 /////////////////////////////////// Energy Loss in the upstream region of the beamline flat method ///////////////////////
 TH1D *hMCELossUpstreamFlat = new TH1D("hMCELossUpstreamFlat", "Energy loss prior to entering the TPC (Flat 60.01 MeV)", 1100, -100, 1000);
@@ -222,11 +223,16 @@ TH1D *hMCELossUpstreamTPCRecoMap = new TH1D("hMCELossUpstreamTPCRecoMap", "Energ
 
 
 /////////////////////////////////// Delta Energy Loss in TPC between True and dE/dX method /////////////////////////
-TH1D *hDeltaEnergyLossInTPCTruevsReco = new TH1D("hDeltaEnergyLossInTPCTruevsReco", "#Delta Energy Loss in the TPC (True - Reco)", 1000, -75, 75);
+TH1D *hDeltaEnergyLossInTPCTruevsReco = new TH1D("hDeltaEnergyLossInTPCTruevsReco", "#Delta Energy Loss in the TPC (True - Reco)", 1000, -150, 150);
 
 /////////////////////////////////// Delta Energy Loss in TPC between True and Reco Map Method /////////////////////////
-TH1D *hDeltaEnergyLossUpstreamTPCTruevsReco = new TH1D("hDeltaEnergyLossUpstreamTPCTruevsReco", "#Delta Energy Loss Upstream of the TPC (True - Reco)", 1000, -75, 75);
+TH1D *hDeltaEnergyLossUpstreamTPCTruevsReco = new TH1D("hDeltaEnergyLossUpstreamTPCTruevsReco", "#Delta Energy Loss Upstream of the TPC (True - Reco)", 1000, -150, 150);
 
+/////////////////////////////////// Delta Energy Loss in TPC between True and dE/dX method /////////////////////////
+TH1D *hDeltaEnergyLossInTPCTruevsRecoNoPeak = new TH1D("hDeltaEnergyLossInTPCTruevsRecoNoPeak", "#Delta Energy Loss in the TPC (True - Reco)", 1000, -150, 150);
+
+/////////////////////////////////// Delta Energy Loss in TPC between True and Reco Map Method /////////////////////////
+TH1D *hDeltaEnergyLossUpstreamTPCTruevsRecoNoPeak = new TH1D("hDeltaEnergyLossUpstreamTPCTruevsRecoNoPeak", "#Delta Energy Loss Upstream of the TPC (True - Reco)", 1000, -150, 150);
 
 TH1D *hDeltaTotalTruevsReco = new TH1D("hDeltaTotalTruevsReco", "#Delta E_{Total} (True - Reco)", 1001, -75, 75);
 
@@ -4179,6 +4185,7 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
          }
 */
       hDeltaEnergyLossTruevsMap->Fill(DeltaEnergyLoss);
+      if(sqrt(DeltaEnergyLoss*DeltaEnergyLoss) > 0.001) {hDeltaEnergyLossTruevsMapNoPeak->Fill(DeltaEnergyLoss);}
       
       // === Filling Histograms ===
       hERemainMCTrue->Fill(ERemainingMCTrue);
@@ -6730,6 +6737,9 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
    
    hDeltaEnergyLossInTPCTruevsReco->Fill(DeltaEnergyLossInTPC);
 
+   if(sqrt(DeltaELossUpstreamTruevsReco*DeltaELossUpstreamTruevsReco) > 0.001 && DeltaELossUpstreamTruevsReco != 999) {hDeltaEnergyLossUpstreamTPCTruevsRecoNoPeak->Fill(DeltaELossUpstreamTruevsReco);}
+   if(sqrt(DeltaEnergyLossInTPC*DeltaEnergyLossInTPC) > 0.001) {hDeltaEnergyLossInTPCTruevsRecoNoPeak->Fill(DeltaEnergyLossInTPC);}
+
    hDeltaEInTPCvsTrkLength->Fill(primary_track_length,DeltaEnergyLossInTPC);
    hDeltaEInTPCvsKEinit->Fill(InitialKineticEnergy,DeltaEnergyLossInTPC);
 
@@ -6985,6 +6995,7 @@ hERemainTPCRecoOnly->Write();
 hMCELossUpstreamTPCRecoMap->Write();
 
 hDeltaEnergyLossTruevsMap->Write();
+hDeltaEnergyLossTruevsMapNoPeak->Write();
 
 hDeltaEnergyLossInTPCTruevsReco->Write();
 
@@ -7183,5 +7194,8 @@ hDeltaX->Write();
 hDeltaY->Write();
 hDeltaT->Write();
 hDeltaP->Write();
+
+hDeltaEnergyLossInTPCTruevsRecoNoPeak->Write();
+hDeltaEnergyLossUpstreamTPCTruevsRecoNoPeak->Write();
 
 }//<----End Loop()
