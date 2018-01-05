@@ -277,6 +277,19 @@ TH1D *hSmartRecoELoss = new TH1D("hSmartRecoELoss", "Energy Loss Pulled From Ran
 //------------------------|
 
 
+
+TH1D *hELossZeroRecoTheta = new TH1D("hELossZeroRecoTheta", "Reco Theta When E_{Remaining} = 0", 1000, 0, 180);
+TH1D *hELossZeroRecoPhi = new TH1D("hELossZeroRecoPhi", "Reco Phi When E_{Remaining} = 0", 1000, 0, 360);
+TH1D *hELossZeroRecoX = new TH1D("hELossZeroRecoX", "Reco x_{0} When E_{Remaining} = 0", 1000, 0, 47);
+TH1D *hELossZeroRecoY = new TH1D("hELossZeroRecoY", "Reco y_{0} When E_{Remaining} = 0", 1000, -20, 20);
+
+TH1D *hELossZeroTrueTheta = new TH1D("hELossZeroTrueTheta", "True Theta When E_{Remaining} = 0", 1000, 0, 180);
+TH1D *hELossZeroTruePhi = new TH1D("hELossZeroTruePhi", "True Phi When E_{Remaining} = 0", 1000, 0, 360);
+TH1D *hELossZeroTrueX = new TH1D("hELossZeroTrueX", "True x_{0} When E_{Remaining} = 0", 1000, 0, 47);
+TH1D *hELossZeroTrueY = new TH1D("hELossZeroTrueY", "True y_{0} When E_{Remaining} = 0", 1000, -20, 20);
+
+
+
 //=================================|
 //=== Breaking up theta and phi ===|
 //=================================|
@@ -6737,8 +6750,22 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
    
    hDeltaEnergyLossInTPCTruevsReco->Fill(DeltaEnergyLossInTPC);
 
-   if(sqrt(DeltaELossUpstreamTruevsReco*DeltaELossUpstreamTruevsReco) > 0.001 && DeltaELossUpstreamTruevsReco != 999) {hDeltaEnergyLossUpstreamTPCTruevsRecoNoPeak->Fill(DeltaELossUpstreamTruevsReco);}
-   if(sqrt(DeltaEnergyLossInTPC*DeltaEnergyLossInTPC) > 0.001) {hDeltaEnergyLossInTPCTruevsRecoNoPeak->Fill(DeltaEnergyLossInTPC);}
+   if(sqrt(DeltaELossUpstreamTruevsReco*DeltaELossUpstreamTruevsReco) > 0.001 && DeltaELossUpstreamTruevsReco != 999) 
+      {
+      hDeltaEnergyLossUpstreamTPCTruevsRecoNoPeak->Fill(DeltaELossUpstreamTruevsReco);
+      hELossZeroRecoTheta->Fill(RecoT);
+      hELossZeroRecoPhi->Fill(RecoP);
+      hELossZeroRecoX->Fill(RecoX);
+      hELossZeroRecoY->Fill(RecoY);
+      hELossZeroTrueTheta->Fill(TrueT);
+      hELossZeroTruePhi->Fill(TrueP);
+      hELossZeroTrueX->Fill(TrueX);
+      hELossZeroTrueY->Fill(TrueY);
+      }
+   if(sqrt(DeltaEnergyLossInTPC*DeltaEnergyLossInTPC) > 0.001) 
+      {
+      hDeltaEnergyLossInTPCTruevsRecoNoPeak->Fill(DeltaEnergyLossInTPC); 
+      }
 
    hDeltaEInTPCvsTrkLength->Fill(primary_track_length,DeltaEnergyLossInTPC);
    hDeltaEInTPCvsKEinit->Fill(InitialKineticEnergy,DeltaEnergyLossInTPC);
@@ -6923,6 +6950,16 @@ hPhivsThetaELossDividedX9Y9->Divide(hPhivsThetaELossX9Y9, hPhivsThetaELossFluxX9
 
 
 ///////////////////////////////////////////////////////////////////////////////////////
+hELossZeroRecoTheta->Write();
+hELossZeroRecoPhi->Write();
+hELossZeroRecoX->Write();
+hELossZeroRecoY->Write();
+
+hELossZeroTrueTheta->Write();
+hELossZeroTruePhi->Write();
+hELossZeroTrueX->Write();
+hELossZeroTrueY->Write();
+
 hMCPrimaryPxUnWeighted->Write();
 hMCPrimaryPyUnWeighted->Write();
 hMCPrimaryPzUnWeighted->Write();
