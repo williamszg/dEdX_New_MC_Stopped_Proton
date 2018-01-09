@@ -4164,8 +4164,9 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
 
       if(EnergyLossFromMap == 0)
          {
-	 EnergyLossFromMap = hSmartPull->GetRandom();
-	 hSmartTrueELoss->Fill(EnergyLossFromMap);
+	 //EnergyLossFromMap = hSmartPull->GetRandom();
+	 //hSmartTrueELoss->Fill(EnergyLossFromMap);
+	 continue;
 	 }
       
       // ###################################################################
@@ -6692,8 +6693,9 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
 
    if(EnergyLossFromMap == 0)
       {
-      EnergyLossFromMap = hSmartPull->GetRandom();
-      hSmartRecoELoss->Fill(EnergyLossFromMap);
+      //EnergyLossFromMap = hSmartPull->GetRandom();
+      //hSmartRecoELoss->Fill(EnergyLossFromMap);
+      continue;
       }
    
    hMCELossUpstreamTPCRecoMap->Fill(EnergyLossFromMap);
@@ -6801,7 +6803,8 @@ std::cout<<"====================================================================
 // ###########################################
 // ### Create a file for all my histograms ###
 // ###########################################
-TFile myfile("./ROOTFILES/ProtonMCNew_1000_2000.root","RECREATE");
+//TFile myfile("./ROOTFILES/ProtonMCNew_1000_2000.root","RECREATE");
+TFile myfile("./ROOTFILES/ProtonMCNew_1000_2000_NoZero.root","CREATE");
 
 
 // ##########################
