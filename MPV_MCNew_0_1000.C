@@ -1,5 +1,5 @@
 #define MPV_MCNew_0_1000_cxx
-#include "ProtonMCNew_0_1000.h"
+#include "MPV_MCNew_0_1000.h"
 #include <TH2.h>
 #include <TStyle.h>
 #include <TCanvas.h>
@@ -240,7 +240,7 @@ double MPVArgon(double x)
 
 } //<--- Close MPV on Argon function
 
-double MPVCarbon(double x)
+double MPVCarbon(double x, double width)
 {
    
    double x0 = 0.2;
@@ -254,7 +254,7 @@ double MPVCarbon(double x)
    double m_e = 0.511;
    double M_proton = 938.272;
    double I = 79.1e-6;
-   double width = 0.6;
+   //double width = 0.6;
    double rho = 2.265;
    double j = 0.2;
    double zeta = (K/2)*(Z/A)*width*rho;
@@ -265,7 +265,7 @@ double MPVCarbon(double x)
 
 } //<--- Close MPV on Carbon function
 
-double MPVSteel(double x)
+double MPVSteel(double x, double width)
 {
    
    double x0 = 0.2;
@@ -279,7 +279,7 @@ double MPVSteel(double x)
    double m_e = 0.511;
    double M_proton = 938.272;
    double I = 286e-6;
-   double width = 5.08;
+   //double width = 5.08;
    double rho = 7.87;
    double j = 0.2;
    double zeta = (K/2)*(Z/A)*width*rho;
@@ -304,7 +304,7 @@ double MPVSteel(double x)
 //%%% Actual Code for MC Analysis %%%|
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|
 
-void ProtonMCNew_0_1000::Loop()
+void MPV_MCNew_0_1000::Loop()
 {
 
 // ##########################################################
@@ -501,7 +501,7 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
 	                        (g4Primary_Py[nG4Primary]*g4Primary_Py[nG4Primary]) + 
 				(g4Primary_Pz[nG4Primary]*g4Primary_Pz[nG4Primary]) );
 
-      InitialKineticEnergy = sqrt( (momentumScale*momentumScale) + (particle_mass*particle_mass) ) - particle_mass;
+      float InitialKineticEnergy = sqrt( (momentumScale*momentumScale) + (particle_mass*particle_mass) ) - particle_mass;
       
       hMCPrimaryPUnWeighted->Fill(momentumScale);
 
@@ -660,8 +660,8 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
       // ###################################################################
       // ### Calculating the remaining energy of the particle from truth ###
       // ###################################################################
-      ERemainingMCTrue = InitialKineticEnergy - EnergyLossOutsideTPC - EnergyLossInsideTPC;
-      ERemainingMCTrueFlat = InitialKineticEnergy - ELossFlat - EnergyLossInsideTPC;
+      float ERemainingMCTrue = InitialKineticEnergy - EnergyLossOutsideTPC - EnergyLossInsideTPC;
+      float ERemainingMCTrueFlat = InitialKineticEnergy - ELossFlat - EnergyLossInsideTPC;
       //Put the MPV method of estimating the energy loss!
       
       hERemainMCTrue->Fill(ERemainingMCTrue);
@@ -683,8 +683,8 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
       float TOFRange = abs((TOFLowerZ - TOFUpperZ)/cos(mcTheta));
       float SteelRange = abs((RoughSteelLowerZ - RoughSteelUpperZ)/cos(mcTheta));
 
-      MPVEnergyLossUpstreamTrue = (HaloRange*MPVCarbon(momentumScale)) + (TOFRange*MPVCarbon(momentumScale)) + (SteelRange*MPVSteel(momentumScale));
-      std::cout<<"MPVEnergyLossUpstreamTrue = "<<MPVEnergyLossUpstreamTrue<<std::endl;
+      MPVEnergyLossUpstreamTrue = (HaloRange*MPVCarbon(momentumScale, HaloRange)) + (TOFRange*MPVCarbon(momentumScale, TOFRange)) + (SteelRange*MPVSteel(momentumScale, SteelRange));
+      if(nTotalEvents % 100 == 0){std::cout<<"MPVEnergyLossUpstreamTrue = "<<MPVEnergyLossUpstreamTrue<<std::endl;}
 
 
 
@@ -693,14 +693,14 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
 
       // === Filling Histograms ===
       hERemainMCTrue->Fill(ERemainingMCTrue);
-      hMCELossUpstreamLookUp->Fill(EnergyLossFromMap);
+      //hMCELossUpstreamLookUp->Fill(EnergyLossFromMap);
 
-      ELossMapTrue = EnergyLossFromMap;
+      //ELossMapTrue = EnergyLossFromMap;
       
-      hERemainMCMap->Fill(ERemainingMCMap);
+      //hERemainMCMap->Fill(ERemainingMCMap);
       
       hMCELossUpstreamFlat->Fill(ELossFlat);
-      hERemainMCFlat->Fill(ERemainingMCDumbFlat);
+      //hERemainMCFlat->Fill(ERemainingMCDumbFlat);
       
       nG4Primary++;
       
@@ -733,6 +733,10 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
    double MCRecoPitch[1000]={0.};
    
    double primary_track_length = 0;
+   double RecoEnergyLossInsideTPC = 0;
+
+
+   float InitialKineticEnergy = 0;
    // ##########################################
    // ### Loop over all reconstructed tracks ###
    // ##########################################
@@ -959,13 +963,13 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
    RecoP = RecoTPCPhi;
 
    DeltaX = TrueX - RecoX;
-   hDeltaX->Fill(DeltaX);
+   //hDeltaX->Fill(DeltaX);
    DeltaY = TrueY - RecoY;
-   hDeltaY->Fill(DeltaY);
+   //hDeltaY->Fill(DeltaY);
    DeltaT = TrueT - RecoT;
-   hDeltaT->Fill(DeltaT);
+   //hDeltaT->Fill(DeltaT);
    DeltaP = TrueP - RecoP;
-   hDeltaP->Fill(DeltaP);
+   //hDeltaP->Fill(DeltaP);
 
    // ### Filling Histograms ###
    hMCELossRecoInTPC->Fill(RecoEnergyLossInsideTPC);
@@ -974,13 +978,13 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
    float DeltaELossUpstreamTruevsReco = 999;
 
    float ETrueTotal = EnergyLossInsideTPC + EnergyLossOutsideTPC;
-   float ERecoTotal = RecoEnergyLossInsideTPC + EnergyLossFromMap;
+   float ERecoTotal = RecoEnergyLossInsideTPC; //+ EnergyLossFromMap;
 
    float DeltaTotal = 999;
    DeltaTotal = ETrueTotal - ERecoTotal;
 
    hDeltaEInTPCvsTrkLength->Fill(primary_track_length,DeltaEnergyLossInTPC);
-   hDeltaEInTPCvsKEinit->Fill(InitialKineticEnergy,DeltaEnergyLossInTPC);
+   //hDeltaEInTPCvsKEinit->Fill(InitialKineticEnergy,DeltaEnergyLossInTPC);
 
    hRecoMCTPCStartX->Fill(FirstSpacePointX);
    hRecoMCTPCStartY->Fill(FirstSpacePointY);
@@ -989,11 +993,11 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
    // ########################################################################
    // ### Calculating the energy remaining using only reco TPC information ###
    // ########################################################################
-   EnergyRemainingRecoTPCOnly = InitialKineticEnergy - EnergyLossOutsideTPC - RecoEnergyLossInsideTPC;
+   float EnergyRemainingRecoTPCOnly = InitialKineticEnergy - EnergyLossOutsideTPC - RecoEnergyLossInsideTPC;
    
    hERemainTPCRecoOnly->Fill(EnergyRemainingRecoTPCOnly);
 
-   ERemainingMCRecoFlat = InitialKineticEnergy - ELossFlat - RecoEnergyLossInsideTPC;
+   float ERemainingMCRecoFlat = InitialKineticEnergy - ELossFlat - RecoEnergyLossInsideTPC;
 
    hERemainMCRecoFlat->Fill(ERemainingMCRecoFlat);
 
@@ -1095,8 +1099,6 @@ hERemainTPCRecoOnly->Write();
 
 hMCELossUpstreamTPCRecoMap->Write();
 
-hDeltaEnergyLossTruevsMap->Write();
-hDeltaEnergyLossTruevsMapNoPeak->Write();
 
 hDeltaEnergyLossInTPCTruevsReco->Write();
 
@@ -1109,10 +1111,10 @@ hDeltaTotalTruevsReco->Write();
 
 hMCPrimaryPUnWeighted->Write();
 
-hDeltaX->Write();
-hDeltaY->Write();
-hDeltaT->Write();
-hDeltaP->Write();
+//hDeltaX->Write();
+//hDeltaY->Write();
+//hDeltaT->Write();
+//hDeltaP->Write();
 
 }//<----End Loop()
 
