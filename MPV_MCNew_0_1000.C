@@ -363,7 +363,7 @@ double RoughSteelLowerY = 0;
 double RoughSteelUpperY = 0;
 
 double RoughSteelLowerZ = 0;
-double RoughSteelUpperZ = -17.5;
+double RoughSteelUpperZ = -2.5;
 
 
 
