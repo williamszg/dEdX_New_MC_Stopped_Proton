@@ -205,6 +205,7 @@ TH1D *hDeltaTotalTruevsReco = new TH1D("hDeltaTotalTruevsReco", "#Delta E_{Total
 TH2D *hDeltaEInTPCvsTrkLength = new TH2D("hDeltaEInTPCvsTrkLength", "TrkLength vs Delta E", 1000, 0, 110, 1000, -75, 75);
 TH2D *hDeltaEInTPCvsKEinit = new TH2D("hDeltaEInTPCvsKEinit", "Initial KE vs Delta E", 80, 0, 800, 1000, -75, 75);
 
+TH1D *hMPVEnergyLossUpstreamTrue = new TH1D("hMPVEnergyLossUpstreamTrue", "MPV value for the energy lost upstream", 200, 0, 200);
 
 // ===================================================================================================================
 // ===================================================================================================================
@@ -254,7 +255,7 @@ double MPVCarbon(double x, double width)
    double m_e = 0.511;
    double M_proton = 938.272;
    double I = 79.1e-6;
-   //double width = 0.6;
+   //double width = 0.47;
    double rho = 2.265;
    double j = 0.2;
    double zeta = (K/2)*(Z/A)*width*rho;
@@ -279,7 +280,7 @@ double MPVSteel(double x, double width)
    double m_e = 0.511;
    double M_proton = 938.272;
    double I = 286e-6;
-   //double width = 5.08;
+   //double width = 0.47;
    double rho = 7.87;
    double j = 0.2;
    double zeta = (K/2)*(Z/A)*width*rho;
@@ -363,7 +364,7 @@ double RoughSteelLowerY = 0;
 double RoughSteelUpperY = 0;
 
 double RoughSteelLowerZ = 0;
-double RoughSteelUpperZ = -2.5;
+double RoughSteelUpperZ = -1.5;
 
 
 
@@ -683,9 +684,19 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
       float TOFRange = abs((TOFLowerZ - TOFUpperZ)/cos(mcTheta));
       float SteelRange = abs((RoughSteelLowerZ - RoughSteelUpperZ)/cos(mcTheta));
 
-      MPVEnergyLossUpstreamTrue = (HaloRange*MPVCarbon(momentumScale, HaloRange)) + (TOFRange*MPVCarbon(momentumScale, TOFRange)) + (SteelRange*MPVSteel(momentumScale, SteelRange));
-      if(nTotalEvents % 100 == 0){std::cout<<"MPVEnergyLossUpstreamTrue = "<<MPVEnergyLossUpstreamTrue<<std::endl;}
+      MPVEnergyLossUpstreamTrue = (HaloRange*MPVCarbon(momentumScale, HaloRange/100)) + (TOFRange*MPVCarbon(momentumScale, TOFRange/100)) + (SteelRange*MPVSteel(momentumScale, SteelRange/100));
+      if(nTotalEvents % 100 == 0)
+         {
+         std::cout<<"MPVEnergyLossUpstreamTrue = "<<MPVEnergyLossUpstreamTrue<<std::endl;
+         std::cout<<"MPVCarbon(Halo) = "<<MPVCarbon(momentumScale, HaloRange/100)<<std::endl;
+         std::cout<<"HaloRange = "<<HaloRange<<std::endl;
+         std::cout<<"MPVCarbon(TOF) = "<<MPVCarbon(momentumScale, TOFRange/100)<<std::endl;
+         std::cout<<"TOFRange = "<<TOFRange<<std::endl;
+         std::cout<<"MPVSteel = "<<MPVSteel(momentumScale, SteelRange/100)<<std::endl;
+         std::cout<<"SteelRange = "<<SteelRange<<std::endl;
+         }
 
+      hMPVEnergyLossUpstreamTrue->Fill(MPVEnergyLossUpstreamTrue);
 
 
 
@@ -1027,6 +1038,8 @@ std::cout<<"====================================================================
 // ###########################################
 TFile myfile("./ROOTFILES/MPV_MCNew_0_1000.root","CREATE");
 
+
+hMPVEnergyLossUpstreamTrue->Write();
 
 hMCPrimaryPxUnWeighted->Write();
 hMCPrimaryPyUnWeighted->Write();
