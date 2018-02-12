@@ -1036,7 +1036,7 @@ std::cout<<"====================================================================
 // ###########################################
 // ### Create a file for all my histograms ###
 // ###########################################
-TFile myfile("./ROOTFILES/MPV_MCNew_1000_2000.root","CREATE");
+TFile myfile("./ROOTFILES/MPV_MCNew_1000_2000.root","RECREATE");
 
 
 hMPVEnergyLossUpstreamTrue->Write();
