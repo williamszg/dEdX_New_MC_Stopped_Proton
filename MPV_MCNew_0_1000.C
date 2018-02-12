@@ -218,6 +218,10 @@ TH1D *hMPVEnergyLossUpstreamReco = new TH1D("hMPVEnergyLossUpstreamReco", "MPV v
 
 TH1D *hMPVEnergyLossUpstreamDelta = new TH1D("hMPVEnergyLossUpstreamDelta", "Delta MPV value for the energy lost upstream (True - Reco)", 1000, -200, 200);
 
+TH1D *hMPVEnergyLossUpstreamDeltaTrueTrue = new TH1D("hMPVEnergyLossUpstreamDeltaTrueTrue", "Difference between the upstream energy loss value for the energy lost upstream and the MPV value (True - True)", 1000, -200, 200);
+
+TH1D *hMPVEnergyLossUpstreamDeltaTrueReco = new TH1D("hMPVEnergyLossUpstreamDeltaTrueReco", "Difference between the upstream energy loss value for the energy lost upstream and the MPV value (True - Reco)", 1000, -200, 200);
+
 // --------------------------|
 
 
@@ -387,6 +391,7 @@ double RoughSteelUpperZ = -1.5;
 float MPVEnergyLossUpstreamTrue = 999;
 float MPVEnergyLossUpstreamReco = 999;
 float momentumScale = 999;
+double UpstreamEnergyLossTrue = 999;
 
 
 
@@ -615,6 +620,8 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
       // --- Filling histograms for ELoss ---
       hMCTrueELossUpstream->Fill(EnergyLossOutsideTPC);
       hMCTrueELossInTPC->Fill(EnergyLossInsideTPC);
+
+      UpstreamEnergyLossTrue = EnergyLossOutsideTPC;
       
       hELossXvsY->Fill(FirstPoint_X, FirstPoint_Y, EnergyLossOutsideTPC);
       hELossXvsYFlux->Fill(FirstPoint_X, FirstPoint_Y);
@@ -1002,7 +1009,8 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
    hMPVEnergyLossUpstreamReco->Fill(MPVEnergyLossUpstreamReco);
 
    hMPVEnergyLossUpstreamDelta->Fill(MPVEnergyLossUpstreamTrue - MPVEnergyLossUpstreamReco);
-
+   hMPVEnergyLossUpstreamDeltaTrueTrue->Fill(UpstreamEnergyLossTrue - MPVEnergyLossUpstreamTrue);
+   hMPVEnergyLossUpstreamDeltaTrueReco->Fill(UpstreamEnergyLossTrue - MPVEnergyLossUpstreamReco);
 
 
    float PhiInDegrees = RecoTPCPhi;
