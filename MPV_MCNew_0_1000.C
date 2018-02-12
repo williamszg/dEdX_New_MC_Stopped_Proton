@@ -199,13 +199,30 @@ TH1D *hDeltaEnergyLossInTPCTruevsRecoNoPeak = new TH1D("hDeltaEnergyLossInTPCTru
 /////////////////////////////////// Delta Energy Loss in TPC between True and Reco Map Method /////////////////////////
 TH1D *hDeltaEnergyLossUpstreamTPCTruevsRecoNoPeak = new TH1D("hDeltaEnergyLossUpstreamTPCTruevsRecoNoPeak", "#Delta Energy Loss Upstream of the TPC (True - Reco)", 1000, -150, 150);
 
-TH1D *hDeltaTotalTruevsReco = new TH1D("hDeltaTotalTruevsReco", "#Delta E_{Total} (True - Reco)", 1001, -75, 75);
+TH1D *hDeltaTotalTruevsReco = new TH1D("hDeltaTotalTruevsReco", "#Delta E_{Total} (True - Reco)", 1000, -75, 75);
 
 
 TH2D *hDeltaEInTPCvsTrkLength = new TH2D("hDeltaEInTPCvsTrkLength", "TrkLength vs Delta E", 1000, 0, 110, 1000, -75, 75);
 TH2D *hDeltaEInTPCvsKEinit = new TH2D("hDeltaEInTPCvsKEinit", "Initial KE vs Delta E", 80, 0, 800, 1000, -75, 75);
 
-TH1D *hMPVEnergyLossUpstreamTrue = new TH1D("hMPVEnergyLossUpstreamTrue", "MPV value for the energy lost upstream", 200, 0, 200);
+
+
+
+// --------------------------|
+// --- New MPV Histograms ---|
+// --------------------------|
+
+TH1D *hMPVEnergyLossUpstreamTrue = new TH1D("hMPVEnergyLossUpstreamTrue", "MPV value for the energy lost upstream", 1000, 0, 200);
+
+TH1D *hMPVEnergyLossUpstreamReco = new TH1D("hMPVEnergyLossUpstreamReco", "MPV value for the energy lost upstream", 1000, 0, 200);
+
+TH1D *hMPVEnergyLossUpstreamDelta = new TH1D("hMPVEnergyLossUpstreamDelta", "Delta MPV value for the energy lost upstream (True - Reco)", 1000, -200, 200);
+
+// --------------------------|
+
+
+
+
 
 // ===================================================================================================================
 // ===================================================================================================================
@@ -960,7 +977,32 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
    
    // ### Skipping events which aren't reconstructed ###
    if(nMCRecoSpts < 1){ReconstructedEvent = false; continue;} 
-     
+    
+   // #######################################################
+   // ### Energy Loss Upstream of TPC Using MPV Functions ###
+   // #######################################################
+   float MPVEnergyLossUpstreamReco = 0;
+   float HaloRange = abs((HaloLowerZ - HaloUpperZ)/cos(tpcTheta));
+   float TOFRange = abs((TOFLowerZ - TOFUpperZ)/cos(tpcTheta));
+   float SteelRange = abs((RoughSteelLowerZ - RoughSteelUpperZ)/cos(tpcTheta));
+
+   MPVEnergyLossUpstreamReco = (HaloRange*MPVCarbon(momentumScale, HaloRange/100)) + (TOFRange*MPVCarbon(momentumScale, TOFRange/100)) + (SteelRange*MPVSteel(momentumScale, SteelRange/100));
+   if(nTotalEvents % 100 == 0)
+      {
+      std::cout<<"MPVEnergyLossUpstreamReco = "<<MPVEnergyLossUpstreamReco<<std::endl;
+      std::cout<<"MPVCarbon(Halo) = "<<MPVCarbon(momentumScale, HaloRange/100)<<std::endl;
+      std::cout<<"HaloRange = "<<HaloRange<<std::endl;
+      std::cout<<"MPVCarbon(TOF) = "<<MPVCarbon(momentumScale, TOFRange/100)<<std::endl;
+      std::cout<<"TOFRange = "<<TOFRange<<std::endl;
+      std::cout<<"MPVSteel = "<<MPVSteel(momentumScale, SteelRange/100)<<std::endl;
+      std::cout<<"SteelRange = "<<SteelRange<<std::endl;
+      }
+
+   hMPVEnergyLossUpstreamReco->Fill(MPVEnergyLossUpstreamReco);
+
+   hMPVEnergyLossUpstreamDelta->Fill(MPVEnergyLossUpstreamTrue - MPVEnergyLossUpstreamReco);
+
+
 
    float PhiInDegrees = RecoTPCPhi;
    float ThetaInDegrees = RecoTPCTheta;
@@ -1013,7 +1055,8 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
    hERemainMCRecoFlat->Fill(ERemainingMCRecoFlat);
 
    if(ReconstructedEvent){nRecoEvents++;}
-      
+     
+
    }//<---End jentry loop
    
 
@@ -1040,6 +1083,8 @@ TFile myfile("./ROOTFILES/MPV_MCNew_0_1000.root","RECREATE");
 
 
 hMPVEnergyLossUpstreamTrue->Write();
+hMPVEnergyLossUpstreamReco->Write();
+hMPVEnergyLossUpstreamDelta->Write();
 
 hMCPrimaryPxUnWeighted->Write();
 hMCPrimaryPyUnWeighted->Write();
