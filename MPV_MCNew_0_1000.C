@@ -384,7 +384,9 @@ double RoughSteelLowerZ = 0;
 double RoughSteelUpperZ = -1.5;
 
 
-
+float MPVEnergyLossUpstreamTrue = 999;
+float MPVEnergyLossUpstreamReco = 999;
+float momentumScale = 999;
 
 
 
@@ -515,7 +517,7 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
       // #############################################################
       // ### Calculating the momentum from the MC Primary Particle ###
       // #############################################################
-      float momentumScale = sqrt( (g4Primary_Px[nG4Primary]*g4Primary_Px[nG4Primary]) + 
+      momentumScale = sqrt( (g4Primary_Px[nG4Primary]*g4Primary_Px[nG4Primary]) + 
 	                        (g4Primary_Py[nG4Primary]*g4Primary_Py[nG4Primary]) + 
 				(g4Primary_Pz[nG4Primary]*g4Primary_Pz[nG4Primary]) );
 
@@ -696,7 +698,7 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
       // #######################################################
       // ### Energy Loss Upstream of TPC Using MPV Functions ###
       // #######################################################
-      float MPVEnergyLossUpstreamTrue = 0;
+      //float MPVEnergyLossUpstreamTrue = 0;
       float HaloRange = abs((HaloLowerZ - HaloUpperZ)/cos(mcTheta));
       float TOFRange = abs((TOFLowerZ - TOFUpperZ)/cos(mcTheta));
       float SteelRange = abs((RoughSteelLowerZ - RoughSteelUpperZ)/cos(mcTheta));
@@ -732,7 +734,6 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
       
       nG4Primary++;
       
-
       }//<---End iG4 loop
       
    // ##########################################################
@@ -981,10 +982,10 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
    // #######################################################
    // ### Energy Loss Upstream of TPC Using MPV Functions ###
    // #######################################################
-   float MPVEnergyLossUpstreamReco = 0;
-   float HaloRange = abs((HaloLowerZ - HaloUpperZ)/cos(tpcTheta));
-   float TOFRange = abs((TOFLowerZ - TOFUpperZ)/cos(tpcTheta));
-   float SteelRange = abs((RoughSteelLowerZ - RoughSteelUpperZ)/cos(tpcTheta));
+   //float MPVEnergyLossUpstreamReco = 0;
+   float HaloRange = abs((HaloLowerZ - HaloUpperZ)/cos(RecoTPCTheta*3.14159/180));
+   float TOFRange = abs((TOFLowerZ - TOFUpperZ)/cos(RecoTPCTheta*3.14159/180));
+   float SteelRange = abs((RoughSteelLowerZ - RoughSteelUpperZ)/cos(RecoTPCTheta*3.14159/180));
 
    MPVEnergyLossUpstreamReco = (HaloRange*MPVCarbon(momentumScale, HaloRange/100)) + (TOFRange*MPVCarbon(momentumScale, TOFRange/100)) + (SteelRange*MPVSteel(momentumScale, SteelRange/100));
    if(nTotalEvents % 100 == 0)
