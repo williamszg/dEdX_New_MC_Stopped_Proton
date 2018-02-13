@@ -402,7 +402,7 @@ Long64_t nbytes = 0, nb = 0;
 // #######################################################
 // ###                 Looping over events             ###
 // ####################################################### 
-for (Long64_t jentry=0; jentry<nentries; jentry++) 
+for (Long64_t jentry=0; jentry<748000; jentry++) 
    {
    Long64_t ientry = LoadTree(jentry);
    if (ientry < 0) break;
@@ -722,7 +722,7 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
          std::cout<<"SteelRange = "<<SteelRange<<std::endl;
          }
 
-      hMPVEnergyLossUpstreamTrue->Fill(MPVEnergyLossUpstreamTrue);
+      //hMPVEnergyLossUpstreamTrue->Fill(MPVEnergyLossUpstreamTrue);
 
 
 
@@ -1007,7 +1007,7 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
       }
 
    hMPVEnergyLossUpstreamReco->Fill(MPVEnergyLossUpstreamReco);
-
+   hMPVEnergyLossUpstreamTrue->Fill(MPVEnergyLossUpstreamTrue);
    hMPVEnergyLossUpstreamDelta->Fill(MPVEnergyLossUpstreamTrue - MPVEnergyLossUpstreamReco);
    hMPVEnergyLossUpstreamDeltaTrueTrue->Fill(UpstreamEnergyLossTrue - MPVEnergyLossUpstreamTrue);
    hMPVEnergyLossUpstreamDeltaTrueReco->Fill(UpstreamEnergyLossTrue - MPVEnergyLossUpstreamReco);
@@ -1094,6 +1094,8 @@ TFile myfile("./ROOTFILES/MPV_MCNew_0_1000.root","RECREATE");
 hMPVEnergyLossUpstreamTrue->Write();
 hMPVEnergyLossUpstreamReco->Write();
 hMPVEnergyLossUpstreamDelta->Write();
+hMPVEnergyLossUpstreamDeltaTrueTrue->Write();
+hMPVEnergyLossUpstreamDeltaTrueReco->Write();
 
 hMCPrimaryPxUnWeighted->Write();
 hMCPrimaryPyUnWeighted->Write();

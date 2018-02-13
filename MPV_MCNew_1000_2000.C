@@ -722,7 +722,7 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
          std::cout<<"SteelRange = "<<SteelRange<<std::endl;
          }
 
-      hMPVEnergyLossUpstreamTrue->Fill(MPVEnergyLossUpstreamTrue);
+      //hMPVEnergyLossUpstreamTrue->Fill(MPVEnergyLossUpstreamTrue);
 
 
 
@@ -1005,9 +1005,9 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
       std::cout<<"MPVSteel = "<<MPVSteel(momentumScale, SteelRange/100)<<std::endl;
       std::cout<<"SteelRange = "<<SteelRange<<std::endl;
       }
-
+   
    hMPVEnergyLossUpstreamReco->Fill(MPVEnergyLossUpstreamReco);
-
+   hMPVEnergyLossUpstreamTrue->Fill(MPVEnergyLossUpstreamTrue);
    hMPVEnergyLossUpstreamDelta->Fill(MPVEnergyLossUpstreamTrue - MPVEnergyLossUpstreamReco);
    hMPVEnergyLossUpstreamDeltaTrueTrue->Fill(UpstreamEnergyLossTrue - MPVEnergyLossUpstreamTrue);
    hMPVEnergyLossUpstreamDeltaTrueReco->Fill(UpstreamEnergyLossTrue - MPVEnergyLossUpstreamReco);
@@ -1094,6 +1094,8 @@ TFile myfile("./ROOTFILES/MPV_MCNew_1000_2000.root","RECREATE");
 hMPVEnergyLossUpstreamTrue->Write();
 hMPVEnergyLossUpstreamReco->Write();
 hMPVEnergyLossUpstreamDelta->Write();
+hMPVEnergyLossUpstreamDeltaTrueTrue->Write();
+hMPVEnergyLossUpstreamDeltaTrueReco->Write();
 
 hMCPrimaryPxUnWeighted->Write();
 hMCPrimaryPyUnWeighted->Write();
