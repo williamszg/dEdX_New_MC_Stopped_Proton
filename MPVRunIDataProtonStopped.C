@@ -173,6 +173,8 @@ TH1D *hDeltaKEFlatVsLength = new TH1D("hDeltaKEFlatVsLength", "#Delta KE (Flat -
 
 TH1D *hMPVEnergyLossUpstream = new TH1D("hMPVEnergyLossUpstream", "MPV value for the energy lost upstream on RunI", 1000, 0, 200);
 
+TH1D *hMPVvsFlat = new TH1D("hMPVvsFlat", "MPV upstream value minus the Flat value of 72.9 MeV", 1000, -200, 200);
+
 //----------------------|
 
 
@@ -184,7 +186,7 @@ TH1D *hMPVEnergyLossUpstream = new TH1D("hMPVEnergyLossUpstream", "MPV value for
 //### The Energy Deposition MPV for the Different Materials Functions ###|
 //#######################################################################|
 
-double MPVArgon(double x)
+double MPVArgon(double x, double width)
 {
 
     double x0 = 0.2;
@@ -198,7 +200,7 @@ double MPVArgon(double x)
     double m_e = 0.511;
     double M_proton = 938.272;
     double I = 188e-6;
-    double width = 0.47;
+    //double width = 0.47;
     double rho = 1.396;
     double j = 0.2;
     double zeta = (K/2)*(Z/A)*width*rho;
@@ -269,7 +271,7 @@ double MPVSteel(double x, double width)
 
 
 
-void DataProtonStopped::Loop()
+void MPVRunIDataProtonStopped::Loop()
 {
 if (fChain == 0) return;
 Long64_t nentries = fChain->GetEntriesFast();
@@ -363,6 +365,9 @@ int nShortTracksAllowed = 2;
 double alphaCut = 10;
 
 
+double ArgonRange = 2;
+
+
 // #################################
 // ### Downstream TOF Dimensions ###
 // #################################
@@ -411,7 +416,7 @@ double RoughSteelUpperZ = -1.5;
 // ----------------------------------------------------------------
 
 // ### The assumed energy loss between the cryostat and the TPC ###
-float entryTPCEnergyLoss = 60.01; //MeV
+float entryTPCEnergyLoss = 78.8; //MeV
 
 // ### The assumed mass of the incident particle (here we assume a pion) ###
 float mass = 938.28;
@@ -957,6 +962,7 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
    float HaloRange = abs((HaloLowerZ - HaloUpperZ)/cos(ThetaInDegrees*3.14159/180));
    float TOFRange = abs((TOFLowerZ - TOFUpperZ)/cos(ThetaInDegrees*3.14159/180));
    float SteelRange = abs((RoughSteelLowerZ - RoughSteelUpperZ)/cos(ThetaInDegrees*3.14159/180));
+   float ArRange = abs(ArgonRange/cos(ThetaInDegrees*3.14159/180));
 
    /*MPVEnergyLossUpstream = (HaloRange*MPVCarbon(momentumScale, HaloRange/100)) + (TOFRange*MPVCarbon(momentumScale, TOFRange/100)) + (SteelRange*MPVSteel(momentumScale, SteelRange/100));
    if(nTotalEvents % 100 == 0)
@@ -1007,21 +1013,23 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
 
 
 
-   MPVEnergyLossUpstream = (HaloRange*MPVCarbon(momentum, HaloRange/100)) + (TOFRange*MPVCarbon(momentum, TOFRange/100)) + (SteelRange*MPVSteel(momentum, SteelRange/100));
+   MPVEnergyLossUpstream = (HaloRange*MPVCarbon(momentum, HaloRange/100)) + (ArRange*MPVArgon(momentum, ArRange/100)) + (TOFRange*MPVCarbon(momentum, TOFRange/100)) + (SteelRange*MPVSteel(momentum, SteelRange/100));
    if(nTotalEvents % 100 == 0)
       {
-      std::cout<<"MPVEnergyLossUpstreamReco = "<<MPVEnergyLossUpstreamReco<<std::endl;
-      std::cout<<"MPVCarbon(Halo) = "<<MPVCarbon(momentumScale, HaloRange/100)<<std::endl;
+      std::cout<<"MPVEnergyLossUpstream = "<<MPVEnergyLossUpstream<<std::endl;
+      std::cout<<"MPVCarbon(Halo) = "<<MPVCarbon(momentum, HaloRange/100)<<std::endl;
       std::cout<<"HaloRange = "<<HaloRange<<std::endl;
-      std::cout<<"MPVCarbon(TOF) = "<<MPVCarbon(momentumScale, TOFRange/100)<<std::endl;
+      std::cout<<"MPVCarbon(TOF) = "<<MPVCarbon(momentum, TOFRange/100)<<std::endl;
       std::cout<<"TOFRange = "<<TOFRange<<std::endl;
-      std::cout<<"MPVSteel = "<<MPVSteel(momentumScale, SteelRange/100)<<std::endl;
+      std::cout<<"MPVSteel = "<<MPVSteel(momentum, SteelRange/100)<<std::endl;
       std::cout<<"SteelRange = "<<SteelRange<<std::endl;
+      std::cout<<"MPVArgon = "<<MPVArgon(momentum, ArRange/100)<<std::endl;
+      std::cout<<"ArRange = "<<ArRange<<std::endl;
       }
 
 
    hMPVEnergyLossUpstream->Fill(MPVEnergyLossUpstream);
-
+   hMPVvsFlat->Fill(MPVEnergyLossUpstream - entryTPCEnergyLoss);
 
 
 
@@ -1182,7 +1190,7 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
       if(LowIonizingTrack == true || CloseToTheEdge == true) {continue;}
          hCaloRecoTrackLength->Fill(TrackLength);
          hEnergyCalo->Fill(ECalo);
-         ELength = TrackLength*MPVArgon(momentum);
+         ELength = TrackLength*MPVArgon(momentum, ArRange/100);
          hEnergyLength->Fill(ELength);
 
          hInitialKEWC4->Fill(kineticEnergyInitial);
@@ -1231,7 +1239,7 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
       if (ElenaHault < ElenaRunICut)
          {
 
-         ElenaTxt <<RunNum<<" "<<SubRunNum<<" "<<EventNum<<"\n";
+         //ElenaTxt <<RunNum<<" "<<SubRunNum<<" "<<EventNum<<"\n";
          ElenaHault++;
 
          }
@@ -1334,14 +1342,14 @@ hPhivsThetaELossDivided->Divide(hPhivsThetaELoss, hPhivsThetaELossFlux);
 
 
 
-ElenaTxt.close();
+//ElenaTxt.close();
 
 
 
 
 
 
-TFile myfile("./ROOTFILES/RunIPosPolData_StoppingProtons_MPV.root", "CREATE");
+TFile myfile("./ROOTFILES/RunIPosPolData_StoppingProtons_MPV.root", "RECREATE");
 
 
 // ===========================================================================================
@@ -1350,6 +1358,7 @@ TFile myfile("./ROOTFILES/RunIPosPolData_StoppingProtons_MPV.root", "CREATE");
 
 
 hMPVEnergyLossUpstream->Write();
+hMPVvsFlat->Write();
 
 
 

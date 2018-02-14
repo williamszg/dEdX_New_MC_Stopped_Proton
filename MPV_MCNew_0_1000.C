@@ -237,7 +237,7 @@ TH1D *hMPVEnergyLossUpstreamDeltaTrueReco = new TH1D("hMPVEnergyLossUpstreamDelt
 //### The Energy Deposition MPV for the Different Materials Functions ###|
 //#######################################################################|
 
-double MPVArgon(double x)
+double MPVArgon(double x, double width)
 {
 
     double x0 = 0.2;
@@ -251,7 +251,7 @@ double MPVArgon(double x)
     double m_e = 0.511;
     double M_proton = 938.272;
     double I = 188e-6;
-    double width = 0.47;
+    //double width = 0.47;
     double rho = 1.396;
     double j = 0.2;
     double zeta = (K/2)*(Z/A)*width*rho;
@@ -350,6 +350,11 @@ double YUpperFid = 20;
 
 double ZLowerFid = 0;
 double ZUpperFid = 90;
+
+
+
+double ArgonRange = 2;
+
 
 // #################################
 // ### Downstream TOF Dimensions ###
@@ -709,8 +714,9 @@ for (Long64_t jentry=0; jentry<748000; jentry++)
       float HaloRange = abs((HaloLowerZ - HaloUpperZ)/cos(mcTheta));
       float TOFRange = abs((TOFLowerZ - TOFUpperZ)/cos(mcTheta));
       float SteelRange = abs((RoughSteelLowerZ - RoughSteelUpperZ)/cos(mcTheta));
+      float ArRange = abs(ArgonRange/cos(mcTheta));
 
-      MPVEnergyLossUpstreamTrue = (HaloRange*MPVCarbon(momentumScale, HaloRange/100)) + (TOFRange*MPVCarbon(momentumScale, TOFRange/100)) + (SteelRange*MPVSteel(momentumScale, SteelRange/100));
+      MPVEnergyLossUpstreamTrue = (ArRange*MPVArgon(momentumScale, ArRange/100)) + (HaloRange*MPVCarbon(momentumScale, HaloRange/100)) + (TOFRange*MPVCarbon(momentumScale, TOFRange/100)) + (SteelRange*MPVSteel(momentumScale, SteelRange/100));
       if(nTotalEvents % 100 == 0)
          {
          std::cout<<"MPVEnergyLossUpstreamTrue = "<<MPVEnergyLossUpstreamTrue<<std::endl;
@@ -720,6 +726,8 @@ for (Long64_t jentry=0; jentry<748000; jentry++)
          std::cout<<"TOFRange = "<<TOFRange<<std::endl;
          std::cout<<"MPVSteel = "<<MPVSteel(momentumScale, SteelRange/100)<<std::endl;
          std::cout<<"SteelRange = "<<SteelRange<<std::endl;
+         std::cout<<"MPVArgon = "<<MPVArgon(momentumScale, ArRange/100)<<std::endl;
+         std::cout<<"ArRange = "<<ArRange<<std::endl;
          }
 
       //hMPVEnergyLossUpstreamTrue->Fill(MPVEnergyLossUpstreamTrue);
@@ -993,8 +1001,9 @@ for (Long64_t jentry=0; jentry<748000; jentry++)
    float HaloRange = abs((HaloLowerZ - HaloUpperZ)/cos(RecoTPCTheta*3.14159/180));
    float TOFRange = abs((TOFLowerZ - TOFUpperZ)/cos(RecoTPCTheta*3.14159/180));
    float SteelRange = abs((RoughSteelLowerZ - RoughSteelUpperZ)/cos(RecoTPCTheta*3.14159/180));
+   float ArRange = abs(ArgonRange/cos(RecoTPCTheta*3.14159/180));
 
-   MPVEnergyLossUpstreamReco = (HaloRange*MPVCarbon(momentumScale, HaloRange/100)) + (TOFRange*MPVCarbon(momentumScale, TOFRange/100)) + (SteelRange*MPVSteel(momentumScale, SteelRange/100));
+   MPVEnergyLossUpstreamReco = (ArRange*MPVArgon(momentumScale, ArRange/100)) + (HaloRange*MPVCarbon(momentumScale, HaloRange/100)) + (TOFRange*MPVCarbon(momentumScale, TOFRange/100)) + (SteelRange*MPVSteel(momentumScale, SteelRange/100));
    if(nTotalEvents % 100 == 0)
       {
       std::cout<<"MPVEnergyLossUpstreamReco = "<<MPVEnergyLossUpstreamReco<<std::endl;
@@ -1004,6 +1013,8 @@ for (Long64_t jentry=0; jentry<748000; jentry++)
       std::cout<<"TOFRange = "<<TOFRange<<std::endl;
       std::cout<<"MPVSteel = "<<MPVSteel(momentumScale, SteelRange/100)<<std::endl;
       std::cout<<"SteelRange = "<<SteelRange<<std::endl;
+      std::cout<<"MPVArgon = "<<MPVArgon(momentumScale, ArRange/100)<<std::endl;
+      std::cout<<"ArRange = "<<ArRange<<std::endl;
       }
 
    hMPVEnergyLossUpstreamReco->Fill(MPVEnergyLossUpstreamReco);
