@@ -222,6 +222,19 @@ TH1D *hMPVEnergyLossUpstreamDeltaTrueTrue = new TH1D("hMPVEnergyLossUpstreamDelt
 
 TH1D *hMPVEnergyLossUpstreamDeltaTrueReco = new TH1D("hMPVEnergyLossUpstreamDeltaTrueReco", "Difference between the upstream energy loss value for the energy lost upstream and the MPV value (True - Reco)", 1000, -200, 200);
 
+TH1D *hMPVTrueDistanceSteel = new TH1D("hMPVTrueDistanceSteel", "Distance Protons Traveled Through Steel for True", 1000, 0, 20);
+TH1D *hMPVTrueDistanceTOF = new TH1D("hMPVTrueDistanceTOF", "Distance Protons Traveled Through TOF for True", 1000, 0, 20);
+TH1D *hMPVTrueDistanceHalo = new TH1D("hMPVTrueDistanceHalo", "Distance Protons Traveled Through Halo for True", 1000, 0, 20);
+TH1D *hMPVTrueDistanceG10 = new TH1D("hMPVTrueDistanceG10", "Distance Protons Traveled Through G10 for True", 1000, 0, 20);
+TH1D *hMPVTrueDistanceArgon = new TH1D("hMPVTrueDistanceArgon", "Distance Protons Traveled Through Argon for True", 1000, 0, 20);
+
+TH1D *hMPVRecoDistanceSteel = new TH1D("hMPVRecoDistanceSteel", "Distance Protons Traveled Through Steel for Reco", 1000, 0, 20);
+TH1D *hMPVRecoDistanceTOF = new TH1D("hMPVRecoDistanceTOF", "Distance Protons Traveled Through TOF for Reco", 1000, 0, 20);
+TH1D *hMPVRecoDistanceHalo = new TH1D("hMPVRecoDistanceHalo", "Distance Protons Traveled Through Halo for Reco", 1000, 0, 20);
+TH1D *hMPVRecoDistanceG10 = new TH1D("hMPVRecoDistanceG10", "Distance Protons Traveled Through G10 for Reco", 1000, 0, 20);
+TH1D *hMPVRecoDistanceArgon = new TH1D("hMPVRecoDistanceArgon", "Distance Protons Traveled Through Argon for Reco", 1000, 0, 20);
+
+
 // --------------------------|
 
 
@@ -400,14 +413,48 @@ double UpstreamEnergyLossTrue = 999;
 
 
 
+
+double TrackCheck = 2;
+
+
+double TrueStartX = 0;
+double TrueStartY = 0;
+double TrueStartZ = 0;
+
+double TrueEndX = 0;
+double TrueEndY = 0;
+double TrueEndZ = 0;
+
+
+double RecoStartX = 0;
+double RecoStartY = 0;
+double RecoStartZ = 0;
+
+double RecoEndX = 0;
+double RecoEndY = 0;
+double RecoEndZ = 0;
+
+
+float TdisSteel = 0;
+float TdisTOF = 0;
+float TdisHalo = 0;
+float TdisG10 = 0;
+float TdisArgon = 0;
+
+
+
+
 if (fChain == 0) return;
 Long64_t nentries = fChain->GetEntriesFast();
 Long64_t nbytes = 0, nb = 0;
-   
+
+nentries = 748000;
+//nentries = 10000;  
+ 
 // #######################################################
 // ###                 Looping over events             ###
 // ####################################################### 
-for (Long64_t jentry=0; jentry<748000; jentry++) 
+for (Long64_t jentry=0; jentry<nentries; jentry++) 
    {
    Long64_t ientry = LoadTree(jentry);
    if (ientry < 0) break;
@@ -504,6 +551,12 @@ for (Long64_t jentry=0; jentry<748000; jentry++)
       
 
       
+      TrueEndX = EndPointx[iG4];
+      TrueEndY = EndPointy[iG4];
+      TrueEndZ = EndPointz[iG4];
+
+
+
       // ==========================
       // === Filling histograms ===
       // ==========================
@@ -592,6 +645,9 @@ for (Long64_t jentry=0; jentry<748000; jentry++)
 	       FirstPoint_Z = MidPosZ[iG4][iPriTrj];
 	       FirstPoint_Y = MidPosY[iG4][iPriTrj];
 	       FirstPoint_X = MidPosX[iG4][iPriTrj];
+               TrueStartX = FirstPoint_X;
+               TrueStartY = FirstPoint_Y;
+               TrueStartZ = FirstPoint_Z;
 	       //std::cout<<"FirstPoint_Z = "<<FirstPoint_Z<<std::endl;
 	       //std::cout<<"MidPx[iG4][iPriTrj] = "<<MidPx[iG4][iPriTrj]<<std::endl;
 	       FrontFace_Px = MidPx[iG4][iPriTrj] * 1000;
@@ -715,6 +771,14 @@ for (Long64_t jentry=0; jentry<748000; jentry++)
       float TOFRange = abs((TOFLowerZ - TOFUpperZ)/cos(mcTheta));
       float SteelRange = abs((RoughSteelLowerZ - RoughSteelUpperZ)/cos(mcTheta));
       float ArRange = abs(ArgonRange/cos(mcTheta));
+      float G10Range = abs(3/cos(mcTheta));
+
+      TdisSteel = SteelRange;
+      TdisTOF = TOFRange;
+      TdisHalo = HaloRange;
+      TdisG10 = G10Range;
+      TdisArgon = ArRange;
+
 
       MPVEnergyLossUpstreamTrue = (ArRange*MPVArgon(momentumScale, ArRange/100)) + (HaloRange*MPVCarbon(momentumScale, HaloRange/100)) + (TOFRange*MPVCarbon(momentumScale, TOFRange/100)) + (SteelRange*MPVSteel(momentumScale, SteelRange/100));
       if(nTotalEvents % 100 == 0)
@@ -932,6 +996,17 @@ for (Long64_t jentry=0; jentry<748000; jentry++)
 	    }//<---End finding the most downstream point
 
          }//<---End ntrjpts loop
+
+
+      RecoStartX = FirstSpacePointX;
+      RecoStartY = FirstSpacePointY;
+      RecoStartZ = FirstSpacePointZ;
+
+      RecoEndX = LastSpacePointX;
+      RecoEndY = LastSpacePointY;
+      RecoEndZ = LastSpacePointZ;
+
+
 	 
       // ###################################################
       // ### Vectors for angles between TPC and WC Track ###
@@ -1002,6 +1077,13 @@ for (Long64_t jentry=0; jentry<748000; jentry++)
    float TOFRange = abs((TOFLowerZ - TOFUpperZ)/cos(RecoTPCTheta*3.14159/180));
    float SteelRange = abs((RoughSteelLowerZ - RoughSteelUpperZ)/cos(RecoTPCTheta*3.14159/180));
    float ArRange = abs(ArgonRange/cos(RecoTPCTheta*3.14159/180));
+   float G10Range = abs(3/cos(RecoTPCTheta*3.14159/180));
+
+   float RdisSteel = SteelRange;
+   float RdisTOF = TOFRange;
+   float RdisHalo = HaloRange;
+   float RdisG10 = G10Range;
+   float RdisArgon = ArRange;
 
    MPVEnergyLossUpstreamReco = (ArRange*MPVArgon(momentumScale, ArRange/100)) + (HaloRange*MPVCarbon(momentumScale, HaloRange/100)) + (TOFRange*MPVCarbon(momentumScale, TOFRange/100)) + (SteelRange*MPVSteel(momentumScale, SteelRange/100));
    if(nTotalEvents % 100 == 0)
@@ -1017,12 +1099,23 @@ for (Long64_t jentry=0; jentry<748000; jentry++)
       std::cout<<"ArRange = "<<ArRange<<std::endl;
       }
 
+   if((abs(TrueStartX - RecoStartX) > TrackCheck) || (abs(TrueStartY - RecoStartY) > TrackCheck) || (abs(TrueStartZ - RecoStartZ) > TrackCheck) || (abs(TrueEndX - RecoEndX) > TrackCheck) || (abs(TrueEndY - RecoEndY) > TrackCheck) || (abs(TrueEndZ - RecoEndZ) > TrackCheck)) {continue;}
+
    hMPVEnergyLossUpstreamReco->Fill(MPVEnergyLossUpstreamReco);
    hMPVEnergyLossUpstreamTrue->Fill(MPVEnergyLossUpstreamTrue);
    hMPVEnergyLossUpstreamDelta->Fill(MPVEnergyLossUpstreamTrue - MPVEnergyLossUpstreamReco);
    hMPVEnergyLossUpstreamDeltaTrueTrue->Fill(UpstreamEnergyLossTrue - MPVEnergyLossUpstreamTrue);
    hMPVEnergyLossUpstreamDeltaTrueReco->Fill(UpstreamEnergyLossTrue - MPVEnergyLossUpstreamReco);
-
+   hMPVTrueDistanceSteel->Fill(TdisSteel);
+   hMPVTrueDistanceTOF->Fill(TdisTOF);
+   hMPVTrueDistanceHalo->Fill(TdisHalo);
+   hMPVTrueDistanceG10->Fill(TdisG10);
+   hMPVTrueDistanceArgon->Fill(TdisArgon);
+   hMPVRecoDistanceSteel->Fill(RdisSteel);
+   hMPVRecoDistanceTOF->Fill(RdisTOF);
+   hMPVRecoDistanceHalo->Fill(RdisHalo);
+   hMPVRecoDistanceG10->Fill(RdisG10);
+   hMPVRecoDistanceArgon->Fill(RdisArgon);
 
    float PhiInDegrees = RecoTPCPhi;
    float ThetaInDegrees = RecoTPCTheta;
@@ -1048,6 +1141,7 @@ for (Long64_t jentry=0; jentry<748000; jentry++)
    hMCELossRecoInTPC->Fill(RecoEnergyLossInsideTPC);
    
    float DeltaEnergyLossInTPC = EnergyLossInsideTPC - RecoEnergyLossInsideTPC;
+   hDeltaEnergyLossInTPCTruevsReco->Fill(DeltaEnergyLossInTPC);
    float DeltaELossUpstreamTruevsReco = 999;
 
    float ETrueTotal = EnergyLossInsideTPC + EnergyLossOutsideTPC;
@@ -1107,6 +1201,17 @@ hMPVEnergyLossUpstreamReco->Write();
 hMPVEnergyLossUpstreamDelta->Write();
 hMPVEnergyLossUpstreamDeltaTrueTrue->Write();
 hMPVEnergyLossUpstreamDeltaTrueReco->Write();
+hMPVTrueDistanceSteel->Write();
+hMPVTrueDistanceTOF->Write();
+hMPVTrueDistanceHalo->Write();
+hMPVTrueDistanceG10->Write();
+hMPVTrueDistanceArgon->Write();
+hMPVRecoDistanceSteel->Write();
+hMPVRecoDistanceTOF->Write();
+hMPVRecoDistanceHalo->Write();
+hMPVRecoDistanceG10->Write();
+hMPVRecoDistanceArgon->Write();
+
 
 hMCPrimaryPxUnWeighted->Write();
 hMCPrimaryPyUnWeighted->Write();
