@@ -173,7 +173,10 @@ TH1D *hDeltaKEFlatVsLength = new TH1D("hDeltaKEFlatVsLength", "#Delta KE (Flat -
 
 TH1D *hMPVEnergyLossUpstream = new TH1D("hMPVEnergyLossUpstream", "MPV value for the energy lost upstream on RunI", 1000, 0, 200);
 
-TH1D *hMPVvsFlat = new TH1D("hMPVvsFlat", "MPV upstream value minus the Flat value of 72.9 MeV", 1000, -200, 200);
+TH1D *hMPVvsFlat = new TH1D("hMPVvsFlat", "MPV upstream value minus the Flat value of 78.8 MeV", 50, -500, 500);
+
+TH1D *hMPVERemaining = new TH1D("hMPVERemaining", "Energy Remaining Using MPV Method (E_{Remaining} = KE^{WC4}_{i} - E_{Loss}^{TPC} - E_{Loss}^{MPV})", 50, -500, 500);
+
 
 //----------------------|
 
@@ -1028,8 +1031,8 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
       }
 
 
-   hMPVEnergyLossUpstream->Fill(MPVEnergyLossUpstream);
-   hMPVvsFlat->Fill(MPVEnergyLossUpstream - entryTPCEnergyLoss);
+   //hMPVEnergyLossUpstream->Fill(MPVEnergyLossUpstream);
+   //hMPVvsFlat->Fill(MPVEnergyLossUpstream - entryTPCEnergyLoss);
 
 
 
@@ -1294,8 +1297,21 @@ for (Long64_t jentry=0; jentry<nentries;jentry++)
    
    hPhivsThetaELoss->Fill(tpcPhi*(180/3.14159) ,tpcTheta*(180/3.14159), EnergyLossUpstream);
    hPhivsThetaELossFlux->Fill(tpcPhi*(180/3.14159) ,tpcTheta*(180/3.14159));
-   
-   
+  
+
+
+
+
+
+   hMPVEnergyLossUpstream->Fill(MPVEnergyLossUpstream);
+   hMPVvsFlat->Fill(MPVEnergyLossUpstream - entryTPCEnergyLoss);
+   hMPVERemaining->Fill(EnergyLossUpstream - MPVEnergyLossUpstream);
+
+
+
+
+
+
    }//<---end jentry loop
 
 
@@ -1359,7 +1375,7 @@ TFile myfile("./ROOTFILES/RunIPosPolData_StoppingProtons_MPV.root", "RECREATE");
 
 hMPVEnergyLossUpstream->Write();
 hMPVvsFlat->Write();
-
+hMPVERemaining->Write();
 
 
 hdataRawWCTRKMomentum->Write();
