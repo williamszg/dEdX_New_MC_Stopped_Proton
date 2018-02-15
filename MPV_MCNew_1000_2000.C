@@ -234,6 +234,8 @@ TH1D *hMPVRecoDistanceHalo = new TH1D("hMPVRecoDistanceHalo", "Distance Protons 
 TH1D *hMPVRecoDistanceG10 = new TH1D("hMPVRecoDistanceG10", "Distance Protons Traveled Through G10 for Reco", 1000, 0, 20);
 TH1D *hMPVRecoDistanceArgon = new TH1D("hMPVRecoDistanceArgon", "Distance Protons Traveled Through Argon for Reco", 1000, 0, 20);
 
+TH1D *hMPVERemainingTrue = new TH1D("hMPVERemainingTrue", "Energy Remaining Using MPV Method with True Parameters", 1000, -200, 200);
+TH1D *hMPVERemainingReco = new TH1D("hMPVERemainingReco", "Energy Remaining Using MPV Method with Reco Parameters", 1000, -200, 200);
 
 // --------------------------|
 
@@ -441,7 +443,10 @@ float TdisHalo = 0;
 float TdisG10 = 0;
 float TdisArgon = 0;
 
-
+float TrueInitialKineticEnergy = 0;
+float RecoInitialKineticEnergy = 0;
+float TrueEnergyLossInsideTPC = 0;
+float RecoEnergyLossInsideTPC = 0;
 
 
 if (fChain == 0) return;
@@ -749,6 +754,8 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
       // ###################################################################
       float ERemainingMCTrue = InitialKineticEnergy - EnergyLossOutsideTPC - EnergyLossInsideTPC;
       float ERemainingMCTrueFlat = InitialKineticEnergy - ELossFlat - EnergyLossInsideTPC;
+      TrueInitialKineticEnergy = InitialKineticEnergy;
+      TrueEnergyLossInsideTPC = EnergyLossInsideTPC;
       //Put the MPV method of estimating the energy loss!
       
       hERemainMCTrue->Fill(ERemainingMCTrue);
@@ -840,7 +847,7 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
    double MCRecoPitch[1000]={0.};
    
    double primary_track_length = 0;
-   double RecoEnergyLossInsideTPC = 0;
+   //double RecoEnergyLossInsideTPC = 0;
 
 
    float InitialKineticEnergy = 0;
@@ -1167,6 +1174,9 @@ for (Long64_t jentry=0; jentry<nentries; jentry++)
 
    hERemainMCRecoFlat->Fill(ERemainingMCRecoFlat);
 
+   hMPVERemainingTrue->Fill(TrueInitialKineticEnergy - TrueEnergyLossInsideTPC - MPVEnergyLossUpstreamTrue);
+   hMPVERemainingReco->Fill(TrueInitialKineticEnergy - RecoEnergyLossInsideTPC - MPVEnergyLossUpstreamReco);
+
    if(ReconstructedEvent){nRecoEvents++;}
      
 
@@ -1210,6 +1220,8 @@ hMPVRecoDistanceTOF->Write();
 hMPVRecoDistanceHalo->Write();
 hMPVRecoDistanceG10->Write();
 hMPVRecoDistanceArgon->Write();
+hMPVERemainingTrue->Write();
+hMPVERemainingReco->Write();
 
 
 hMCPrimaryPxUnWeighted->Write();
